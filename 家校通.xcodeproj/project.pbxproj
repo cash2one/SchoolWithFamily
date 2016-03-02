@@ -290,6 +290,7 @@
 				TargetAttributes = {
 					59038D051C706B42007BE74D = {
 						CreatedOnToolsVersion = 7.2.1;
+						DevelopmentTeam = XSG6ZK7ZQR;
 					};
 					59038D1E1C706B43007BE74D = {
 						CreatedOnToolsVersion = 7.2.1;
@@ -537,6 +538,8 @@
 			baseConfigurationReference = 305C305E7DD8B33F7D85B01C /* Pods.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/家校通/Frameworks",
@@ -552,6 +555,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.Nine.prictice.---";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Debug;
 		};
@@ -560,6 +564,8 @@
 			baseConfigurationReference = EB8B5C3766110C64F9273C4A /* Pods.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/家校通/Frameworks",
@@ -575,6 +581,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.Nine.prictice.---";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Release;
 		};
