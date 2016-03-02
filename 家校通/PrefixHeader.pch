@@ -1,0 +1,18 @@
+//
+//  PrefixHeader.pch
+//  家校通
+//
+//  Created by Sunny on 2/14/16.
+//  Copyright © 2016 Sunny. All rights reserved.
+//
+
+#ifndef PrefixHeader_pch
+#define PrefixHeader_pch
+
+//屏幕大小
+#define kScreenFrame [UIScreen mainScreen].bounds
+#define kScreenWidth [UIScreen mainScreen].bounds.size.width
+#define kScreenHeight [UIScreen mainScreen].bounds.size.height
+#define kScreenScale [UIScreen mainScreen].scale
+
+#endif /* PrefixHeader_pch */
