@@ -32,12 +32,10 @@
 - (void)viewDidAppear:(BOOL)animated {
     [super viewDidAppear:animated];
     
-    [self loadWebView];
+//    [self loadWebView];
 }
 
-/**
- *  有菊花旋转的加载网页
- */
+//有菊花旋转的加载网页
 - (void)loadWebView {
     //打开指定的html网页呈现新闻
     NSString *path = [[NSBundle mainBundle] pathForResource:@"news" ofType:@"html"];
@@ -54,11 +52,7 @@
 }
 
 #pragma mark - UIWebViewDelegate implement
-/**
- *  加载网页完毕菊花消失
- *
- *  @param webView 新闻承载view
- */
+//加载网页完毕菊花消失
 - (void)webViewDidFinishLoad:(UIWebView *)webView {
     [_indicator stopAnimating];
 }
