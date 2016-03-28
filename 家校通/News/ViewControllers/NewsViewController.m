@@ -31,18 +31,15 @@
 
 - (void)viewDidAppear:(BOOL)animated {
     [super viewDidAppear:animated];
-    
-//    [self loadWebView];
+    [self loadWebView];
 }
 
 //有菊花旋转的加载网页
 - (void)loadWebView {
     //打开指定的html网页呈现新闻
-    NSString *path = [[NSBundle mainBundle] pathForResource:@"news" ofType:@"html"];
-    NSURL *pathURL = [NSURL fileURLWithPath:path];
-    NSString *dataString = [[NSString alloc] initWithContentsOfFile:path encoding:NSUTF8StringEncoding error:nil];
-    [_webView loadHTMLString:dataString baseURL:pathURL];
-    
+    NSURL *pathURL = [NSURL URLWithString:@"http://zesicus.site"];
+    NSURLRequest *request = [NSURLRequest requestWithURL:pathURL];
+    [_webView loadRequest:request];
     //加载前菊花
     _indicator = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleGray];
     [_indicator setCenter:CGPointMake(20, 84)];

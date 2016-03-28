@@ -18,7 +18,7 @@
     
     /** 设置默认状态 */
     NSMutableDictionary *norDict = @{}.mutableCopy;
-    norDict[NSFontAttributeName] = [UIFont systemFontOfSize:14];
+    norDict[NSFontAttributeName] = [UIFont systemFontOfSize:11];
     norDict[NSForegroundColorAttributeName] = [UIColor grayColor];
     [tabBarItem setTitleTextAttributes:norDict forState:UIControlStateNormal];
     
@@ -27,6 +27,7 @@
     selDict[NSFontAttributeName] = norDict[NSFontAttributeName];
     selDict[NSForegroundColorAttributeName] = [UIColor blackColor];
     [tabBarItem setTitleTextAttributes:selDict forState:UIControlStateSelected];
+    
 }
 
 - (void)viewDidLoad {
@@ -47,6 +48,8 @@
     
     //＊＊设置tabBar工具条
     [self.tabBar setBackgroundImage:[UIImage imageNamed:@"tabbar-light"]];
+    //设置选中标题栏图像颜色
+    [self.tabBar setTintColor:[UIColor colorWithRed:81/255.f green:81/255.f blue:81/255.f alpha:1.0]];
 }
 
 - (void)setUpChildControllerWith:(UIViewController *)childVc norImage:(UIImage *)norImage selImage:(UIImage *)selImage title:(NSString *)title
