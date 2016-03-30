@@ -19,6 +19,8 @@
 		596C80C51C706D6C00CFF0DA /* MainTabBarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 596C80C41C706D6C00CFF0DA /* MainTabBarViewController.m */; };
 		596C80D11C70725C00CFF0DA /* TempViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 596C80D01C70725C00CFF0DA /* TempViewController.m */; };
 		596C80DC1C7079E200CFF0DA /* Reveal.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 596C80DB1C7079E200CFF0DA /* Reveal.framework */; };
+		59EC15691CAC291D00B2AEF5 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 59EC15671CAC291D00B2AEF5 /* LoginViewController.m */; };
+		59EC156A1CAC291D00B2AEF5 /* LoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 59EC15681CAC291D00B2AEF5 /* LoginViewController.xib */; };
 		90E70C287226F37CAB9ED2B5 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3225A0A78324430BE11DBB07 /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -51,8 +53,8 @@
 		59038D301C706B43007BE74D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		59269AAC1CA8C7ED00CC9620 /* NewsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewsViewController.h; sourceTree = "<group>"; };
 		59269AAD1CA8C7ED00CC9620 /* NewsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewsViewController.m; sourceTree = "<group>"; };
-		59269AB01CA8C7FE00CC9620 /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
-		59269AB11CA8C7FE00CC9620 /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		59269AB01CA8C7FE00CC9620 /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AppDelegate.h; path = "Supporting Files/AppDelegate.h"; sourceTree = "<group>"; };
+		59269AB11CA8C7FE00CC9620 /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AppDelegate.m; path = "Supporting Files/AppDelegate.m"; sourceTree = "<group>"; };
 		59269AB21CA8C7FE00CC9620 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		59269AB41CA8C7FE00CC9620 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		59269AB61CA8C7FE00CC9620 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -64,6 +66,9 @@
 		596C80CF1C70725C00CFF0DA /* TempViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TempViewController.h; path = MainInterface/TempViewController.h; sourceTree = "<group>"; };
 		596C80D01C70725C00CFF0DA /* TempViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TempViewController.m; path = MainInterface/TempViewController.m; sourceTree = "<group>"; };
 		596C80DB1C7079E200CFF0DA /* Reveal.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Reveal.framework; path = Frameworks/Reveal.framework; sourceTree = "<group>"; };
+		59EC15661CAC291D00B2AEF5 /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
+		59EC15671CAC291D00B2AEF5 /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
+		59EC15681CAC291D00B2AEF5 /* LoginViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LoginViewController.xib; sourceTree = "<group>"; };
 		EB8B5C3766110C64F9273C4A /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -136,6 +141,9 @@
 		59038D081C706B42007BE74D /* 家校通 */ = {
 			isa = PBXGroup;
 			children = (
+				59269AB01CA8C7FE00CC9620 /* AppDelegate.h */,
+				59269AB11CA8C7FE00CC9620 /* AppDelegate.m */,
+				59EC15621CAC1FCE00B2AEF5 /* Login */,
 				596C80C21C706CE000CFF0DA /* MainInterface */,
 				59269AAA1CA8C7ED00CC9620 /* News */,
 				59269AAF1CA8C7FE00CC9620 /* Supporting Files */,
@@ -183,8 +191,6 @@
 			isa = PBXGroup;
 			children = (
 				59269AC31CA8CA8F00CC9620 /* Info.plist */,
-				59269AB01CA8C7FE00CC9620 /* AppDelegate.h */,
-				59269AB11CA8C7FE00CC9620 /* AppDelegate.m */,
 				59269AB21CA8C7FE00CC9620 /* Assets.xcassets */,
 				59269AB31CA8C7FE00CC9620 /* LaunchScreen.storyboard */,
 				59269AB51CA8C7FE00CC9620 /* Main.storyboard */,
@@ -211,6 +217,16 @@
 				596C80DB1C7079E200CFF0DA /* Reveal.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		59EC15621CAC1FCE00B2AEF5 /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				59EC15661CAC291D00B2AEF5 /* LoginViewController.h */,
+				59EC15671CAC291D00B2AEF5 /* LoginViewController.m */,
+				59EC15681CAC291D00B2AEF5 /* LoginViewController.xib */,
+			);
+			path = Login;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -320,6 +336,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				59EC156A1CAC291D00B2AEF5 /* LoginViewController.xib in Resources */,
 				59269AC41CA8CA8F00CC9620 /* Info.plist in Resources */,
 				59269ABD1CA8C7FE00CC9620 /* Main.storyboard in Resources */,
 				59269ABB1CA8C7FE00CC9620 /* Assets.xcassets in Resources */,
@@ -398,6 +415,7 @@
 			files = (
 				59269ABF1CA8C7FE00CC9620 /* main.m in Sources */,
 				59269ABA1CA8C7FE00CC9620 /* AppDelegate.m in Sources */,
+				59EC15691CAC291D00B2AEF5 /* LoginViewController.m in Sources */,
 				596C80D11C70725C00CFF0DA /* TempViewController.m in Sources */,
 				596C80C51C706D6C00CFF0DA /* MainTabBarViewController.m in Sources */,
 				59269AAE1CA8C7ED00CC9620 /* NewsViewController.m in Sources */,

@@ -7,6 +7,7 @@
 //
 
 #import "AppDelegate.h"
+#import "LoginViewController.h"
 #import "MainTabBarViewController.h"
 
 @interface AppDelegate ()
@@ -19,11 +20,11 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
-    self.window.rootViewController = [MainTabBarViewController new];
+    self.window.rootViewController = [LoginViewController new];
     [self.window makeKeyAndVisible];
     
     //设置标题栏颜色
-    [[UINavigationBar appearance] setBarTintColor:[UIColor colorWithRed:36/255.f green:147/255.f blue:200/255.f alpha:1.0]];
+    [[UINavigationBar appearance] setBarTintColor:[UIColor colorWithRed:36.0/255 green:36.0/255 blue:36.0/255 alpha:0.9]];
     //设置导航栏标题颜色
     [[UINavigationBar appearance] setTitleTextAttributes:@{NSForegroundColorAttributeName:[UIColor whiteColor]}];
     //设置按钮文字颜色 白色
