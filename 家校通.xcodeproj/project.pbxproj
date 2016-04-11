@@ -573,7 +573,7 @@
 					"-framework",
 					Reveal,
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.Nine.jxt;
+				PRODUCT_BUNDLE_IDENTIFIER = com.Nine.SchoolWithFamily;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 			};
@@ -594,7 +594,7 @@
 				INFOPLIST_FILE = "家校通/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				OTHER_LDFLAGS = "";
-				PRODUCT_BUNDLE_IDENTIFIER = com.Nine.jxt;
+				PRODUCT_BUNDLE_IDENTIFIER = com.Nine.SchoolWithFamily;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 			};
