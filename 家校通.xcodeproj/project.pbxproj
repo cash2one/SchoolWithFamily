@@ -16,7 +16,6 @@
 		59269ABC1CA8C7FE00CC9620 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 59269AB31CA8C7FE00CC9620 /* LaunchScreen.storyboard */; };
 		59269ABD1CA8C7FE00CC9620 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 59269AB51CA8C7FE00CC9620 /* Main.storyboard */; };
 		59269ABF1CA8C7FE00CC9620 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 59269AB81CA8C7FE00CC9620 /* main.m */; };
-		59269AC41CA8CA8F00CC9620 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 59269AC31CA8CA8F00CC9620 /* Info.plist */; };
 		596C80C51C706D6C00CFF0DA /* MainTabBarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 596C80C41C706D6C00CFF0DA /* MainTabBarViewController.m */; };
 		596C80D11C70725C00CFF0DA /* TempViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 596C80D01C70725C00CFF0DA /* TempViewController.m */; };
 		596C80DC1C7079E200CFF0DA /* Reveal.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 596C80DB1C7079E200CFF0DA /* Reveal.framework */; };
@@ -315,7 +314,7 @@
 		59038CFE1C706B42007BE74D /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0720;
+				LastUpgradeCheck = 0730;
 				ORGANIZATIONNAME = Sunny;
 				TargetAttributes = {
 					59038D051C706B42007BE74D = {
@@ -358,7 +357,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				59EC156A1CAC291D00B2AEF5 /* LoginViewController.xib in Resources */,
-				59269AC41CA8CA8F00CC9620 /* Info.plist in Resources */,
 				59269ABD1CA8C7FE00CC9620 /* Main.storyboard in Resources */,
 				59269ABB1CA8C7FE00CC9620 /* Assets.xcassets in Resources */,
 				59269ABC1CA8C7FE00CC9620 /* LaunchScreen.storyboard in Resources */,
