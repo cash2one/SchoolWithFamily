@@ -53,7 +53,7 @@
 
 - (IBAction)login:(UIButton *)sender {
     MainTabBarViewController *mainVC = [MainTabBarViewController new];
-    mainVC.shouldShowLaunchAnimation = YES;
+    mainVC.shouldShowLaunchAnimation = NO;
     [self presentViewController:mainVC animated:NO completion:nil];
 }
 
