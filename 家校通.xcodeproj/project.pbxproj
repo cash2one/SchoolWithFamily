@@ -58,11 +58,11 @@
 		59269AAD1CA8C7ED00CC9620 /* NewsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewsViewController.m; sourceTree = "<group>"; };
 		59269AB01CA8C7FE00CC9620 /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AppDelegate.h; path = "Supporting Files/AppDelegate.h"; sourceTree = "<group>"; };
 		59269AB11CA8C7FE00CC9620 /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AppDelegate.m; path = "Supporting Files/AppDelegate.m"; sourceTree = "<group>"; };
-		59269AB21CA8C7FE00CC9620 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		59269AB21CA8C7FE00CC9620 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = "Supporting Files/Assets.xcassets"; sourceTree = "<group>"; };
 		59269AB41CA8C7FE00CC9620 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		59269AB61CA8C7FE00CC9620 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		59269AB81CA8C7FE00CC9620 /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		59269AB91CA8C7FE00CC9620 /* PrefixHeader.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
+		59269AB91CA8C7FE00CC9620 /* PrefixHeader.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PrefixHeader.pch; path = "Supporting Files/PrefixHeader.pch"; sourceTree = "<group>"; };
 		59269AC31CA8CA8F00CC9620 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = ../Info.plist; sourceTree = "<group>"; };
 		596C80C31C706D6C00CFF0DA /* MainTabBarViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MainTabBarViewController.h; path = MainInterface/MainTabBarViewController.h; sourceTree = "<group>"; };
 		596C80C41C706D6C00CFF0DA /* MainTabBarViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MainTabBarViewController.m; path = MainInterface/MainTabBarViewController.m; sourceTree = "<group>"; };
@@ -161,8 +161,10 @@
 		59038D081C706B42007BE74D /* 家校通 */ = {
 			isa = PBXGroup;
 			children = (
+				59269AB91CA8C7FE00CC9620 /* PrefixHeader.pch */,
 				59269AB01CA8C7FE00CC9620 /* AppDelegate.h */,
 				59269AB11CA8C7FE00CC9620 /* AppDelegate.m */,
+				59269AB21CA8C7FE00CC9620 /* Assets.xcassets */,
 				590260351CBCA7750068E825 /* Libs */,
 				59EC15621CAC1FCE00B2AEF5 /* Login */,
 				596C80C21C706CE000CFF0DA /* MainInterface */,
@@ -212,11 +214,9 @@
 			isa = PBXGroup;
 			children = (
 				59269AC31CA8CA8F00CC9620 /* Info.plist */,
-				59269AB21CA8C7FE00CC9620 /* Assets.xcassets */,
 				59269AB31CA8C7FE00CC9620 /* LaunchScreen.storyboard */,
 				59269AB51CA8C7FE00CC9620 /* Main.storyboard */,
 				59269AB81CA8C7FE00CC9620 /* main.m */,
-				59269AB91CA8C7FE00CC9620 /* PrefixHeader.pch */,
 			);
 			path = "Supporting Files";
 			sourceTree = "<group>";

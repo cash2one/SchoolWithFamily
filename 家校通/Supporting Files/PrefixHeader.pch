@@ -9,10 +9,14 @@
 #ifndef PrefixHeader_pch
 #define PrefixHeader_pch
 
+#import "LaunchDemo.h"
+
 //屏幕大小
 #define kScreenFrame [UIScreen mainScreen].bounds
 #define kScreenWidth [UIScreen mainScreen].bounds.size.width
 #define kScreenHeight [UIScreen mainScreen].bounds.size.height
 #define kScreenScale [UIScreen mainScreen].scale
+//导航栏颜色
+#define kCommonColor ([UIColor colorWithRed:81/255.f green:81/255.f blue:81/255.f alpha:1.0])
 
 #endif /* PrefixHeader_pch */

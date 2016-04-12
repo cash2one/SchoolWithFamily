@@ -49,7 +49,15 @@
     //＊＊设置tabBar工具条
     [self.tabBar setBackgroundImage:[UIImage imageNamed:@"tabbar-light"]];
     //设置选中标题栏图像颜色
-    [self.tabBar setTintColor:[UIColor colorWithRed:81/255.f green:81/255.f blue:81/255.f alpha:1.0]];
+    [self.tabBar setTintColor:kCommonColor];
+    
+    //进入动画
+    [[LaunchDemo new] loadLaunchImage:@"LoginBg"
+                             iconName:nil
+                          appearStyle:JRApperaStyleNone
+                              bgImage:@"LoginBg"
+                            disappear:JRDisApperaStyleOne
+                       descriptionStr:nil];
 }
 
 - (void)setUpChildControllerWith:(UIViewController *)childVc norImage:(UIImage *)norImage selImage:(UIImage *)selImage title:(NSString *)title {
