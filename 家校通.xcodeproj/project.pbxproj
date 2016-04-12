@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5902603C1CBCA79E0068E825 /* LaunchDemo.m in Sources */ = {isa = PBXBuildFile; fileRef = 5902603B1CBCA79E0068E825 /* LaunchDemo.m */; };
 		59038D241C706B43007BE74D /* ___Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = 59038D231C706B43007BE74D /* ___Tests.m */; };
 		59038D2F1C706B43007BE74D /* ___UITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 59038D2E1C706B43007BE74D /* ___UITests.m */; };
 		59269AAE1CA8C7ED00CC9620 /* NewsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 59269AAD1CA8C7ED00CC9620 /* NewsViewController.m */; };
@@ -44,6 +45,8 @@
 /* Begin PBXFileReference section */
 		305C305E7DD8B33F7D85B01C /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		3225A0A78324430BE11DBB07 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		5902603A1CBCA79E0068E825 /* LaunchDemo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LaunchDemo.h; sourceTree = "<group>"; };
+		5902603B1CBCA79E0068E825 /* LaunchDemo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LaunchDemo.m; sourceTree = "<group>"; };
 		59038D061C706B42007BE74D /* 家校通.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "家校通.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		59038D1F1C706B43007BE74D /* 家校通Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "家校通Tests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		59038D231C706B43007BE74D /* ___Tests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "___Tests.m"; sourceTree = "<group>"; };
@@ -116,6 +119,23 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		590260351CBCA7750068E825 /* Libs */ = {
+			isa = PBXGroup;
+			children = (
+				590260391CBCA79E0068E825 /* Launch */,
+			);
+			path = Libs;
+			sourceTree = "<group>";
+		};
+		590260391CBCA79E0068E825 /* Launch */ = {
+			isa = PBXGroup;
+			children = (
+				5902603A1CBCA79E0068E825 /* LaunchDemo.h */,
+				5902603B1CBCA79E0068E825 /* LaunchDemo.m */,
+			);
+			path = Launch;
+			sourceTree = "<group>";
+		};
 		59038CFD1C706B42007BE74D = {
 			isa = PBXGroup;
 			children = (
@@ -143,6 +163,7 @@
 			children = (
 				59269AB01CA8C7FE00CC9620 /* AppDelegate.h */,
 				59269AB11CA8C7FE00CC9620 /* AppDelegate.m */,
+				590260351CBCA7750068E825 /* Libs */,
 				59EC15621CAC1FCE00B2AEF5 /* Login */,
 				596C80C21C706CE000CFF0DA /* MainInterface */,
 				59269AAA1CA8C7ED00CC9620 /* News */,
@@ -419,6 +440,7 @@
 				596C80D11C70725C00CFF0DA /* TempViewController.m in Sources */,
 				596C80C51C706D6C00CFF0DA /* MainTabBarViewController.m in Sources */,
 				59269AAE1CA8C7ED00CC9620 /* NewsViewController.m in Sources */,
+				5902603C1CBCA79E0068E825 /* LaunchDemo.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -573,7 +595,7 @@
 					"-framework",
 					Reveal,
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.Nine.SchoolWithFamily;
+				PRODUCT_BUNDLE_IDENTIFIER = com.Nine.graduationProject;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 			};
@@ -594,7 +616,7 @@
 				INFOPLIST_FILE = "家校通/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				OTHER_LDFLAGS = "";
-				PRODUCT_BUNDLE_IDENTIFIER = com.Nine.SchoolWithFamily;
+				PRODUCT_BUNDLE_IDENTIFIER = com.Nine.graduationProject;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 			};

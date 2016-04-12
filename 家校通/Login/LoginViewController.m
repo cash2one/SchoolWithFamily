@@ -7,6 +7,7 @@
 //
 
 #import "LoginViewController.h"
+#import "LaunchDemo.h"
 
 @interface LoginViewController ()
 
@@ -17,16 +18,22 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self setNeedsStatusBarAppearanceUpdate];
+    _loginBtn.layer.cornerRadius = 5;
+}
+
+- (void)viewDidAppear:(BOOL)animated {
+    [super viewDidAppear:animated];
+    [[LaunchDemo new] loadLaunchImage:@"LoginBg"
+                             iconName:nil
+                          appearStyle:JRApperaStyleNone
+                              bgImage:@"LoginBg"
+                            disappear:JRDisApperaStyleOne
+                       descriptionStr:nil];
 }
 
 - (IBAction)login:(UIButton *)sender {
     MainTabBarViewController *mainVC = [MainTabBarViewController new];
     [self presentViewController:mainVC animated:YES completion:nil];
-}
-
-//白色状态栏
-- (UIStatusBarStyle)preferredStatusBarStyle {
-    return UIStatusBarStyleLightContent;
 }
 
 @end
