@@ -20,8 +20,6 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    self.navigationController.navigationBar.barStyle = UIBarStyleBlack;
-    
     //新闻承载页面
     _webView = [[UIWebView alloc] initWithFrame:CGRectMake(0, 0, kScreenWidth, kScreenHeight)];
     [self.view addSubview:_webView];
@@ -30,6 +28,13 @@
     //返回新闻列表按钮
     self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"主页" style:UIBarButtonItemStylePlain target:self action:@selector(loadWebView)];
     
+    //延迟显示状态栏，去掉
+    if ([self respondsToSelector:@selector(setNeedsStatusBarAppearanceUpdate)]) {
+        [self setNeedsStatusBarAppearanceUpdate];
+    }
+    [self delayShowStatusBar];
+    
+    //加载 web view
     [self loadWebView];
 }
 
@@ -51,6 +56,31 @@
 //加载网页完毕菊花消失
 - (void)webViewDidFinishLoad:(UIWebView *)webView {
     [_indicator stopAnimating];
+}
+
+#pragma mark - Status bar
+- (UIStatusBarStyle)preferredStatusBarStyle {
+    return UIStatusBarStyleLightContent;
+}
+
+- (BOOL)prefersStatusBarHidden {
+    return _isStatusBarHidden;
+}
+
+- (UIStatusBarAnimation)preferredStatusBarUpdateAnimation {
+    return UIStatusBarAnimationSlide;
+}
+
+- (void)delayShowStatusBar {
+    if (_isStatusBarHidden) {
+        //等待Launch动画结束，动态滑入状态栏，NavigationController下也很自然
+        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(2 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+            _isStatusBarHidden = NO;
+            [UIView animateWithDuration:0.5 animations:^{
+                [self setNeedsStatusBarAppearanceUpdate];
+            }];
+        });
+    }
 }
 
 @end

@@ -597,7 +597,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.Nine.graduationProject;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE = "5a152e0c-69f7-48ca-82ff-a25e19066f5a";
 			};
 			name = Debug;
 		};

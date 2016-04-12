@@ -30,28 +30,33 @@
     
     //延迟显示状态栏
     _isStatusBarHidden = YES;
+    if ([self respondsToSelector:@selector(setNeedsStatusBarAppearanceUpdate)]) {
+        [self setNeedsStatusBarAppearanceUpdate];
+    }
     [self delayShowStatusBar];
 }
 
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
     
-    
 }
 
 - (void)viewDidAppear:(BOOL)animated {
     [super viewDidAppear:animated];
-    [[LaunchDemo new] loadLaunchImage:@"LoginBg"
-                             iconName:nil
-                          appearStyle:JRApperaStyleNone
-                              bgImage:@"LoginBg"
-                            disappear:JRDisApperaStyleOne
-                       descriptionStr:nil];
+    if (_shouldShowLaunchAnimation) {
+        [[LaunchDemo new] loadLaunchImage:@"LoginBg"
+                                 iconName:nil
+                              appearStyle:JRApperaStyleNone
+                                  bgImage:@"LoginBg"
+                                disappear:JRDisApperaStyleOne
+                           descriptionStr:nil];
+    }
 }
 
 - (IBAction)login:(UIButton *)sender {
     MainTabBarViewController *mainVC = [MainTabBarViewController new];
-    [self presentViewController:mainVC animated:YES completion:nil];
+    mainVC.shouldShowLaunchAnimation = NO;
+    [self presentViewController:mainVC animated:NO completion:nil];
 }
 
 //有输入情况激活登录按钮
@@ -73,10 +78,18 @@
 }
 
 - (void)delayShowStatusBar {
-    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(2.5 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+    if (_shouldShowLaunchAnimation) {
+        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(2 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+            _isStatusBarHidden = NO;
+            [UIView animateWithDuration:0.5 animations:^{
+                [self setNeedsStatusBarAppearanceUpdate];
+            }];
+        });
+    } else {
         _isStatusBarHidden = NO;
         [self setNeedsStatusBarAppearanceUpdate];
-    });
+    }
+    
 }
 
 #pragma mark - UITextFieldDelegate

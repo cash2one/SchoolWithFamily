@@ -20,7 +20,11 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
-    self.window.rootViewController = [LoginViewController new];
+    MainTabBarViewController *mainVC = [MainTabBarViewController new];
+    mainVC.shouldShowLaunchAnimation = YES;
+    LoginViewController *loginVC = [LoginViewController new];
+    loginVC.shouldShowLaunchAnimation = YES;
+    self.window.rootViewController = loginVC;
     [self.window makeKeyAndVisible];
     
     //设置标题栏颜色
