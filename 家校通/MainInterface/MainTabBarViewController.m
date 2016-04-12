@@ -52,8 +52,7 @@
     [self.tabBar setTintColor:[UIColor colorWithRed:81/255.f green:81/255.f blue:81/255.f alpha:1.0]];
 }
 
-- (void)setUpChildControllerWith:(UIViewController *)childVc norImage:(UIImage *)norImage selImage:(UIImage *)selImage title:(NSString *)title
-{
+- (void)setUpChildControllerWith:(UIViewController *)childVc norImage:(UIImage *)norImage selImage:(UIImage *)selImage title:(NSString *)title {
     UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:childVc];
     
     childVc.title = title;

@@ -16,7 +16,12 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
+    [self setNeedsStatusBarAppearanceUpdate];
+}
+
+- (IBAction)login:(UIButton *)sender {
+    MainTabBarViewController *mainVC = [MainTabBarViewController new];
+    [self presentViewController:mainVC animated:YES completion:nil];
 }
 
 //白色状态栏

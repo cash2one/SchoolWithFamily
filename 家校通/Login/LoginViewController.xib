@@ -3,11 +3,15 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="LoginViewController">
             <connections>
+                <outlet property="loginBtn" destination="zhz-xU-zXD" id="ho6-hv-CiP"/>
+                <outlet property="passwordField" destination="h6d-RW-JsT" id="Pei-Hp-G1n"/>
+                <outlet property="usernameField" destination="jrt-av-btF" id="cjX-eT-mDp"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -16,10 +20,10 @@
             <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <imageView userInteractionEnabled="NO" alpha="0.94999999999999996" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="LoginBg" translatesAutoresizingMaskIntoConstraints="NO" id="eiO-EW-VxH">
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="LoginBg" translatesAutoresizingMaskIntoConstraints="NO" id="eiO-EW-VxH">
                     <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                 </imageView>
-                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="用户名" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="jrt-av-btF">
+                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="用户名" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="jrt-av-btF">
                     <rect key="frame" x="106" y="273" width="163" height="30"/>
                     <color key="backgroundColor" red="1" green="1" blue="1" alpha="0.5" colorSpace="calibratedRGB"/>
                     <color key="tintColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
@@ -30,7 +34,7 @@
                     <fontDescription key="fontDescription" type="system" pointSize="16"/>
                     <textInputTraits key="textInputTraits"/>
                 </textField>
-                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="密码" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="h6d-RW-JsT">
+                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="密码" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="h6d-RW-JsT">
                     <rect key="frame" x="106" y="313" width="163" height="30"/>
                     <color key="backgroundColor" red="1" green="1" blue="1" alpha="0.5" colorSpace="calibratedRGB"/>
                     <color key="tintColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
@@ -41,7 +45,7 @@
                     <fontDescription key="fontDescription" type="system" pointSize="16"/>
                     <textInputTraits key="textInputTraits"/>
                 </textField>
-                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo" translatesAutoresizingMaskIntoConstraints="NO" id="hhH-0q-6GX">
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="logo" translatesAutoresizingMaskIntoConstraints="NO" id="hhH-0q-6GX">
                     <rect key="frame" x="93" y="155" width="188" height="77"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="77" id="NMB-nn-w2W"/>
@@ -70,6 +74,9 @@
                             <include reference="usu-H5-fsY"/>
                         </mask>
                     </variation>
+                    <connections>
+                        <action selector="login:" destination="-1" eventType="touchUpInside" id="ECB-VN-r1Y"/>
+                    </connections>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6Cq-Pk-e9K">
                     <rect key="frame" x="-23" y="-15" width="46" height="30"/>
@@ -119,10 +126,10 @@
                     <exclude reference="6Cq-Pk-e9K"/>
                 </mask>
                 <mask key="constraints">
-                    <exclude reference="b0j-R2-JxX"/>
-                    <exclude reference="h7I-HR-ZFh"/>
                     <exclude reference="CIy-gW-ycM"/>
                     <exclude reference="QNQ-pI-9eP"/>
+                    <exclude reference="b0j-R2-JxX"/>
+                    <exclude reference="h7I-HR-ZFh"/>
                 </mask>
             </variation>
             <variation key="widthClass=compact">
@@ -131,13 +138,13 @@
                     <include reference="6Cq-Pk-e9K"/>
                 </mask>
                 <mask key="constraints">
-                    <include reference="b0j-R2-JxX"/>
-                    <include reference="h7I-HR-ZFh"/>
                     <include reference="CIy-gW-ycM"/>
                     <include reference="QNQ-pI-9eP"/>
+                    <include reference="b0j-R2-JxX"/>
+                    <include reference="h7I-HR-ZFh"/>
                 </mask>
             </variation>
-            <point key="canvasLocation" x="395.5" y="273.5"/>
+            <point key="canvasLocation" x="80.5" y="271.5"/>
         </view>
     </objects>
     <resources>
