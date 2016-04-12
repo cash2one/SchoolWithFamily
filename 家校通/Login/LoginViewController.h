@@ -17,5 +17,6 @@
 - (IBAction)login:(UIButton *)sender;
 //是否需要启动动画
 @property (nonatomic, assign) BOOL shouldShowLaunchAnimation;
+@property (nonatomic, assign) BOOL isStatusBarHidden;
 
 @end

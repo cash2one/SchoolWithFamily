@@ -20,10 +20,9 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
-    MainTabBarViewController *mainVC = [MainTabBarViewController new];
-    mainVC.shouldShowLaunchAnimation = YES;
     LoginViewController *loginVC = [LoginViewController new];
     loginVC.shouldShowLaunchAnimation = YES;
+    loginVC.isStatusBarHidden = YES;
     self.window.rootViewController = loginVC;
     [self.window makeKeyAndVisible];
     

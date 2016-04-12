@@ -8,9 +8,7 @@
 
 #import "LoginViewController.h"
 
-@interface LoginViewController () <UITextFieldDelegate> {
-    BOOL _isStatusBarHidden;
-}
+@interface LoginViewController () <UITextFieldDelegate>
 
 @end
 
@@ -29,7 +27,7 @@
     [self.view addGestureRecognizer:tapBg];
     
     //延迟显示状态栏
-    _isStatusBarHidden = YES;
+    
     if ([self respondsToSelector:@selector(setNeedsStatusBarAppearanceUpdate)]) {
         [self setNeedsStatusBarAppearanceUpdate];
     }
@@ -55,7 +53,7 @@
 
 - (IBAction)login:(UIButton *)sender {
     MainTabBarViewController *mainVC = [MainTabBarViewController new];
-    mainVC.shouldShowLaunchAnimation = NO;
+    mainVC.shouldShowLaunchAnimation = YES;
     [self presentViewController:mainVC animated:NO completion:nil];
 }
 
