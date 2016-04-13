@@ -7,6 +7,7 @@
 //
 
 #import "LoginViewController.h"
+#import "SVProgressHUD.h"
 
 @interface LoginViewController () <UITextFieldDelegate>
 
@@ -54,7 +55,15 @@
 - (IBAction)login:(UIButton *)sender {
     MainTabBarViewController *mainVC = [MainTabBarViewController new];
     mainVC.shouldShowLaunchAnimation = NO;
-    [self presentViewController:mainVC animated:NO completion:nil];
+    //登录指示器
+    [SVProgressHUD setDefaultStyle:SVProgressHUDStyleCustom];
+    [SVProgressHUD setForegroundColor:[UIColor whiteColor]];
+    [SVProgressHUD setBackgroundColor:[UIColor colorWithRed:20.0/255 green:20.0/255 blue:20.0/255 alpha:0.8]];
+    [SVProgressHUD showWithStatus:@"登录中..."];
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(2 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+        [SVProgressHUD dismiss];
+        [self presentViewController:mainVC animated:NO completion:nil];
+    });
 }
 
 //有输入情况激活登录按钮

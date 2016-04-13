@@ -196,7 +196,7 @@
                 <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="请填写密码" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ilC-16-JaV">
                     <rect key="frame" x="-25" y="-30" width="97" height="30"/>
                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                    <textInputTraits key="textInputTraits"/>
+                    <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                 </textField>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gad-gT-iXG">
                     <rect key="frame" x="-23" y="-15" width="46" height="30"/>
@@ -273,31 +273,31 @@
                     <exclude reference="gad-gT-iXG"/>
                 </mask>
                 <mask key="constraints">
-                    <exclude reference="IMM-4J-y1Q"/>
-                    <exclude reference="MGq-Eg-enO"/>
-                    <exclude reference="LNq-4A-zGv"/>
-                    <exclude reference="kwi-yG-9m4"/>
                     <exclude reference="FLj-TI-CNv"/>
                     <exclude reference="whp-Bs-3JJ"/>
-                    <exclude reference="5gI-uF-wNd"/>
-                    <exclude reference="7O0-8o-ps9"/>
-                    <exclude reference="d8J-9b-IOf"/>
-                    <exclude reference="gd3-D9-VGt"/>
-                    <exclude reference="If4-vc-UTt"/>
-                    <exclude reference="dEy-hF-bMM"/>
                     <exclude reference="47v-zW-i2X"/>
                     <exclude reference="ama-At-BsT"/>
+                    <exclude reference="CIy-gW-ycM"/>
+                    <exclude reference="QNQ-pI-9eP"/>
+                    <exclude reference="kSc-X3-MrH"/>
+                    <exclude reference="yne-VF-Ct5"/>
+                    <exclude reference="CuE-wJ-rqD"/>
+                    <exclude reference="DI5-47-2Jg"/>
+                    <exclude reference="y6U-wH-HoU"/>
                     <exclude reference="DfM-DL-nR8"/>
                     <exclude reference="ELA-qt-Vzx"/>
                     <exclude reference="mLF-TF-exR"/>
                     <exclude reference="nyL-g1-Lqc"/>
-                    <exclude reference="CuE-wJ-rqD"/>
-                    <exclude reference="DI5-47-2Jg"/>
-                    <exclude reference="y6U-wH-HoU"/>
-                    <exclude reference="kSc-X3-MrH"/>
-                    <exclude reference="yne-VF-Ct5"/>
-                    <exclude reference="CIy-gW-ycM"/>
-                    <exclude reference="QNQ-pI-9eP"/>
+                    <exclude reference="LNq-4A-zGv"/>
+                    <exclude reference="kwi-yG-9m4"/>
+                    <exclude reference="If4-vc-UTt"/>
+                    <exclude reference="dEy-hF-bMM"/>
+                    <exclude reference="5gI-uF-wNd"/>
+                    <exclude reference="7O0-8o-ps9"/>
+                    <exclude reference="d8J-9b-IOf"/>
+                    <exclude reference="gd3-D9-VGt"/>
+                    <exclude reference="IMM-4J-y1Q"/>
+                    <exclude reference="MGq-Eg-enO"/>
                 </mask>
             </variation>
             <variation key="widthClass=compact">
@@ -322,29 +322,29 @@
                     <include reference="gad-gT-iXG"/>
                 </mask>
                 <mask key="constraints">
-                    <include reference="IMM-4J-y1Q"/>
-                    <include reference="MGq-Eg-enO"/>
-                    <include reference="LNq-4A-zGv"/>
-                    <include reference="kwi-yG-9m4"/>
                     <include reference="FLj-TI-CNv"/>
                     <include reference="whp-Bs-3JJ"/>
-                    <include reference="5gI-uF-wNd"/>
-                    <include reference="7O0-8o-ps9"/>
-                    <include reference="d8J-9b-IOf"/>
-                    <include reference="gd3-D9-VGt"/>
-                    <include reference="If4-vc-UTt"/>
-                    <include reference="dEy-hF-bMM"/>
                     <include reference="47v-zW-i2X"/>
                     <include reference="ama-At-BsT"/>
+                    <include reference="kSc-X3-MrH"/>
+                    <include reference="yne-VF-Ct5"/>
+                    <include reference="CuE-wJ-rqD"/>
+                    <include reference="DI5-47-2Jg"/>
+                    <include reference="y6U-wH-HoU"/>
                     <include reference="DfM-DL-nR8"/>
                     <include reference="ELA-qt-Vzx"/>
                     <include reference="mLF-TF-exR"/>
                     <include reference="nyL-g1-Lqc"/>
-                    <include reference="CuE-wJ-rqD"/>
-                    <include reference="DI5-47-2Jg"/>
-                    <include reference="y6U-wH-HoU"/>
-                    <include reference="kSc-X3-MrH"/>
-                    <include reference="yne-VF-Ct5"/>
+                    <include reference="LNq-4A-zGv"/>
+                    <include reference="kwi-yG-9m4"/>
+                    <include reference="If4-vc-UTt"/>
+                    <include reference="dEy-hF-bMM"/>
+                    <include reference="5gI-uF-wNd"/>
+                    <include reference="7O0-8o-ps9"/>
+                    <include reference="d8J-9b-IOf"/>
+                    <include reference="gd3-D9-VGt"/>
+                    <include reference="IMM-4J-y1Q"/>
+                    <include reference="MGq-Eg-enO"/>
                 </mask>
             </variation>
             <point key="canvasLocation" x="92.5" y="277.5"/>
