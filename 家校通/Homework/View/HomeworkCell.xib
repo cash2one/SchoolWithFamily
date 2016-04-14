@@ -17,7 +17,7 @@
                 <rect key="frame" x="0.0" y="0.0" width="398" height="209"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9Dz-13-2YV">
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="作业标题" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9Dz-13-2YV">
                         <rect key="frame" x="8" y="8" width="382" height="25"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="25" id="gGl-mS-tQu"/>
@@ -26,7 +26,7 @@
                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AuF-4y-sHR">
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sunny" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AuF-4y-sHR">
                         <rect key="frame" x="8" y="186" width="42" height="15"/>
                         <constraints>
                             <constraint firstAttribute="width" constant="42" id="mxZ-aa-AnX"/>
@@ -41,40 +41,40 @@
                             <constraint firstAttribute="width" constant="46" id="m0B-Si-SpE"/>
                         </constraints>
                         <fontDescription key="fontDescription" type="system" pointSize="12"/>
-                        <state key="normal" title="Button">
+                        <state key="normal" title="编辑">
                             <color key="titleColor" red="0.18058453839999999" green="0.40071144860000002" blue="0.67895124350000002" alpha="1" colorSpace="calibratedRGB"/>
                         </state>
                         <connections>
                             <action selector="behavior:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="HZr-j7-MgI"/>
                         </connections>
                     </button>
-                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" editable="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="R3K-pV-uNN">
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9hK-ea-ghG">
                         <rect key="frame" x="8" y="41" width="382" height="137"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                        <string key="text">作业内容 作业内容 作业内容 作业内容 作业内容 作业内容 作业内容 作业内容 作业内容 作业内容 作业内容 作业内容 作业内容 作业内容 作业内容 作业内容 作业内容 作业内容 作业内容 作业内容 作业内容 作业内容 作业内容 作业内容 作业内容 作业内容 作业内容 作业内容 作业内容 </string>
                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                    </textView>
+                        <color key="textColor" red="0.1215686275" green="0.12941176469999999" blue="0.14117647059999999" alpha="1" colorSpace="calibratedRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
                 </subviews>
                 <constraints>
+                    <constraint firstItem="9hK-ea-ghG" firstAttribute="leading" secondItem="AuF-4y-sHR" secondAttribute="leading" id="0qp-GC-FpS"/>
                     <constraint firstItem="9Dz-13-2YV" firstAttribute="trailing" secondItem="H2p-sc-9uM" secondAttribute="trailingMargin" id="3ez-3m-1Px"/>
                     <constraint firstItem="9Dz-13-2YV" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" id="4O7-yg-Xu9"/>
                     <constraint firstItem="AuF-4y-sHR" firstAttribute="baseline" secondItem="smK-7c-ucx" secondAttribute="firstBaseline" id="5UC-BR-RwQ"/>
-                    <constraint firstItem="9Dz-13-2YV" firstAttribute="leading" secondItem="R3K-pV-uNN" secondAttribute="leading" id="9TV-UQ-eIh"/>
-                    <constraint firstItem="R3K-pV-uNN" firstAttribute="top" secondItem="9Dz-13-2YV" secondAttribute="bottom" constant="8" symbolic="YES" id="Am4-eQ-l2X"/>
-                    <constraint firstItem="R3K-pV-uNN" firstAttribute="trailing" secondItem="smK-7c-ucx" secondAttribute="trailing" id="C2F-SK-2l4"/>
+                    <constraint firstItem="9hK-ea-ghG" firstAttribute="trailing" secondItem="smK-7c-ucx" secondAttribute="trailing" id="DFb-BU-mC4"/>
                     <constraint firstItem="9Dz-13-2YV" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" id="JzL-4I-zAq"/>
                     <constraint firstItem="AuF-4y-sHR" firstAttribute="bottom" secondItem="H2p-sc-9uM" secondAttribute="bottomMargin" id="K9F-kD-wIP"/>
-                    <constraint firstItem="AuF-4y-sHR" firstAttribute="top" secondItem="R3K-pV-uNN" secondAttribute="bottom" constant="8" symbolic="YES" id="eDJ-jC-os5"/>
+                    <constraint firstItem="9hK-ea-ghG" firstAttribute="trailing" secondItem="9Dz-13-2YV" secondAttribute="trailing" id="Nfe-s6-pwW"/>
+                    <constraint firstItem="AuF-4y-sHR" firstAttribute="top" secondItem="9hK-ea-ghG" secondAttribute="bottom" constant="8" symbolic="YES" id="e5l-qr-a6x"/>
+                    <constraint firstItem="9hK-ea-ghG" firstAttribute="top" secondItem="9Dz-13-2YV" secondAttribute="bottom" constant="8" symbolic="YES" id="feO-sg-Pg0"/>
                     <constraint firstItem="AuF-4y-sHR" firstAttribute="top" secondItem="smK-7c-ucx" secondAttribute="top" id="g2s-vT-EXD"/>
                     <constraint firstItem="smK-7c-ucx" firstAttribute="baseline" secondItem="AuF-4y-sHR" secondAttribute="firstBaseline" id="gFi-GJ-LNa"/>
-                    <constraint firstItem="9Dz-13-2YV" firstAttribute="trailing" secondItem="R3K-pV-uNN" secondAttribute="trailing" id="tp7-ca-50T"/>
+                    <constraint firstItem="9hK-ea-ghG" firstAttribute="leading" secondItem="9Dz-13-2YV" secondAttribute="leading" id="qQg-Ku-gvg"/>
                     <constraint firstItem="AuF-4y-sHR" firstAttribute="baseline" secondItem="smK-7c-ucx" secondAttribute="baseline" id="wel-Pr-gAg"/>
-                    <constraint firstItem="R3K-pV-uNN" firstAttribute="leading" secondItem="AuF-4y-sHR" secondAttribute="leading" id="yHH-nF-fmg"/>
                 </constraints>
             </tableViewCellContentView>
             <connections>
-                <outlet property="detailTextView" destination="R3K-pV-uNN" id="Jw5-Om-Nkt"/>
+                <outlet property="detailLabel" destination="9hK-ea-ghG" id="k0Q-bU-aTw"/>
                 <outlet property="funcBtn" destination="smK-7c-ucx" id="xlh-jM-JI2"/>
                 <outlet property="titleLabel" destination="9Dz-13-2YV" id="nFQ-nu-55N"/>
                 <outlet property="uploaderLabel" destination="AuF-4y-sHR" id="FWK-6B-gSo"/>
