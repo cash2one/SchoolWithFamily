@@ -8,6 +8,7 @@
 
 #import "HomeworkTableViewController.h"
 #import "HomeworkCell.h"
+#import "HomeworkDetailViewController.h"
 
 @interface HomeworkTableViewController ()
 
@@ -17,6 +18,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.hidesBottomBarWhenPushed = NO;
 }
 
 #pragma mark - Table view data source
@@ -41,6 +43,11 @@
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
     return 130;
+}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    HomeworkDetailViewController *detailVC = [HomeworkDetailViewController new];
+    [self.navigationController pushViewController:detailVC animated:YES];
 }
 
 /*

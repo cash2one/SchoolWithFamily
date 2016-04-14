@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10116" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="HomeworkDetailViewController">
+            <connections>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="作业标题" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="UuB-rn-5ds">
+                    <rect key="frame" x="8" y="84" width="304" height="40"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="40" id="HX2-Ky-aNE"/>
+                        <constraint firstAttribute="height" constant="30" id="UmQ-13-R6t"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                    <textInputTraits key="textInputTraits"/>
+                    <variation key="default">
+                        <mask key="constraints">
+                            <exclude reference="UmQ-13-R6t"/>
+                        </mask>
+                    </variation>
+                </textField>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2016.04.14" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Lci-lj-4OM">
+                    <rect key="frame" x="8" y="531" width="236" height="21"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <color key="textColor" red="0.52156862749999999" green="0.52156862749999999" blue="0.52156862749999999" alpha="1" colorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="hMG-MV-Xtu">
+                    <rect key="frame" x="252" y="529" width="60" height="27"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="60" id="G21-JZ-zb1"/>
+                    </constraints>
+                    <state key="normal">
+                        <attributedString key="attributedTitle">
+                            <fragment content="取消编辑">
+                                <attributes>
+                                    <color key="NSColor" red="0.0" green="0.25098040700000002" blue="0.50196081400000003" alpha="1" colorSpace="calibratedRGB"/>
+                                    <font key="NSFont" size="15" name=".PingFangSC-Regular"/>
+                                    <paragraphStyle key="NSParagraphStyle" alignment="right" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                </attributes>
+                            </fragment>
+                        </attributedString>
+                    </state>
+                </button>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sunny" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fRK-PZ-Tk3">
+                    <rect key="frame" x="8" y="132" width="304" height="20"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="20" id="Ano-gl-A7Y"/>
+                        <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="21" id="f9o-Pd-JVW"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                    <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                    <nil key="highlightedColor"/>
+                    <variation key="default">
+                        <mask key="constraints">
+                            <exclude reference="f9o-Pd-JVW"/>
+                        </mask>
+                    </variation>
+                </label>
+                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="3jv-yp-Iu6">
+                    <rect key="frame" x="8" y="160" width="304" height="361"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <mutableString key="text">Lorem ipsum  dolor  sit er elit  lamet, c onsectet aur cillium  adipisicing pecu, s ed do eiusmod te mpor  incididunt ut labo re et dolore magna  aliqua. Ut enim ad  minim veniam,  quis nost rud exercitation  ullamco laboris nisi ut aliquip ex ea commodo conse quat. Duis aute  irure dolor  in reprehender it in voluptate  velit esse cillum dolore e u fugiat nulla  pariatur. Excepteur sint  occaecat cupidatat non proident, sunt  in culpa qui officia deserunt mollit  anim id est la borum. Nam li ber te consc ient to fact or tum poen legum odioque civiuda.</mutableString>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                </textView>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstItem="UuB-rn-5ds" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="84" id="3ID-2Z-eYc"/>
+                <constraint firstItem="3jv-yp-Iu6" firstAttribute="top" secondItem="fRK-PZ-Tk3" secondAttribute="bottom" constant="8" symbolic="YES" id="4Jy-Md-jcW"/>
+                <constraint firstItem="UuB-rn-5ds" firstAttribute="trailing" secondItem="i5M-Pr-FkT" secondAttribute="trailingMargin" id="57A-vy-F3a"/>
+                <constraint firstItem="hMG-MV-Xtu" firstAttribute="leading" secondItem="Lci-lj-4OM" secondAttribute="trailing" constant="8" symbolic="YES" id="8zn-ZL-iwU"/>
+                <constraint firstItem="fRK-PZ-Tk3" firstAttribute="top" secondItem="UuB-rn-5ds" secondAttribute="bottom" constant="8" symbolic="YES" id="9cf-cE-Jwv"/>
+                <constraint firstItem="fRK-PZ-Tk3" firstAttribute="leading" secondItem="UuB-rn-5ds" secondAttribute="leading" id="Fqi-hf-4hK"/>
+                <constraint firstItem="fRK-PZ-Tk3" firstAttribute="leading" secondItem="Lci-lj-4OM" secondAttribute="leading" id="aEM-1y-JAk"/>
+                <constraint firstItem="UuB-rn-5ds" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leadingMargin" id="avU-MS-6a8"/>
+                <constraint firstItem="Lci-lj-4OM" firstAttribute="bottom" secondItem="i5M-Pr-FkT" secondAttribute="bottomMargin" constant="-8" id="bM4-w5-Whf"/>
+                <constraint firstItem="3jv-yp-Iu6" firstAttribute="trailing" secondItem="fRK-PZ-Tk3" secondAttribute="trailing" id="cj6-uR-FpA"/>
+                <constraint firstItem="3jv-yp-Iu6" firstAttribute="leading" secondItem="fRK-PZ-Tk3" secondAttribute="leading" id="ewh-9Z-hIH"/>
+                <constraint firstItem="Lci-lj-4OM" firstAttribute="baseline" secondItem="hMG-MV-Xtu" secondAttribute="baseline" id="ocX-WS-1rg"/>
+                <constraint firstItem="hMG-MV-Xtu" firstAttribute="top" secondItem="3jv-yp-Iu6" secondAttribute="bottom" constant="8" symbolic="YES" id="ppK-N7-aXI"/>
+                <constraint firstItem="fRK-PZ-Tk3" firstAttribute="trailing" secondItem="UuB-rn-5ds" secondAttribute="trailing" id="tBY-Hs-S4R"/>
+                <constraint firstItem="fRK-PZ-Tk3" firstAttribute="trailing" secondItem="hMG-MV-Xtu" secondAttribute="trailing" id="xxj-Yh-ykB"/>
+            </constraints>
+            <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+        </view>
+    </objects>
+</document>

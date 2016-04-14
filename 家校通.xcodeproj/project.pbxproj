@@ -19,6 +19,8 @@
 		594F854C1CBF280C0016F9B2 /* HomeworkTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 594F854B1CBF280C0016F9B2 /* HomeworkTableViewController.m */; };
 		594F855A1CBF88D00016F9B2 /* HomeworkCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 594F85581CBF88D00016F9B2 /* HomeworkCell.m */; };
 		594F855B1CBF88D00016F9B2 /* HomeworkCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 594F85591CBF88D00016F9B2 /* HomeworkCell.xib */; };
+		594F85641CBF996A0016F9B2 /* HomeworkDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 594F85621CBF996A0016F9B2 /* HomeworkDetailViewController.m */; };
+		594F85651CBF996A0016F9B2 /* HomeworkDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 594F85631CBF996A0016F9B2 /* HomeworkDetailViewController.xib */; };
 		596C80C51C706D6C00CFF0DA /* MainTabBarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 596C80C41C706D6C00CFF0DA /* MainTabBarViewController.m */; };
 		596C80D11C70725C00CFF0DA /* TempViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 596C80D01C70725C00CFF0DA /* TempViewController.m */; };
 		596C80DC1C7079E200CFF0DA /* Reveal.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 596C80DB1C7079E200CFF0DA /* Reveal.framework */; };
@@ -77,6 +79,9 @@
 		594F85571CBF88D00016F9B2 /* HomeworkCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeworkCell.h; sourceTree = "<group>"; };
 		594F85581CBF88D00016F9B2 /* HomeworkCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeworkCell.m; sourceTree = "<group>"; };
 		594F85591CBF88D00016F9B2 /* HomeworkCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HomeworkCell.xib; sourceTree = "<group>"; };
+		594F85611CBF996A0016F9B2 /* HomeworkDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeworkDetailViewController.h; sourceTree = "<group>"; };
+		594F85621CBF996A0016F9B2 /* HomeworkDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeworkDetailViewController.m; sourceTree = "<group>"; };
+		594F85631CBF996A0016F9B2 /* HomeworkDetailViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HomeworkDetailViewController.xib; sourceTree = "<group>"; };
 		596C80C31C706D6C00CFF0DA /* MainTabBarViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MainTabBarViewController.h; path = MainInterface/MainTabBarViewController.h; sourceTree = "<group>"; };
 		596C80C41C706D6C00CFF0DA /* MainTabBarViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MainTabBarViewController.m; path = MainInterface/MainTabBarViewController.m; sourceTree = "<group>"; };
 		596C80CF1C70725C00CFF0DA /* TempViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TempViewController.h; path = MainInterface/TempViewController.h; sourceTree = "<group>"; };
@@ -281,6 +286,9 @@
 			children = (
 				594F854A1CBF280C0016F9B2 /* HomeworkTableViewController.h */,
 				594F854B1CBF280C0016F9B2 /* HomeworkTableViewController.m */,
+				594F85611CBF996A0016F9B2 /* HomeworkDetailViewController.h */,
+				594F85621CBF996A0016F9B2 /* HomeworkDetailViewController.m */,
+				594F85631CBF996A0016F9B2 /* HomeworkDetailViewController.xib */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -439,6 +447,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				59A8A17C1CBE97F5002E43B7 /* SVProgressHUD.bundle in Resources */,
+				594F85651CBF996A0016F9B2 /* HomeworkDetailViewController.xib in Resources */,
 				59EC156A1CAC291D00B2AEF5 /* LoginViewController.xib in Resources */,
 				59269ABD1CA8C7FE00CC9620 /* Main.storyboard in Resources */,
 				59269ABB1CA8C7FE00CC9620 /* Assets.xcassets in Resources */,
@@ -521,6 +530,7 @@
 				59EC15691CAC291D00B2AEF5 /* LoginViewController.m in Sources */,
 				59A8A17A1CBE97F5002E43B7 /* SVIndefiniteAnimatedView.m in Sources */,
 				596C80D11C70725C00CFF0DA /* TempViewController.m in Sources */,
+				594F85641CBF996A0016F9B2 /* HomeworkDetailViewController.m in Sources */,
 				59A8A17B1CBE97F5002E43B7 /* SVProgressAnimatedView.m in Sources */,
 				596C80C51C706D6C00CFF0DA /* MainTabBarViewController.m in Sources */,
 				59A8A17D1CBE97F5002E43B7 /* SVProgressHUD.m in Sources */,
