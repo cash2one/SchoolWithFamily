@@ -18,13 +18,13 @@
             self.view.backgroundColor = [UIColor redColor];
             break;
         case 1:
-            self.view.backgroundColor = [UIColor yellowColor];
+            self.view.backgroundColor = [UIColor whiteColor];
             break;
         case 2:
-            self.view.backgroundColor = [UIColor orangeColor];
+            self.view.backgroundColor = [UIColor whiteColor];
             break;
         case 3:
-            self.view.backgroundColor = [UIColor blueColor];
+            self.view.backgroundColor = [UIColor whiteColor];
             break;
         default:
             break;

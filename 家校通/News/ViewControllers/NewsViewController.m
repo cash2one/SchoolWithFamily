@@ -28,10 +28,7 @@
     //返回新闻列表按钮
     self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"主页" style:UIBarButtonItemStylePlain target:self action:@selector(loadWebView)];
     
-    //延迟显示状态栏，去掉
-    if ([self respondsToSelector:@selector(setNeedsStatusBarAppearanceUpdate)]) {
-        [self setNeedsStatusBarAppearanceUpdate];
-    }
+    //延迟显示状态栏
     [self delayShowStatusBar];
     
     //加载 web view

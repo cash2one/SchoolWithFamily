@@ -8,6 +8,7 @@
 
 #import "MainTabBarViewController.h"
 #import "TempViewController.h"
+#import "HomeworkTableViewController.h"
 
 @implementation MainTabBarViewController
 
@@ -44,7 +45,7 @@
     [self setUpChildControllerWith:_NewsVC norImage:[UIImage imageNamed:@"tabBar_essence_icon"] selImage:[UIImage imageNamed:@"tabBar_essence_click_icon"] title:@"学院要闻"];
     
     //＊＊作业管理
-    [self setUpChildControllerWith:[[TempViewController alloc] init] norImage:[UIImage imageNamed:@"tabBar_new_icon"] selImage:[UIImage imageNamed:@"tabBar_new_click_icon"] title:@"作业管理"];
+    [self setUpChildControllerWith:[HomeworkTableViewController new] norImage:[UIImage imageNamed:@"tabBar_new_icon"] selImage:[UIImage imageNamed:@"tabBar_new_click_icon"] title:@"作业管理"];
     
     //＊＊实时交流
     [self setUpChildControllerWith:[TempViewController new] norImage:[UIImage imageNamed:@"tabBar_me_icon"] selImage:[UIImage imageNamed:@"tabBar_me_click_icon"] title:@"实时交流"];

@@ -28,10 +28,6 @@
     [self.view addGestureRecognizer:tapBg];
     
     //延迟显示状态栏
-    
-    if ([self respondsToSelector:@selector(setNeedsStatusBarAppearanceUpdate)]) {
-        [self setNeedsStatusBarAppearanceUpdate];
-    }
     [self delayShowStatusBar];
 }
 

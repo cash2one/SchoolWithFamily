@@ -16,6 +16,9 @@
 		59269ABC1CA8C7FE00CC9620 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 59269AB31CA8C7FE00CC9620 /* LaunchScreen.storyboard */; };
 		59269ABD1CA8C7FE00CC9620 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 59269AB51CA8C7FE00CC9620 /* Main.storyboard */; };
 		59269ABF1CA8C7FE00CC9620 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 59269AB81CA8C7FE00CC9620 /* main.m */; };
+		594F854C1CBF280C0016F9B2 /* HomeworkTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 594F854B1CBF280C0016F9B2 /* HomeworkTableViewController.m */; };
+		594F855A1CBF88D00016F9B2 /* HomeworkCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 594F85581CBF88D00016F9B2 /* HomeworkCell.m */; };
+		594F855B1CBF88D00016F9B2 /* HomeworkCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 594F85591CBF88D00016F9B2 /* HomeworkCell.xib */; };
 		596C80C51C706D6C00CFF0DA /* MainTabBarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 596C80C41C706D6C00CFF0DA /* MainTabBarViewController.m */; };
 		596C80D11C70725C00CFF0DA /* TempViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 596C80D01C70725C00CFF0DA /* TempViewController.m */; };
 		596C80DC1C7079E200CFF0DA /* Reveal.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 596C80DB1C7079E200CFF0DA /* Reveal.framework */; };
@@ -69,6 +72,11 @@
 		59269AB81CA8C7FE00CC9620 /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		59269AB91CA8C7FE00CC9620 /* PrefixHeader.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PrefixHeader.pch; path = "Supporting Files/PrefixHeader.pch"; sourceTree = "<group>"; };
 		59269AC31CA8CA8F00CC9620 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = ../Info.plist; sourceTree = "<group>"; };
+		594F854A1CBF280C0016F9B2 /* HomeworkTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeworkTableViewController.h; sourceTree = "<group>"; };
+		594F854B1CBF280C0016F9B2 /* HomeworkTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeworkTableViewController.m; sourceTree = "<group>"; };
+		594F85571CBF88D00016F9B2 /* HomeworkCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeworkCell.h; sourceTree = "<group>"; };
+		594F85581CBF88D00016F9B2 /* HomeworkCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeworkCell.m; sourceTree = "<group>"; };
+		594F85591CBF88D00016F9B2 /* HomeworkCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HomeworkCell.xib; sourceTree = "<group>"; };
 		596C80C31C706D6C00CFF0DA /* MainTabBarViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MainTabBarViewController.h; path = MainInterface/MainTabBarViewController.h; sourceTree = "<group>"; };
 		596C80C41C706D6C00CFF0DA /* MainTabBarViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MainTabBarViewController.m; path = MainInterface/MainTabBarViewController.m; sourceTree = "<group>"; };
 		596C80CF1C70725C00CFF0DA /* TempViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TempViewController.h; path = MainInterface/TempViewController.h; sourceTree = "<group>"; };
@@ -188,6 +196,7 @@
 				59EC15621CAC1FCE00B2AEF5 /* Login */,
 				596C80C21C706CE000CFF0DA /* MainInterface */,
 				59269AAA1CA8C7ED00CC9620 /* News */,
+				594F85421CBF27840016F9B2 /* Homework */,
 				59269AAF1CA8C7FE00CC9620 /* Supporting Files */,
 				596C80DA1C70792A00CFF0DA /* Frameworks */,
 			);
@@ -238,6 +247,42 @@
 				59269AB81CA8C7FE00CC9620 /* main.m */,
 			);
 			path = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		594F85421CBF27840016F9B2 /* Homework */ = {
+			isa = PBXGroup;
+			children = (
+				594F85471CBF280C0016F9B2 /* Model */,
+				594F85481CBF280C0016F9B2 /* View */,
+				594F85491CBF280C0016F9B2 /* ViewController */,
+			);
+			path = Homework;
+			sourceTree = "<group>";
+		};
+		594F85471CBF280C0016F9B2 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		594F85481CBF280C0016F9B2 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				594F85571CBF88D00016F9B2 /* HomeworkCell.h */,
+				594F85581CBF88D00016F9B2 /* HomeworkCell.m */,
+				594F85591CBF88D00016F9B2 /* HomeworkCell.xib */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		594F85491CBF280C0016F9B2 /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				594F854A1CBF280C0016F9B2 /* HomeworkTableViewController.h */,
+				594F854B1CBF280C0016F9B2 /* HomeworkTableViewController.m */,
+			);
+			path = ViewController;
 			sourceTree = "<group>";
 		};
 		596C80C21C706CE000CFF0DA /* MainInterface */ = {
@@ -398,6 +443,7 @@
 				59269ABD1CA8C7FE00CC9620 /* Main.storyboard in Resources */,
 				59269ABB1CA8C7FE00CC9620 /* Assets.xcassets in Resources */,
 				59269ABC1CA8C7FE00CC9620 /* LaunchScreen.storyboard in Resources */,
+				594F855B1CBF88D00016F9B2 /* HomeworkCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -480,7 +526,9 @@
 				59A8A17D1CBE97F5002E43B7 /* SVProgressHUD.m in Sources */,
 				59269AAE1CA8C7ED00CC9620 /* NewsViewController.m in Sources */,
 				5902603C1CBCA79E0068E825 /* LaunchDemo.m in Sources */,
+				594F854C1CBF280C0016F9B2 /* HomeworkTableViewController.m in Sources */,
 				59A8A17E1CBE97F5002E43B7 /* SVRadialGradientLayer.m in Sources */,
+				594F855A1CBF88D00016F9B2 /* HomeworkCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
