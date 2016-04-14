@@ -10,4 +10,11 @@
 
 @interface HomeworkCell : UITableViewCell
 
+@property (weak, nonatomic) IBOutlet UILabel *titleLabel;
+@property (weak, nonatomic) IBOutlet UITextView *detailTextView;
+@property (weak, nonatomic) IBOutlet UILabel *uploaderLabel;
+@property (weak, nonatomic) IBOutlet UIButton *funcBtn;
+
+- (IBAction)behavior:(UIButton *)sender;
+
 @end
