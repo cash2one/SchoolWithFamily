@@ -8,8 +8,9 @@
 
 #import "HomeworkDetailViewController.h"
 
-@interface HomeworkDetailViewController () {
+@interface HomeworkDetailViewController () <UITextViewDelegate, UITextFieldDelegate> {
     UITabBar *_tabBar;
+    UIBarButtonItem *_rightBarBtn;
 }
 
 @end
@@ -19,11 +20,20 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     _tabBar = self.tabBarController.tabBar;
+    
+    self.navigationItem.title = @"作业详情";
+    _rightBarBtn = [[UIBarButtonItem alloc] initWithTitle:@"编辑" style:UIBarButtonItemStylePlain target:self action:@selector(behavior)];
+    self.navigationItem.rightBarButtonItem = _rightBarBtn;
+    
+    _titleTextField.delegate = self;
+    _detailTextView.delegate = self;
 }
 
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
     [self hideTabBar];
+    
+    _scoreLabel.textColor = [UIColor grayColor];
 }
 
 - (void)viewWillDisappear:(BOOL)animated {
@@ -47,6 +57,67 @@
                          tabFrame.origin.y = CGRectGetMinY(tabFrame) - CGRectGetHeight(tabFrame);
                          _tabBar.frame = tabFrame;
                      }];
+}
+
+#pragma mark - function
+- (void)behavior {
+    if ([_rightBarBtn.title isEqualToString:@"编辑"]) {
+        _titleTextField.enabled = YES;
+        _detailTextView.editable = YES;
+        _rightBarBtn.title = @"取消编辑";
+        [_titleTextField isFirstResponder];
+    } else if ([_rightBarBtn.title isEqualToString:@"取消编辑"]) {
+        _titleTextField.enabled = NO;
+        _detailTextView.editable = NO;
+        _rightBarBtn.title = @"编辑";
+    } else if ([_rightBarBtn.title isEqualToString:@"完成"]) {
+        [_titleTextField resignFirstResponder];
+        [_detailTextView resignFirstResponder];
+        _titleTextField.enabled = NO;
+        _detailTextView.editable = NO;
+        _rightBarBtn.title = @"保存";
+    } else if ([_rightBarBtn.title isEqualToString:@"保存"]) {
+        __block BOOL isSaved;
+        //保存成功后返回，否则保存失败不返回
+        [SVProgressHUD setDefaultStyle:SVProgressHUDStyleLight];
+        [SVProgressHUD setDefaultMaskType:SVProgressHUDMaskTypeBlack];
+        [SVProgressHUD showWithStatus:@"保存中..."];
+        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+            
+            isSaved = YES;
+            if (isSaved) {
+                [SVProgressHUD showSuccessWithStatus:@"保存成功"];
+                dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.5 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+                    [SVProgressHUD dismiss];
+                    [self.navigationController popViewControllerAnimated:YES];
+                });
+            } else {
+                [SVProgressHUD showErrorWithStatus:@"保存失败！"];
+                dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.5 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+                    [SVProgressHUD dismiss];
+                });
+            }
+        });
+    }
+}
+
+#pragma mark - UITextFieldDelegate
+- (BOOL)textFieldShouldReturn:(UITextField *)textField {
+    [_titleTextField resignFirstResponder];
+    return YES;
+}
+
+-  (void)textFieldDidBeginEditing:(UITextField *)textField {
+    _rightBarBtn.title = @"完成";
+}
+
+- (void)textFieldDidEndEditing:(UITextField *)textField {
+    
+}
+
+#pragma mark - UITextViewDelegate
+- (void)textViewDidChange:(UITextView *)textView {
+    _rightBarBtn.title = @"完成";
 }
 
 @end
