@@ -13,6 +13,7 @@
 - (void)awakeFromNib {
     [super awakeFromNib];
     // Initialization code
+    _scoreLabel.textColor = [UIColor grayColor];
 }
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {
@@ -21,6 +22,4 @@
     // Configure the view for the selected state
 }
 
-- (IBAction)behavior:(UIButton *)sender {
-}
 @end

@@ -13,8 +13,6 @@
 @property (weak, nonatomic) IBOutlet UILabel *titleLabel;
 @property (weak, nonatomic) IBOutlet UILabel *detailLabel;
 @property (weak, nonatomic) IBOutlet UILabel *uploaderLabel;
-@property (weak, nonatomic) IBOutlet UIButton *funcBtn;
-
-- (IBAction)behavior:(UIButton *)sender;
+@property (weak, nonatomic) IBOutlet UILabel *scoreLabel;
 
 @end

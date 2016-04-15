@@ -13,6 +13,12 @@
     UIBarButtonItem *_rightBarBtn;
 }
 
+@property (weak, nonatomic) IBOutlet UITextField *titleTextField;
+@property (weak, nonatomic) IBOutlet UILabel *uploaderLabel;
+@property (weak, nonatomic) IBOutlet UITextView *detailTextView;
+@property (weak, nonatomic) IBOutlet UILabel *dateLabel;
+@property (weak, nonatomic) IBOutlet UILabel *scoreLabel;
+
 @end
 
 @implementation HomeworkDetailViewController
@@ -34,6 +40,7 @@
     [self hideTabBar];
     
     _scoreLabel.textColor = [UIColor grayColor];
+    _scoreLabel.text = _score;
 }
 
 - (void)viewWillDisappear:(BOOL)animated {

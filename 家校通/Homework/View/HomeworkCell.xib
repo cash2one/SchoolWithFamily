@@ -3,8 +3,6 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
-        <capability name="Alignment constraints to the first baseline" minToolsVersion="6.0"/>
-        <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <objects>
@@ -20,34 +18,12 @@
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="作业标题" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9Dz-13-2YV">
                         <rect key="frame" x="8" y="8" width="382" height="25"/>
                         <constraints>
-                            <constraint firstAttribute="height" constant="25" id="gGl-mS-tQu"/>
+                            <constraint firstAttribute="height" constant="25" id="qHk-k3-fa1"/>
                         </constraints>
                         <fontDescription key="fontDescription" type="system" pointSize="20"/>
                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sunny" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AuF-4y-sHR">
-                        <rect key="frame" x="8" y="186" width="42" height="15"/>
-                        <constraints>
-                            <constraint firstAttribute="width" constant="42" id="mxZ-aa-AnX"/>
-                        </constraints>
-                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
-                        <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
-                        <nil key="highlightedColor"/>
-                    </label>
-                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="smK-7c-ucx">
-                        <rect key="frame" x="344" y="186" width="46" height="15"/>
-                        <constraints>
-                            <constraint firstAttribute="width" constant="46" id="m0B-Si-SpE"/>
-                        </constraints>
-                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
-                        <state key="normal" title="编辑">
-                            <color key="titleColor" red="0.18058453839999999" green="0.40071144860000002" blue="0.67895124350000002" alpha="1" colorSpace="calibratedRGB"/>
-                        </state>
-                        <connections>
-                            <action selector="behavior:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="HZr-j7-MgI"/>
-                        </connections>
-                    </button>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9hK-ea-ghG">
                         <rect key="frame" x="8" y="41" width="382" height="137"/>
                         <string key="text">作业内容 作业内容 作业内容 作业内容 作业内容 作业内容 作业内容 作业内容 作业内容 作业内容 作业内容 作业内容 作业内容 作业内容 作业内容 作业内容 作业内容 作业内容 作业内容 作业内容 作业内容 作业内容 作业内容 作业内容 作业内容 作业内容 作业内容 作业内容 作业内容 </string>
@@ -55,27 +31,44 @@
                         <color key="textColor" red="0.1215686275" green="0.12941176469999999" blue="0.14117647059999999" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="未评分" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IUL-NR-ZRZ">
+                        <rect key="frame" x="230" y="186" width="160" height="15"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="15" id="DVl-ni-Mhs"/>
+                            <constraint firstAttribute="width" constant="160" id="vcJ-cp-Zcc"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                        <color key="textColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sunny" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AuF-4y-sHR">
+                        <rect key="frame" x="8" y="186" width="160" height="15"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="160" id="3UU-Ul-dsv"/>
+                            <constraint firstAttribute="height" constant="15" id="5fM-fy-lGy"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                        <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                        <nil key="highlightedColor"/>
+                    </label>
                 </subviews>
                 <constraints>
-                    <constraint firstItem="9hK-ea-ghG" firstAttribute="leading" secondItem="AuF-4y-sHR" secondAttribute="leading" id="0qp-GC-FpS"/>
-                    <constraint firstItem="9Dz-13-2YV" firstAttribute="trailing" secondItem="H2p-sc-9uM" secondAttribute="trailingMargin" id="3ez-3m-1Px"/>
-                    <constraint firstItem="9Dz-13-2YV" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" id="4O7-yg-Xu9"/>
-                    <constraint firstItem="AuF-4y-sHR" firstAttribute="baseline" secondItem="smK-7c-ucx" secondAttribute="firstBaseline" id="5UC-BR-RwQ"/>
-                    <constraint firstItem="9hK-ea-ghG" firstAttribute="trailing" secondItem="smK-7c-ucx" secondAttribute="trailing" id="DFb-BU-mC4"/>
-                    <constraint firstItem="9Dz-13-2YV" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" id="JzL-4I-zAq"/>
-                    <constraint firstItem="AuF-4y-sHR" firstAttribute="bottom" secondItem="H2p-sc-9uM" secondAttribute="bottomMargin" id="K9F-kD-wIP"/>
-                    <constraint firstItem="9hK-ea-ghG" firstAttribute="trailing" secondItem="9Dz-13-2YV" secondAttribute="trailing" id="Nfe-s6-pwW"/>
-                    <constraint firstItem="AuF-4y-sHR" firstAttribute="top" secondItem="9hK-ea-ghG" secondAttribute="bottom" constant="8" symbolic="YES" id="e5l-qr-a6x"/>
-                    <constraint firstItem="9hK-ea-ghG" firstAttribute="top" secondItem="9Dz-13-2YV" secondAttribute="bottom" constant="8" symbolic="YES" id="feO-sg-Pg0"/>
-                    <constraint firstItem="AuF-4y-sHR" firstAttribute="top" secondItem="smK-7c-ucx" secondAttribute="top" id="g2s-vT-EXD"/>
-                    <constraint firstItem="smK-7c-ucx" firstAttribute="baseline" secondItem="AuF-4y-sHR" secondAttribute="firstBaseline" id="gFi-GJ-LNa"/>
-                    <constraint firstItem="9hK-ea-ghG" firstAttribute="leading" secondItem="9Dz-13-2YV" secondAttribute="leading" id="qQg-Ku-gvg"/>
-                    <constraint firstItem="AuF-4y-sHR" firstAttribute="baseline" secondItem="smK-7c-ucx" secondAttribute="baseline" id="wel-Pr-gAg"/>
+                    <constraint firstItem="9Dz-13-2YV" firstAttribute="trailing" secondItem="H2p-sc-9uM" secondAttribute="trailingMargin" id="Bky-qj-VUk"/>
+                    <constraint firstItem="AuF-4y-sHR" firstAttribute="top" secondItem="9hK-ea-ghG" secondAttribute="bottom" constant="8" symbolic="YES" id="JLz-Zi-9en"/>
+                    <constraint firstItem="9Dz-13-2YV" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" id="Mxv-LK-biH"/>
+                    <constraint firstItem="9Dz-13-2YV" firstAttribute="trailing" secondItem="9hK-ea-ghG" secondAttribute="trailing" id="TGm-aB-Yb7"/>
+                    <constraint firstItem="AuF-4y-sHR" firstAttribute="baseline" secondItem="IUL-NR-ZRZ" secondAttribute="baseline" id="X7h-Ag-YC7"/>
+                    <constraint firstItem="9Dz-13-2YV" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" id="bbl-F1-JIx"/>
+                    <constraint firstItem="9Dz-13-2YV" firstAttribute="leading" secondItem="9hK-ea-ghG" secondAttribute="leading" id="erF-aJ-Pnr"/>
+                    <constraint firstItem="AuF-4y-sHR" firstAttribute="bottom" secondItem="H2p-sc-9uM" secondAttribute="bottomMargin" id="hU3-kW-Tgf"/>
+                    <constraint firstItem="9hK-ea-ghG" firstAttribute="leading" secondItem="AuF-4y-sHR" secondAttribute="leading" id="iaB-Lf-njZ"/>
+                    <constraint firstItem="9hK-ea-ghG" firstAttribute="trailing" secondItem="IUL-NR-ZRZ" secondAttribute="trailing" id="xSr-hm-JgT"/>
+                    <constraint firstItem="9hK-ea-ghG" firstAttribute="top" secondItem="9Dz-13-2YV" secondAttribute="bottom" constant="8" symbolic="YES" id="ycw-FF-Gds"/>
                 </constraints>
             </tableViewCellContentView>
             <connections>
                 <outlet property="detailLabel" destination="9hK-ea-ghG" id="k0Q-bU-aTw"/>
-                <outlet property="funcBtn" destination="smK-7c-ucx" id="xlh-jM-JI2"/>
+                <outlet property="scoreLabel" destination="IUL-NR-ZRZ" id="cbq-gE-dlH"/>
                 <outlet property="titleLabel" destination="9Dz-13-2YV" id="nFQ-nu-55N"/>
                 <outlet property="uploaderLabel" destination="AuF-4y-sHR" id="FWK-6B-gSo"/>
             </connections>

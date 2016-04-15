@@ -46,6 +46,8 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     HomeworkDetailViewController *detailVC = [HomeworkDetailViewController new];
+    HomeworkCell *currentCell = [tableView cellForRowAtIndexPath:indexPath];
+    detailVC.score = currentCell.scoreLabel.text;
     [self.navigationController pushViewController:detailVC animated:YES];
 }
 
