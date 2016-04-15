@@ -28,7 +28,7 @@
     _tabBar = self.tabBarController.tabBar;
     
     self.navigationItem.title = @"作业详情";
-    _rightBarBtn = [[UIBarButtonItem alloc] initWithTitle:@"编辑" style:UIBarButtonItemStylePlain target:self action:@selector(behavior)];
+    _rightBarBtn = [[UIBarButtonItem alloc] initWithTitle:@"编辑  " style:UIBarButtonItemStylePlain target:self action:@selector(behavior)];
     self.navigationItem.rightBarButtonItem = _rightBarBtn;
     
     _titleTextField.delegate = self;
@@ -68,7 +68,7 @@
 
 #pragma mark - function
 - (void)behavior {
-    if ([_rightBarBtn.title isEqualToString:@"编辑"]) {
+    if ([_rightBarBtn.title isEqualToString:@"编辑  "]) {
         _titleTextField.enabled = YES;
         _detailTextView.editable = YES;
         _rightBarBtn.title = @"取消编辑";
@@ -76,7 +76,7 @@
     } else if ([_rightBarBtn.title isEqualToString:@"取消编辑"]) {
         _titleTextField.enabled = NO;
         _detailTextView.editable = NO;
-        _rightBarBtn.title = @"编辑";
+        _rightBarBtn.title = @"编辑  ";
     } else if ([_rightBarBtn.title isEqualToString:@"完成"]) {
         [_titleTextField resignFirstResponder];
         [_detailTextView resignFirstResponder];
