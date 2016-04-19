@@ -22,7 +22,7 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="作业标题" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="UuB-rn-5ds">
-                    <rect key="frame" x="8" y="84" width="304" height="40"/>
+                    <rect key="frame" x="8" y="20" width="304" height="40"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="40" id="HX2-Ky-aNE"/>
                         <constraint firstAttribute="height" constant="30" id="UmQ-13-R6t"/>
@@ -36,7 +36,7 @@
                     </variation>
                 </textField>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sunny" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fRK-PZ-Tk3">
-                    <rect key="frame" x="8" y="132" width="304" height="20"/>
+                    <rect key="frame" x="8" y="68" width="304" height="20"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="20" id="Ano-gl-A7Y"/>
                         <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="21" id="f9o-Pd-JVW"/>
@@ -51,7 +51,7 @@
                     </variation>
                 </label>
                 <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="3jv-yp-Iu6">
-                    <rect key="frame" x="8" y="160" width="304" height="359"/>
+                    <rect key="frame" x="8" y="96" width="304" height="423"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     <string key="text">Lorem ipsum  dolor  sit er elit  lamet, c onsectet aur cillium  adipisicing pecu, s ed do eiusmod te mpor  incididunt ut labo re et dolore magna  aliqua. Ut enim ad  minim veniam,  quis nost rud exercitation  ullamco laboris nisi ut aliquip ex ea commodo conse quat. Duis aute  irure dolor  in reprehender it in voluptate  velit esse cillum dolore e u fugiat nulla  pariatur. Excepteur sint  occaecat cupidatat non proident, sunt  in culpa qui officia deserunt mollit  anim id est la borum. Nam li ber te consc ient to fact or tum poen legum odioque civiuda.</string>
                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -85,7 +85,7 @@
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <constraints>
                 <constraint firstAttribute="trailing" secondItem="TeS-7j-eiO" secondAttribute="trailing" constant="8" id="0Gw-Px-JeH"/>
-                <constraint firstItem="UuB-rn-5ds" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="84" id="3ID-2Z-eYc"/>
+                <constraint firstItem="UuB-rn-5ds" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="20" id="3ID-2Z-eYc"/>
                 <constraint firstItem="3jv-yp-Iu6" firstAttribute="top" secondItem="fRK-PZ-Tk3" secondAttribute="bottom" constant="8" symbolic="YES" id="4Jy-Md-jcW"/>
                 <constraint firstItem="UuB-rn-5ds" firstAttribute="trailing" secondItem="i5M-Pr-FkT" secondAttribute="trailingMargin" id="57A-vy-F3a"/>
                 <constraint firstItem="fRK-PZ-Tk3" firstAttribute="top" secondItem="UuB-rn-5ds" secondAttribute="bottom" constant="8" symbolic="YES" id="9cf-cE-Jwv"/>

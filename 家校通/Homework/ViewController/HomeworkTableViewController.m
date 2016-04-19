@@ -22,11 +22,11 @@
 
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
-    [self pullToRefresh];
+    [self addPullToRefresh];
 }
 
 #pragma mark - Function
-- (void)pullToRefresh {
+- (void)addPullToRefresh {
     WEAKSELF
     JElasticPullToRefreshLoadingViewCircle *loadingViewCircle = [[JElasticPullToRefreshLoadingViewCircle alloc] init];
     loadingViewCircle.tintColor = [UIColor whiteColor];
@@ -37,6 +37,10 @@
     } LoadingView:loadingViewCircle];
     [self.tableView setJElasticPullToRefreshFillColor:kCommonColor];
     [self.tableView setJElasticPullToRefreshBackgroundColor:[UIColor whiteColor]];
+}
+
+- (void)loadHomework {
+    
 }
 
 #pragma mark - Table view data source
