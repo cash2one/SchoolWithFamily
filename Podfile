@@ -1,3 +1,5 @@
 pod 'AFNetworking','~> 2.6.1'
 pod 'JSONModel'
 pod 'TAlertView'
+pod 'JElasticPullToRefresh'
+pod 'SVProgressHUD', :git => 'https://github.com/SVProgressHUD/SVProgressHUD.git'

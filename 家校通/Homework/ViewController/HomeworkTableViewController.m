@@ -20,6 +20,25 @@
     [super viewDidLoad];
 }
 
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    [self pullToRefresh];
+}
+
+#pragma mark - Function
+- (void)pullToRefresh {
+    WEAKSELF
+    JElasticPullToRefreshLoadingViewCircle *loadingViewCircle = [[JElasticPullToRefreshLoadingViewCircle alloc] init];
+    loadingViewCircle.tintColor = [UIColor whiteColor];
+    [self.tableView addJElasticPullToRefreshViewWithActionHandler:^{
+        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1.5 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+            [weakSelf.tableView stopLoading];
+        });
+    } LoadingView:loadingViewCircle];
+    [self.tableView setJElasticPullToRefreshFillColor:kCommonColor];
+    [self.tableView setJElasticPullToRefreshBackgroundColor:[UIColor whiteColor]];
+}
+
 #pragma mark - Table view data source
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {

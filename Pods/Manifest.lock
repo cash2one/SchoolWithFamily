@@ -20,17 +20,32 @@ PODS:
   - AFNetworking/UIKit (2.6.3):
     - AFNetworking/NSURLConnection
     - AFNetworking/NSURLSession
+  - JElasticPullToRefresh (1.0.3)
   - JSONModel (1.2.0)
+  - SVProgressHUD (2.0.3)
   - TAlertView (0.2.0)
 
 DEPENDENCIES:
   - AFNetworking (~> 2.6.1)
+  - JElasticPullToRefresh
   - JSONModel
+  - SVProgressHUD (from `https://github.com/SVProgressHUD/SVProgressHUD.git`)
   - TAlertView
+
+EXTERNAL SOURCES:
+  SVProgressHUD:
+    :git: https://github.com/SVProgressHUD/SVProgressHUD.git
+
+CHECKOUT OPTIONS:
+  SVProgressHUD:
+    :commit: c406f0ac1929b21ab444608eb4ab27035bb57a21
+    :git: https://github.com/SVProgressHUD/SVProgressHUD.git
 
 SPEC CHECKSUMS:
   AFNetworking: cb8d14a848e831097108418f5d49217339d4eb60
+  JElasticPullToRefresh: 63b15bfbb96ea476dce3df9460509d59473b1e94
   JSONModel: 12523685c4b623553ccf844bbbf7007624317b2c
+  SVProgressHUD: b0830714205bea1317ea1a2ebc71e5633af334d4
   TAlertView: 3787ac0ea7e832d80be129a9be960eb1fc5c73f1
 
 COCOAPODS: 0.39.0

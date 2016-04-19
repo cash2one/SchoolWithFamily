@@ -9,12 +9,22 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>JElasticPullToRefresh.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>JSONModel.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
 		</dict>
 		<key>Pods.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>SVProgressHUD.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
@@ -32,17 +42,27 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>133795EA052940BBDC5FC8BA331DA7DC</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
 		<key>410B25DF16EA5C5B3E2698F74F9625FB</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>9DEFA00AEC47A8A4563B8AE9C0D1343E</key>
+		<key>6E51C00A52F572E662458EECD57C5272</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>94C83CF45269AE444E7BE5789F241211</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>C0163B997BA6D31A4889A86B2CB472A9</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>E2547877D4981724A54C803831D8910C</key>
 		<dict>
 			<key>primary</key>
 			<true/>

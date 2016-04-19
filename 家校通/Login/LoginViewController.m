@@ -47,6 +47,7 @@
     }
 }
 
+#pragma mark - Function
 - (IBAction)login:(UIButton *)sender {
     MainTabBarViewController *mainVC = [MainTabBarViewController new];
     mainVC.shouldShowLaunchAnimation = NO;

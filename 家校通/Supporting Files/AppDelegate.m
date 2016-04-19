@@ -19,23 +19,8 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     
-    self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
-//    LoginViewController *loginVC = [LoginViewController new];
-//    loginVC.shouldShowLaunchAnimation = YES;
-//    loginVC.isStatusBarHidden = YES;
-    MainTabBarViewController *mainVC = [MainTabBarViewController new];
-    mainVC.shouldShowLaunchAnimation = YES;
-    self.window.rootViewController = mainVC;
-    [self.window makeKeyAndVisible];
-    
-    //设置标题栏颜色
-    [[UINavigationBar appearance] setBarTintColor:[UIColor colorWithRed:36.0/255 green:36.0/255 blue:36.0/255 alpha:0.9]];
-    //设置导航栏标题颜色
-    [[UINavigationBar appearance] setTitleTextAttributes:@{NSForegroundColorAttributeName:[UIColor whiteColor]}];
-    //设置按钮文字颜色 白色
-    [[UINavigationBar appearance] setTintColor:[UIColor whiteColor]];
-    //设置导航栏按钮字体大小
-    [[UIBarButtonItem appearance] setTitleTextAttributes:[NSDictionary dictionaryWithObjectsAndKeys:[UIFont boldSystemFontOfSize:13], NSFontAttributeName, nil] forState:UIControlStateNormal];
+    [self setupMainWindow];
+    [self setupUI];
     
     return YES;
 }
@@ -60,6 +45,32 @@
 
 - (void)applicationWillTerminate:(UIApplication *)application {
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
+}
+
+- (void)setupMainWindow {
+    self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
+    //    LoginViewController *loginVC = [LoginViewController new];
+    //    loginVC.shouldShowLaunchAnimation = YES;
+    //    loginVC.isStatusBarHidden = YES;
+    MainTabBarViewController *mainVC = [MainTabBarViewController new];
+    mainVC.shouldShowLaunchAnimation = YES;
+    self.window.rootViewController = mainVC;
+    [self.window makeKeyAndVisible];
+}
+
+- (void)setupUI {
+    //设置标题栏颜色
+    [[UINavigationBar appearance] setTranslucent:NO];
+    [[UINavigationBar appearance] setBarTintColor:kCommonColor];
+    //设置导航栏标题颜色
+    [[UINavigationBar appearance] setTitleTextAttributes:@{NSForegroundColorAttributeName:[UIColor whiteColor]}];
+    //设置按钮文字颜色 白色
+    [[UINavigationBar appearance] setTintColor:[UIColor whiteColor]];
+    //设置导航栏按钮字体大小
+    [[UIBarButtonItem appearance] setTitleTextAttributes:[NSDictionary dictionaryWithObjectsAndKeys:[UIFont boldSystemFontOfSize:13], NSFontAttributeName, nil] forState:UIControlStateNormal];
+    //去掉导航栏黑线
+    [[UINavigationBar appearance] setShadowImage:[UIImage imageFromColor:[UIColor clearColor] corner:CornerAll radius:0]];
+    [[UINavigationBar appearance] setBackgroundImage:[UIImage imageFromColor:[UIColor clearColor] corner:CornerAll radius:0] forBarMetrics:UIBarMetricsDefault];
 }
 
 @end

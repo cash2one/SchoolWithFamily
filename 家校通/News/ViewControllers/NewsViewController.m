@@ -23,6 +23,7 @@
     //新闻承载页面
     _webView = [[UIWebView alloc] initWithFrame:CGRectMake(0, 0, kScreenWidth, kScreenHeight)];
     [self.view addSubview:_webView];
+    _webView.backgroundColor = [UIColor whiteColor];
     _webView.delegate = self;
     
     //返回新闻列表按钮
@@ -35,6 +36,12 @@
     [self loadWebView];
 }
 
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    
+}
+
+#pragma mark - Function
 //有菊花旋转的加载网页
 - (void)loadWebView {
     //打开指定的html网页呈现新闻
