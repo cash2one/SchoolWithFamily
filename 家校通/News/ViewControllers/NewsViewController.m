@@ -50,7 +50,7 @@
     [_webView loadRequest:request];
     //加载前菊花
     _indicator = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleGray];
-    [_indicator setCenter:CGPointMake(20, 84)];
+    [_indicator setCenter:CGPointMake(20, 20)];
     [self.view addSubview:_indicator];
     [_indicator setHidesWhenStopped:YES];
     [_indicator startAnimating];
