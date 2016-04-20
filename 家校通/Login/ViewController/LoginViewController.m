@@ -9,7 +9,9 @@
 #import "LoginViewController.h"
 #import "LoginModel.h"
 
-@interface LoginViewController () <UITextFieldDelegate>
+@interface LoginViewController () <UITextFieldDelegate> {
+    NSUserDefaults *_userDefaults;
+}
 
 @end
 
@@ -76,12 +78,15 @@
             LoginModel *model = [[LoginModel alloc] initWithDictionary:responseObject error:nil];
             if ([model.responseCode isEqualToString:@"100"]) {
                 [weakSelf dismissHud];
+                _userDefaults = [NSUserDefaults standardUserDefaults];
+                [_userDefaults setObject:_usernameField.text forKey:keyUsername];
+                [_userDefaults setObject:_passwordField.text forKey:keyPassword];
                 [weakSelf presentViewController:mainVC animated:NO completion:nil];
             } else if ([model.responseCode isEqualToString:@"200"]) {
                 [SVProgressHUD showErrorWithStatus:@"用户名或密码不正确！"];
                 [weakSelf performSelector:@selector(dismissHud) withObject:nil afterDelay:1.5];
             } else {
-                [SVProgressHUD showErrorWithStatus:@"服务器连接失败！"];
+                [SVProgressHUD showErrorWithStatus:@"连接服务器失败！"];
                 [weakSelf performSelector:@selector(dismissHud) withObject:nil afterDelay:1.5];
             }
         } failure:^(AFHTTPRequestOperation * _Nullable operation, NSError * _Nonnull error) {

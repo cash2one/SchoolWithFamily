@@ -49,12 +49,17 @@
 
 - (void)setupMainWindow {
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    if ([defaults objectForKey:keyUsername] && [defaults objectForKey:keyPassword]) {
+        MainTabBarViewController *mainVC = [MainTabBarViewController new];
+        mainVC.shouldShowLaunchAnimation = YES;
+        self.window.rootViewController = mainVC;
+    } else {
         LoginViewController *loginVC = [LoginViewController new];
         loginVC.shouldShowLaunchAnimation = YES;
         loginVC.isStatusBarHidden = YES;
-//    MainTabBarViewController *mainVC = [MainTabBarViewController new];
-//    mainVC.shouldShowLaunchAnimation = YES;
-    self.window.rootViewController = loginVC;
+        self.window.rootViewController = loginVC;
+    }
     [self.window makeKeyAndVisible];
 }
 

@@ -22,8 +22,11 @@
 #define kScreenScale [UIScreen mainScreen].scale
 //导航栏颜色
 #define kCommonColor ([UIColor colorWithRed:91.0/255 green:91.0/255 blue:91.0/255 alpha:1.0])
-
+//Common
 #define appDelegate ((AppDelegate *)[[UIApplication sharedApplication] delegate])
 #define WEAKSELF  __weak typeof(self) weakSelf = self;
+//登录
+#define keyUsername @"username"
+#define keyPassword @"password"
 
 #endif /* PrefixHeader_pch */
