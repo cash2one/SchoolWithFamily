@@ -7,6 +7,7 @@
 //
 
 #import "LoginViewController.h"
+#import "LoginModel.h"
 
 @interface LoginViewController () <UITextFieldDelegate>
 
@@ -48,6 +49,15 @@
 }
 
 #pragma mark - Function
+- (NSDictionary *)combineParamsForLogin {
+    NSMutableDictionary *dict = [NSMutableDictionary dictionary];
+    //act参数
+    [dict setObject:_usernameField.text forKey:@"username"];
+    [dict setObject:_passwordField.text forKey:@"password"];
+    
+    return dict.copy;
+}
+
 - (IBAction)login:(UIButton *)sender {
     MainTabBarViewController *mainVC = [MainTabBarViewController new];
     mainVC.shouldShowLaunchAnimation = NO;
@@ -56,10 +66,32 @@
     [SVProgressHUD setForegroundColor:[UIColor whiteColor]];
     [SVProgressHUD setBackgroundColor:[UIColor colorWithRed:20.0/255 green:20.0/255 blue:20.0/255 alpha:0.8]];
     [SVProgressHUD showWithStatus:@"登录中..."];
-    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(2 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-        [SVProgressHUD dismiss];
-        [self presentViewController:mainVC animated:NO completion:nil];
+    //网络请求
+    WEAKSELF
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+        AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
+        manager.responseSerializer.acceptableContentTypes = [NSSet setWithObjects:@"application/json",@"text/plain",@"text/html",@"text/javascript", nil];
+        NSDictionary *dict = [self combineParamsForLogin];
+        [manager POST:@"http://zesicus.site/interface/school_manager/login.php" parameters:dict success:^(AFHTTPRequestOperation * _Nonnull operation, id  _Nonnull responseObject) {
+            LoginModel *model = [[LoginModel alloc] initWithDictionary:responseObject error:nil];
+            if ([model.responseCode isEqualToString:@"100"]) {
+                [weakSelf dismissHud];
+                [weakSelf presentViewController:mainVC animated:NO completion:nil];
+            } else if ([model.responseCode isEqualToString:@"200"]) {
+                [SVProgressHUD showErrorWithStatus:@"用户名或密码不正确！"];
+                [weakSelf performSelector:@selector(dismissHud) withObject:nil afterDelay:1.5];
+            } else {
+                [SVProgressHUD showErrorWithStatus:@"服务器连接失败！"];
+                [weakSelf performSelector:@selector(dismissHud) withObject:nil afterDelay:1.5];
+            }
+        } failure:^(AFHTTPRequestOperation * _Nullable operation, NSError * _Nonnull error) {
+            NSLog(@"%@", [error description]);
+        }];
     });
+}
+
+- (void)dismissHud {
+    [SVProgressHUD dismiss];
 }
 
 //有输入情况激活登录按钮

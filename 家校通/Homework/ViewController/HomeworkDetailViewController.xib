@@ -50,13 +50,6 @@
                         </mask>
                     </variation>
                 </label>
-                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="3jv-yp-Iu6">
-                    <rect key="frame" x="8" y="96" width="304" height="423"/>
-                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    <string key="text">Lorem ipsum  dolor  sit er elit  lamet, c onsectet aur cillium  adipisicing pecu, s ed do eiusmod te mpor  incididunt ut labo re et dolore magna  aliqua. Ut enim ad  minim veniam,  quis nost rud exercitation  ullamco laboris nisi ut aliquip ex ea commodo conse quat. Duis aute  irure dolor  in reprehender it in voluptate  velit esse cillum dolore e u fugiat nulla  pariatur. Excepteur sint  occaecat cupidatat non proident, sunt  in culpa qui officia deserunt mollit  anim id est la borum. Nam li ber te consc ient to fact or tum poen legum odioque civiuda.</string>
-                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                    <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                </textView>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="成绩" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TeS-7j-eiO">
                     <rect key="frame" x="192" y="532" width="120" height="20"/>
                     <constraints>
@@ -81,6 +74,13 @@
                     <color key="textColor" red="0.52156862749999999" green="0.52156862749999999" blue="0.52156862749999999" alpha="1" colorSpace="calibratedRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
+                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="3jv-yp-Iu6">
+                    <rect key="frame" x="8" y="96" width="304" height="423"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <string key="text">Lorem ipsum  dolor  sit er elit  lamet, c onsectet aur cillium  adipisicing pecu, s ed do eiusmod te mpor  incididunt ut labo re et dolore magna  aliqua. Ut enim ad  minim veniam,  quis nost rud exercitation  ullamco laboris nisi ut aliquip ex ea commodo conse quat. Duis aute  irure dolor  in reprehender it in voluptate  velit esse cillum dolore e u fugiat nulla  pariatur. Excepteur sint  occaecat cupidatat non proident, sunt  in culpa qui officia deserunt mollit  anim id est la borum. Nam li ber te consc ient to fact or tum poen legum odioque civiuda.</string>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                </textView>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <constraints>

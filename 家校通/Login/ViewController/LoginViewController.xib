@@ -47,8 +47,12 @@
                     <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
                     <constraints>
                         <constraint firstAttribute="width" constant="168" id="ERN-fN-ba5"/>
-                        <constraint firstAttribute="height" constant="210" id="ZAO-kf-4go"/>
-                        <constraint firstAttribute="width" constant="168" id="eQG-CJ-46l"/>
+                        <constraint firstAttribute="height" constant="210" id="ZAO-kf-4go">
+                            <variation key="heightClass=regular-widthClass=compact" constant="150"/>
+                        </constraint>
+                        <constraint firstAttribute="width" constant="168" id="eQG-CJ-46l">
+                            <variation key="heightClass=regular-widthClass=compact" constant="118"/>
+                        </constraint>
                     </constraints>
                     <variation key="default">
                         <mask key="constraints">
@@ -240,7 +244,7 @@
                 <constraint firstItem="ZaA-LS-vo5" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="IMM-4J-y1Q"/>
                 <constraint firstItem="PVw-lI-rxe" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="20" id="If4-vc-UTt"/>
                 <constraint firstItem="Med-BQ-0vP" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="20" id="LNq-4A-zGv"/>
-                <constraint firstItem="ZaA-LS-vo5" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="60" id="MGq-Eg-enO"/>
+                <constraint firstItem="ZaA-LS-vo5" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="30" id="MGq-Eg-enO"/>
                 <constraint firstItem="6Cq-Pk-e9K" firstAttribute="bottom" secondItem="i5M-Pr-FkT" secondAttribute="bottomMargin" id="QNQ-pI-9eP"/>
                 <constraint firstAttribute="trailing" secondItem="ilC-16-JaV" secondAttribute="trailing" constant="8" id="ama-At-BsT"/>
                 <constraint firstAttribute="trailing" secondItem="VS6-5F-PoR" secondAttribute="trailing" constant="8" id="d8J-9b-IOf">

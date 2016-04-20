@@ -10,6 +10,9 @@
 		5902603C1CBCA79E0068E825 /* LaunchDemo.m in Sources */ = {isa = PBXBuildFile; fileRef = 5902603B1CBCA79E0068E825 /* LaunchDemo.m */; };
 		59038D241C706B43007BE74D /* ___Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = 59038D231C706B43007BE74D /* ___Tests.m */; };
 		59038D2F1C706B43007BE74D /* ___UITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 59038D2E1C706B43007BE74D /* ___UITests.m */; };
+		590D95AA1CC7CB0C00BEFB10 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 590D95A81CC7CB0C00BEFB10 /* LoginViewController.m */; };
+		590D95AB1CC7CB0C00BEFB10 /* LoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 590D95A91CC7CB0C00BEFB10 /* LoginViewController.xib */; };
+		590D95AE1CC7CB4C00BEFB10 /* LoginModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 590D95AD1CC7CB4C00BEFB10 /* LoginModel.m */; };
 		5918DB551CC6190000430C80 /* UIImage+Alpha.m in Sources */ = {isa = PBXBuildFile; fileRef = 5918DB4A1CC6190000430C80 /* UIImage+Alpha.m */; };
 		5918DB561CC6190000430C80 /* UIImage+Resize.m in Sources */ = {isa = PBXBuildFile; fileRef = 5918DB4C1CC6190000430C80 /* UIImage+Resize.m */; };
 		5918DB571CC6190000430C80 /* UIImage+RoundedCorner.m in Sources */ = {isa = PBXBuildFile; fileRef = 5918DB4E1CC6190000430C80 /* UIImage+RoundedCorner.m */; };
@@ -29,8 +32,6 @@
 		594F85651CBF996A0016F9B2 /* HomeworkDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 594F85631CBF996A0016F9B2 /* HomeworkDetailViewController.xib */; };
 		596C80C51C706D6C00CFF0DA /* MainTabBarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 596C80C41C706D6C00CFF0DA /* MainTabBarViewController.m */; };
 		596C80D11C70725C00CFF0DA /* TempViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 596C80D01C70725C00CFF0DA /* TempViewController.m */; };
-		59EC15691CAC291D00B2AEF5 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 59EC15671CAC291D00B2AEF5 /* LoginViewController.m */; };
-		59EC156A1CAC291D00B2AEF5 /* LoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 59EC15681CAC291D00B2AEF5 /* LoginViewController.xib */; };
 		B65EBF61778FD0D2E93B58E5 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3225A0A78324430BE11DBB07 /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -64,6 +65,11 @@
 		59038D2A1C706B43007BE74D /* 家校通UITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "家校通UITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		59038D2E1C706B43007BE74D /* ___UITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "___UITests.m"; sourceTree = "<group>"; };
 		59038D301C706B43007BE74D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		590D95A71CC7CB0C00BEFB10 /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
+		590D95A81CC7CB0C00BEFB10 /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
+		590D95A91CC7CB0C00BEFB10 /* LoginViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LoginViewController.xib; sourceTree = "<group>"; };
+		590D95AC1CC7CB4C00BEFB10 /* LoginModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginModel.h; sourceTree = "<group>"; };
+		590D95AD1CC7CB4C00BEFB10 /* LoginModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginModel.m; sourceTree = "<group>"; };
 		5918DB491CC6190000430C80 /* UIImage+Alpha.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+Alpha.h"; sourceTree = "<group>"; };
 		5918DB4A1CC6190000430C80 /* UIImage+Alpha.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+Alpha.m"; sourceTree = "<group>"; };
 		5918DB4B1CC6190000430C80 /* UIImage+Resize.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+Resize.h"; sourceTree = "<group>"; };
@@ -98,9 +104,6 @@
 		596C80C41C706D6C00CFF0DA /* MainTabBarViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MainTabBarViewController.m; path = MainInterface/MainTabBarViewController.m; sourceTree = "<group>"; };
 		596C80CF1C70725C00CFF0DA /* TempViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TempViewController.h; path = MainInterface/TempViewController.h; sourceTree = "<group>"; };
 		596C80D01C70725C00CFF0DA /* TempViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TempViewController.m; path = MainInterface/TempViewController.m; sourceTree = "<group>"; };
-		59EC15661CAC291D00B2AEF5 /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
-		59EC15671CAC291D00B2AEF5 /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
-		59EC15681CAC291D00B2AEF5 /* LoginViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LoginViewController.xib; sourceTree = "<group>"; };
 		EB8B5C3766110C64F9273C4A /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -223,6 +226,25 @@
 			path = "家校通UITests";
 			sourceTree = "<group>";
 		};
+		590D95A51CC7CB0C00BEFB10 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				590D95AC1CC7CB4C00BEFB10 /* LoginModel.h */,
+				590D95AD1CC7CB4C00BEFB10 /* LoginModel.m */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		590D95A61CC7CB0C00BEFB10 /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				590D95A71CC7CB0C00BEFB10 /* LoginViewController.h */,
+				590D95A81CC7CB0C00BEFB10 /* LoginViewController.m */,
+				590D95A91CC7CB0C00BEFB10 /* LoginViewController.xib */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
 		5918DB481CC6190000430C80 /* UIImage */ = {
 			isa = PBXGroup;
 			children = (
@@ -331,9 +353,8 @@
 		59EC15621CAC1FCE00B2AEF5 /* Login */ = {
 			isa = PBXGroup;
 			children = (
-				59EC15661CAC291D00B2AEF5 /* LoginViewController.h */,
-				59EC15671CAC291D00B2AEF5 /* LoginViewController.m */,
-				59EC15681CAC291D00B2AEF5 /* LoginViewController.xib */,
+				590D95A51CC7CB0C00BEFB10 /* Model */,
+				590D95A61CC7CB0C00BEFB10 /* ViewController */,
 			);
 			path = Login;
 			sourceTree = "<group>";
@@ -446,10 +467,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				594F85651CBF996A0016F9B2 /* HomeworkDetailViewController.xib in Resources */,
-				59EC156A1CAC291D00B2AEF5 /* LoginViewController.xib in Resources */,
 				59269ABD1CA8C7FE00CC9620 /* Main.storyboard in Resources */,
 				59269ABB1CA8C7FE00CC9620 /* Assets.xcassets in Resources */,
 				59269ABC1CA8C7FE00CC9620 /* LaunchScreen.storyboard in Resources */,
+				590D95AB1CC7CB0C00BEFB10 /* LoginViewController.xib in Resources */,
 				594F855B1CBF88D00016F9B2 /* HomeworkCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -525,11 +546,12 @@
 			files = (
 				59269ABF1CA8C7FE00CC9620 /* main.m in Sources */,
 				59269ABA1CA8C7FE00CC9620 /* AppDelegate.m in Sources */,
-				59EC15691CAC291D00B2AEF5 /* LoginViewController.m in Sources */,
 				596C80D11C70725C00CFF0DA /* TempViewController.m in Sources */,
 				594F85641CBF996A0016F9B2 /* HomeworkDetailViewController.m in Sources */,
+				590D95AE1CC7CB4C00BEFB10 /* LoginModel.m in Sources */,
 				5918DB561CC6190000430C80 /* UIImage+Resize.m in Sources */,
 				596C80C51C706D6C00CFF0DA /* MainTabBarViewController.m in Sources */,
+				590D95AA1CC7CB0C00BEFB10 /* LoginViewController.m in Sources */,
 				59269AAE1CA8C7ED00CC9620 /* NewsViewController.m in Sources */,
 				5918DB581CC6190000430C80 /* UIImage+Utility.m in Sources */,
 				5918DB591CC6190000430C80 /* UIImage+XHAnimatedFaceGif.m in Sources */,
