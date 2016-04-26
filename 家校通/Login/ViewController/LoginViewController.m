@@ -70,10 +70,8 @@
     //网络请求
     WEAKSELF
     dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-        AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
-        manager.responseSerializer.acceptableContentTypes = [NSSet setWithObjects:@"application/json",@"text/plain",@"text/html",@"text/javascript", nil];
         NSDictionary *dict = [self combineParamsForLogin];
-        [manager POST:@"http://zesicus.site/interface/school_manager/login.php" parameters:dict success:^(AFHTTPRequestOperation * _Nonnull operation, id  _Nonnull responseObject) {
+        [[NetworkManager sharedManager] requestByPostWithUrl:@"http://zesicus.site/interface/school_manager/login.php" andDict:dict finishWithSuccess:^(AFHTTPRequestOperation * _Nonnull operation, id  _Nonnull responseObject) {
             LoginModel *model = [[LoginModel alloc] initWithDictionary:responseObject error:nil];
             if ([model.responseCode isEqualToString:@"100"]) {
                 [weakSelf dismissHud];
@@ -87,7 +85,7 @@
                 [SVProgressHUD showErrorWithStatus:@"连接服务器失败！"];
                 [weakSelf performSelector:@selector(dismissHud) withObject:nil afterDelay:1.5];
             }
-        } failure:^(AFHTTPRequestOperation * _Nullable operation, NSError * _Nonnull error) {
+        } orFailure:^(AFHTTPRequestOperation * _Nullable operation, NSError * _Nonnull error) {
             [SVProgressHUD showErrorWithStatus:@"连接服务器失败！"];
             [weakSelf performSelector:@selector(dismissHud) withObject:nil afterDelay:1.5];
         }];

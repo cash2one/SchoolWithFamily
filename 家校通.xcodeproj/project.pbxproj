@@ -32,6 +32,8 @@
 		594F85651CBF996A0016F9B2 /* HomeworkDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 594F85631CBF996A0016F9B2 /* HomeworkDetailViewController.xib */; };
 		596C80C51C706D6C00CFF0DA /* MainTabBarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 596C80C41C706D6C00CFF0DA /* MainTabBarViewController.m */; };
 		596C80D11C70725C00CFF0DA /* TempViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 596C80D01C70725C00CFF0DA /* TempViewController.m */; };
+		59E8EA761CCF2523006AE0B7 /* Homework.m in Sources */ = {isa = PBXBuildFile; fileRef = 59E8EA751CCF2523006AE0B7 /* Homework.m */; };
+		59E8EA7A1CCF2C6B006AE0B7 /* NetworkManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 59E8EA791CCF2C6B006AE0B7 /* NetworkManager.m */; };
 		B65EBF61778FD0D2E93B58E5 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3225A0A78324430BE11DBB07 /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -104,6 +106,10 @@
 		596C80C41C706D6C00CFF0DA /* MainTabBarViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MainTabBarViewController.m; path = MainInterface/MainTabBarViewController.m; sourceTree = "<group>"; };
 		596C80CF1C70725C00CFF0DA /* TempViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TempViewController.h; path = MainInterface/TempViewController.h; sourceTree = "<group>"; };
 		596C80D01C70725C00CFF0DA /* TempViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TempViewController.m; path = MainInterface/TempViewController.m; sourceTree = "<group>"; };
+		59E8EA741CCF2523006AE0B7 /* Homework.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Homework.h; sourceTree = "<group>"; };
+		59E8EA751CCF2523006AE0B7 /* Homework.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Homework.m; sourceTree = "<group>"; };
+		59E8EA781CCF2C6B006AE0B7 /* NetworkManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NetworkManager.h; sourceTree = "<group>"; };
+		59E8EA791CCF2C6B006AE0B7 /* NetworkManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NetworkManager.m; sourceTree = "<group>"; };
 		EB8B5C3766110C64F9273C4A /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -305,6 +311,8 @@
 		594F85471CBF280C0016F9B2 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				59E8EA741CCF2523006AE0B7 /* Homework.h */,
+				59E8EA751CCF2523006AE0B7 /* Homework.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -334,6 +342,8 @@
 		595118611CC5CE0800AB503A /* Utility */ = {
 			isa = PBXGroup;
 			children = (
+				59E8EA781CCF2C6B006AE0B7 /* NetworkManager.h */,
+				59E8EA791CCF2C6B006AE0B7 /* NetworkManager.m */,
 				5918DB481CC6190000430C80 /* UIImage */,
 			);
 			path = Utility;
@@ -551,11 +561,13 @@
 				590D95AE1CC7CB4C00BEFB10 /* LoginModel.m in Sources */,
 				5918DB561CC6190000430C80 /* UIImage+Resize.m in Sources */,
 				596C80C51C706D6C00CFF0DA /* MainTabBarViewController.m in Sources */,
+				59E8EA761CCF2523006AE0B7 /* Homework.m in Sources */,
 				590D95AA1CC7CB0C00BEFB10 /* LoginViewController.m in Sources */,
 				59269AAE1CA8C7ED00CC9620 /* NewsViewController.m in Sources */,
 				5918DB581CC6190000430C80 /* UIImage+Utility.m in Sources */,
 				5918DB591CC6190000430C80 /* UIImage+XHAnimatedFaceGif.m in Sources */,
 				5918DB571CC6190000430C80 /* UIImage+RoundedCorner.m in Sources */,
+				59E8EA7A1CCF2C6B006AE0B7 /* NetworkManager.m in Sources */,
 				5918DB5A1CC6190000430C80 /* UIImage+XHRounded.m in Sources */,
 				5918DB551CC6190000430C80 /* UIImage+Alpha.m in Sources */,
 				5902603C1CBCA79E0068E825 /* LaunchDemo.m in Sources */,

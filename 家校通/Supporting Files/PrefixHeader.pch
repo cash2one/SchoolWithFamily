@@ -14,6 +14,7 @@
 #import "UIImage+Utility.h"
 #import <UIScrollView+JElasticPullToRefresh.h>
 #import <AFNetworking.h>
+#import "NetworkManager.h"
 
 //屏幕大小
 #define kScreenFrame [UIScreen mainScreen].bounds
