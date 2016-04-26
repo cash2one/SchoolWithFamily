@@ -90,7 +90,8 @@
                 [weakSelf performSelector:@selector(dismissHud) withObject:nil afterDelay:1.5];
             }
         } failure:^(AFHTTPRequestOperation * _Nullable operation, NSError * _Nonnull error) {
-            NSLog(@"%@", [error description]);
+            [SVProgressHUD showErrorWithStatus:@"连接服务器失败！"];
+            [weakSelf performSelector:@selector(dismissHud) withObject:nil afterDelay:1.5];
         }];
     });
 }
