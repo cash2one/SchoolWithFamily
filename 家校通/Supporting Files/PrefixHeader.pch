@@ -25,6 +25,7 @@
 //Common
 #define appDelegate ((AppDelegate *)[[UIApplication sharedApplication] delegate])
 #define WEAKSELF  __weak typeof(self) weakSelf = self;
+#define userDefaults [NSUserDefaults standardUserDefaults]
 //登录
 #define keyUsername @"username"
 #define keyPassword @"password"

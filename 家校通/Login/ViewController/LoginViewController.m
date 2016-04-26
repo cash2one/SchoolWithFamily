@@ -9,9 +9,7 @@
 #import "LoginViewController.h"
 #import "LoginModel.h"
 
-@interface LoginViewController () <UITextFieldDelegate> {
-    NSUserDefaults *_userDefaults;
-}
+@interface LoginViewController () <UITextFieldDelegate>
 
 @end
 
@@ -35,7 +33,8 @@
 
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
-    
+    _usernameField.text = [userDefaults objectForKey:keyUsername]?[userDefaults objectForKey:keyUsername]:@"";
+    _passwordField.text = [userDefaults objectForKey:keyPassword]?[userDefaults objectForKey:keyPassword]:@"";
 }
 
 - (void)viewDidAppear:(BOOL)animated {
@@ -78,9 +77,8 @@
             LoginModel *model = [[LoginModel alloc] initWithDictionary:responseObject error:nil];
             if ([model.responseCode isEqualToString:@"100"]) {
                 [weakSelf dismissHud];
-                _userDefaults = [NSUserDefaults standardUserDefaults];
-                [_userDefaults setObject:_usernameField.text forKey:keyUsername];
-                [_userDefaults setObject:_passwordField.text forKey:keyPassword];
+                [userDefaults setObject:_usernameField.text forKey:keyUsername];
+                [userDefaults setObject:_passwordField.text forKey:keyPassword];
                 [weakSelf presentViewController:mainVC animated:NO completion:nil];
             } else if ([model.responseCode isEqualToString:@"200"]) {
                 [SVProgressHUD showErrorWithStatus:@"用户名或密码不正确！"];
