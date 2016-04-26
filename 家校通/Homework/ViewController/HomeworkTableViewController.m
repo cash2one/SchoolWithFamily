@@ -42,8 +42,7 @@
 }
 
 - (void)loadHomework {
-    AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
-    manager.responseSerializer.acceptableContentTypes = [NSSet setWithObjects:@"application/json",@"text/plain",@"text/html",@"text/javascript", nil];
+    
 }
 
 #pragma mark - Table view data source
