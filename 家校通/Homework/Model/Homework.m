@@ -8,6 +8,10 @@
 
 #import "Homework.h"
 
+@implementation HomeworkData
+
+@end
+
 @implementation Homework
 
 @end

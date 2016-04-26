@@ -9,6 +9,7 @@
 #import "HomeworkTableViewController.h"
 #import "HomeworkCell.h"
 #import "HomeworkDetailViewController.h"
+#import "Homework.h"
 
 @interface HomeworkTableViewController () {
     NSArray *_dataArr;
@@ -20,6 +21,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    [self loadHomework];
 }
 
 - (void)viewWillAppear:(BOOL)animated {
@@ -33,7 +35,8 @@
     JElasticPullToRefreshLoadingViewCircle *loadingViewCircle = [[JElasticPullToRefreshLoadingViewCircle alloc] init];
     loadingViewCircle.tintColor = [UIColor whiteColor];
     [self.tableView addJElasticPullToRefreshViewWithActionHandler:^{
-        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1.5 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+        [weakSelf loadHomework];
+        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1.0 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
             [weakSelf.tableView stopLoading];
         });
     } LoadingView:loadingViewCircle];
@@ -42,7 +45,38 @@
 }
 
 - (void)loadHomework {
-    
+    if ([[userDefaults objectForKey:keyUserType] isEqualToString:@"2"]) {
+        [self loadHomeworkByUser:[userDefaults objectForKey:keyUsername]];
+    } else {
+        [self loadHomeworkAll];
+    }
+}
+
+- (void)loadHomeworkAll {
+    [[NetworkManager sharedManager] requestByPostWithUrl:@"http://zesicus.site/interface/school_manager/homework_manage/showHomework.php" andDict:nil finishWithSuccess:^(AFHTTPRequestOperation * _Nonnull operation, id  _Nonnull responseObject) {
+        Homework *model = [[Homework alloc] initWithDictionary:responseObject error:nil];
+        _dataArr = model.data;
+        [self.tableView reloadData];
+    } orFailure:^(AFHTTPRequestOperation * _Nullable operation, NSError * _Nonnull error) {
+        NSLog(@"取作业列表失败！/n%@", error);
+    }];
+}
+
+- (void)loadHomeworkByUser:(NSString *)username {
+    NSDictionary *dict = [self combineParamsLoadHomeworkByUser:username];
+    [[NetworkManager sharedManager] requestByPostWithUrl:@"http://zesicus.site/interface/school_manager/homework_manage/showHomeworkByUserId.php" andDict:dict finishWithSuccess:^(AFHTTPRequestOperation * _Nonnull operation, id  _Nonnull responseObject) {
+        Homework *model = [[Homework alloc] initWithDictionary:responseObject error:nil];
+        _dataArr = model.data;
+        [self.tableView reloadData];
+    } orFailure:^(AFHTTPRequestOperation * _Nullable operation, NSError * _Nonnull error) {
+        NSLog(@"取作业列表失败！/n%@", error);
+    }];
+}
+
+- (NSDictionary *)combineParamsLoadHomeworkByUser:(NSString *)username {
+    NSMutableDictionary *dict = [NSMutableDictionary dictionary];
+    [dict setObject:username forKey:@"userId"];
+    return dict.copy;
 }
 
 #pragma mark - Table view data source
@@ -52,7 +86,7 @@
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return 10;
+    return _dataArr.count;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -62,6 +96,16 @@
         [tableView registerNib:[UINib nibWithNibName:@"HomeworkCell" bundle:nil] forCellReuseIdentifier:identifier];
         cell = [tableView dequeueReusableCellWithIdentifier:identifier];
     }
+    cell.titleLabel.text = ((HomeworkData *)_dataArr[indexPath.row]).homeworkTitle;
+    cell.detailLabel.text = ((HomeworkData *)_dataArr[indexPath.row]).homeworkDetail;
+    cell.uploaderLabel.text = ((HomeworkData *)_dataArr[indexPath.row]).userId;
+    cell.scoreLabel.text = ((HomeworkData *)_dataArr[indexPath.row]).homeworkScore?[NSString stringWithFormat:@"分数：%@", ((HomeworkData *)_dataArr[indexPath.row]).homeworkScore]:unmarked;
+    if ([cell.scoreLabel.text isEqualToString:unmarked]) {
+        cell.scoreLabel.textColor = [UIColor grayColor];
+    } else {
+        cell.scoreLabel.textColor = [UIColor redColor];
+    }
+
     return cell;
 }
 

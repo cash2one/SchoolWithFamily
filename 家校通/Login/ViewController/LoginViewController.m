@@ -74,9 +74,10 @@
         [[NetworkManager sharedManager] requestByPostWithUrl:@"http://zesicus.site/interface/school_manager/login.php" andDict:dict finishWithSuccess:^(AFHTTPRequestOperation * _Nonnull operation, id  _Nonnull responseObject) {
             LoginModel *model = [[LoginModel alloc] initWithDictionary:responseObject error:nil];
             if ([model.responseCode isEqualToString:@"100"]) {
-                [weakSelf dismissHud];
                 [userDefaults setObject:_usernameField.text forKey:keyUsername];
                 [userDefaults setObject:_passwordField.text forKey:keyPassword];
+                [userDefaults setObject:model.data forKey:keyUserType];
+                [weakSelf dismissHud];
                 [weakSelf presentViewController:mainVC animated:NO completion:nil];
             } else if ([model.responseCode isEqualToString:@"200"]) {
                 [SVProgressHUD showErrorWithStatus:@"用户名或密码不正确！"];
