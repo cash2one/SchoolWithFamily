@@ -10,9 +10,10 @@
 #import "HomeworkCell.h"
 #import "HomeworkDetailViewController.h"
 #import "Homework.h"
+#import "DeleteHomework.h"
 
 @interface HomeworkTableViewController () {
-    NSArray *_dataArr;
+    NSMutableArray *_dataArr;
 }
 
 @end
@@ -56,7 +57,7 @@
 - (void)loadHomeworkAll {
     [[NetworkManager sharedManager] requestByPostWithUrl:@"http://zesicus.site/interface/school_manager/homework_manage/showHomework.php" andDict:nil finishWithSuccess:^(AFHTTPRequestOperation * _Nonnull operation, id  _Nonnull responseObject) {
         Homework *model = [[Homework alloc] initWithDictionary:responseObject error:nil];
-        _dataArr = model.data;
+        _dataArr = [NSMutableArray arrayWithArray:model.data];
         [self.tableView reloadData];
     } orFailure:^(AFHTTPRequestOperation * _Nullable operation, NSError * _Nonnull error) {
         NSLog(@"取作业列表失败！/n%@", error);
@@ -67,7 +68,7 @@
     NSDictionary *dict = [self combineParamsLoadHomeworkByUser:username];
     [[NetworkManager sharedManager] requestByPostWithUrl:@"http://zesicus.site/interface/school_manager/homework_manage/showHomeworkByUserId.php" andDict:dict finishWithSuccess:^(AFHTTPRequestOperation * _Nonnull operation, id  _Nonnull responseObject) {
         Homework *model = [[Homework alloc] initWithDictionary:responseObject error:nil];
-        _dataArr = model.data;
+        _dataArr = [NSMutableArray arrayWithArray:model.data];
         [self.tableView reloadData];
     } orFailure:^(AFHTTPRequestOperation * _Nullable operation, NSError * _Nonnull error) {
         NSLog(@"取作业列表失败！/n%@", error);
@@ -77,6 +78,12 @@
 - (NSDictionary *)combineParamsLoadHomeworkByUser:(NSString *)username {
     NSMutableDictionary *dict = [NSMutableDictionary dictionary];
     [dict setObject:username forKey:@"userId"];
+    return dict.copy;
+}
+
+- (NSDictionary *)combineParamsForDeleteHomeworkById:(NSString *)homeworkId {
+    NSMutableDictionary *dict = [NSMutableDictionary dictionary];
+    [dict setObject:homeworkId forKey:@"homeworkId"];
     return dict.copy;
 }
 
@@ -126,48 +133,31 @@
     [self.navigationController pushViewController:detailVC animated:YES];
 }
 
-/*
-// Override to support conditional editing of the table view.
 - (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {
-    // Return NO if you do not want the specified item to be editable.
-    return YES;
+    HomeworkCell *cell = [tableView cellForRowAtIndexPath:indexPath];
+    if ([cell.scoreLabel.text isEqualToString:unmarked]) {
+        return YES;
+    } else {
+        return NO;
+    }
 }
-*/
 
-/*
-// Override to support editing the table view.
 - (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
     if (editingStyle == UITableViewCellEditingStyleDelete) {
-        // Delete the row from the data source
-        [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
-    } else if (editingStyle == UITableViewCellEditingStyleInsert) {
-        // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-    }   
+        if ([[userDefaults objectForKey:keyUserType] isEqualToString:@"2"]) {
+            NSDictionary *dict = [self combineParamsForDeleteHomeworkById:((HomeworkData *)_dataArr[indexPath.row]).homeworkId];
+            [[NetworkManager sharedManager] requestByPostWithUrl:@"http://zesicus.site/interface/school_manager/homework_manage/deleteHomework.php" andDict:dict finishWithSuccess:^(AFHTTPRequestOperation * _Nonnull operation, id  _Nonnull responseObject) {
+                DeleteHomework *model = [[DeleteHomework alloc] initWithDictionary:responseObject error:nil];
+                if ([model.responseCode isEqualToString:@"100"]) {
+                    [_dataArr removeObjectAtIndex:indexPath.row];
+                    [self.tableView reloadData];
+                }
+            } orFailure:^(AFHTTPRequestOperation * _Nullable operation, NSError * _Nonnull error) {
+                UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"删除失败！" message:@"请检查您的网络设置" delegate:nil cancelButtonTitle:@"确定" otherButtonTitles:nil, nil];
+                [alert show];
+            }];
+        }
+    }
 }
-*/
-
-/*
-// Override to support rearranging the table view.
-- (void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)fromIndexPath toIndexPath:(NSIndexPath *)toIndexPath {
-}
-*/
-
-/*
-// Override to support conditional rearranging of the table view.
-- (BOOL)tableView:(UITableView *)tableView canMoveRowAtIndexPath:(NSIndexPath *)indexPath {
-    // Return NO if you do not want the item to be re-orderable.
-    return YES;
-}
-*/
-
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 @end
