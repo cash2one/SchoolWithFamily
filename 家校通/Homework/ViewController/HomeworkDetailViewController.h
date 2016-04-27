@@ -10,6 +10,7 @@
 
 @interface HomeworkDetailViewController : UIViewController
 
+@property (strong, nonatomic) NSString *homeworkId;
 @property (strong, nonatomic) NSString *homeworkTitle;
 @property (strong, nonatomic) NSString *uploader;
 @property (strong, nonatomic) NSString *homeworkDetail;

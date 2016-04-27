@@ -21,11 +21,11 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    [self loadHomework];
 }
 
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
+    [self loadHomework];
     [self addPullToRefresh];
 }
 
@@ -100,6 +100,7 @@
     cell.detailLabel.text = ((HomeworkData *)_dataArr[indexPath.row]).homeworkDetail;
     cell.uploaderLabel.text = ((HomeworkData *)_dataArr[indexPath.row]).userId;
     cell.scoreLabel.text = ((HomeworkData *)_dataArr[indexPath.row]).homeworkScore?[NSString stringWithFormat:@"分数：%@", ((HomeworkData *)_dataArr[indexPath.row]).homeworkScore]:unmarked;
+    
     if ([cell.scoreLabel.text isEqualToString:unmarked]) {
         cell.scoreLabel.textColor = [UIColor grayColor];
     } else {
@@ -115,6 +116,7 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     HomeworkDetailViewController *detailVC = [HomeworkDetailViewController new];
+    detailVC.homeworkId = ((HomeworkData *)_dataArr[indexPath.row]).homeworkId;
     detailVC.homeworkTitle = ((HomeworkData *)_dataArr[indexPath.row]).homeworkTitle;
     detailVC.uploader = ((HomeworkData *)_dataArr[indexPath.row]).userId;
     detailVC.homeworkDetail = ((HomeworkData *)_dataArr[indexPath.row]).homeworkDetail;

@@ -7,6 +7,7 @@
 //
 
 #import "HomeworkDetailViewController.h"
+#import "UpdateHomework.h"
 
 @interface HomeworkDetailViewController () <UITextViewDelegate, UITextFieldDelegate> {
     UITabBar *_tabBar;
@@ -98,7 +99,14 @@
 #pragma mark - function
 - (void)changeUIText {
     self.navigationItem.title = @"作业详情";
-    _rightBarBtn = [[UIBarButtonItem alloc] initWithTitle:@"编辑  " style:UIBarButtonItemStylePlain target:self action:@selector(btnBehavior)];
+    if ([[userDefaults objectForKey:keyUserType] isEqualToString:@"2"]) {
+        _rightBarBtn = [[UIBarButtonItem alloc] initWithTitle:@"编辑  " style:UIBarButtonItemStylePlain target:self action:@selector(btnBehavior)];
+    } else if ([[userDefaults objectForKey:keyUserType] isEqualToString:@"1"]) {
+        _rightBarBtn = [[UIBarButtonItem alloc] initWithTitle:@"评分  " style:UIBarButtonItemStylePlain target:self action:@selector(btnBehavior)];
+    } else {
+        _rightBarBtn = nil;
+    }
+    
     self.navigationItem.rightBarButtonItem = _rightBarBtn;
     _titleTextField.text = _homeworkTitle;
     _uploaderLabel.text = _uploader;
@@ -129,27 +137,44 @@
         _detailTextView.editable = YES;
         _rightBarBtn.title = @"保存";
     } else if ([_rightBarBtn.title isEqualToString:@"保存"]) {
-        __block BOOL isSaved;
         //保存成功后返回，否则保存失败不返回
         [SVProgressHUD setDefaultStyle:SVProgressHUDStyleLight];
         [SVProgressHUD setDefaultMaskType:SVProgressHUDMaskTypeBlack];
         [SVProgressHUD showWithStatus:@"保存中..."];
+        WEAKSELF
         dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-            isSaved = YES;
-            if (isSaved) {
-                [SVProgressHUD showSuccessWithStatus:@"保存成功"];
-                dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.5 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-                    [SVProgressHUD dismiss];
-                    [self.navigationController popViewControllerAnimated:YES];
-                });
-            } else {
+            NSDictionary *dict = [weakSelf combineParamsForUpdateHomework];
+            [[NetworkManager sharedManager] requestByPostWithUrl:@"http://zesicus.site/interface/school_manager/homework_manage/updateHomeworkForStu.php" andDict:dict finishWithSuccess:^(AFHTTPRequestOperation * _Nonnull operation, id  _Nonnull responseObject) {
+                UpdateHomework *model = [[UpdateHomework alloc] initWithDictionary:responseObject error:nil];
+                if ([model.responseCode isEqualToString:@"100"]) {
+                    [SVProgressHUD showSuccessWithStatus:@"保存成功"];
+                    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.5 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+                        [SVProgressHUD dismiss];
+                        [weakSelf.navigationController popViewControllerAnimated:YES];
+                    });
+                } else {
+                    [SVProgressHUD showErrorWithStatus:@"保存失败！"];
+                    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.5 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+                        [SVProgressHUD dismiss];
+                    });
+                }
+            } orFailure:^(AFHTTPRequestOperation * _Nullable operation, NSError * _Nonnull error) {
                 [SVProgressHUD showErrorWithStatus:@"保存失败！"];
                 dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.5 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
                     [SVProgressHUD dismiss];
                 });
-            }
+                NSLog(@"%@", error);
+            }];
         });
     }
+}
+
+- (NSDictionary *)combineParamsForUpdateHomework {
+    NSMutableDictionary *dict = [NSMutableDictionary dictionary];
+    [dict setObject:_homeworkId forKey:@"homeworkId"];
+    [dict setObject:_titleTextField.text forKey:@"homeworkTitle"];
+    [dict setObject:_detailTextView.text forKey:@"homeworkDetail"];
+    return dict.copy;
 }
 
 - (void)changeTextViewHight:(CGFloat)height {

@@ -32,6 +32,7 @@
 		596C80C51C706D6C00CFF0DA /* MainTabBarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 596C80C41C706D6C00CFF0DA /* MainTabBarViewController.m */; };
 		596C80D11C70725C00CFF0DA /* TempViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 596C80D01C70725C00CFF0DA /* TempViewController.m */; };
 		59B62BB41CD05151004687D4 /* Reveal.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 59B62BB31CD05151004687D4 /* Reveal.framework */; };
+		59B62BBA1CD0A9B3004687D4 /* UpdateHomework.m in Sources */ = {isa = PBXBuildFile; fileRef = 59B62BB91CD0A9B3004687D4 /* UpdateHomework.m */; };
 		59E8EA761CCF2523006AE0B7 /* Homework.m in Sources */ = {isa = PBXBuildFile; fileRef = 59E8EA751CCF2523006AE0B7 /* Homework.m */; };
 		59E8EA7A1CCF2C6B006AE0B7 /* NetworkManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 59E8EA791CCF2C6B006AE0B7 /* NetworkManager.m */; };
 		B65EBF61778FD0D2E93B58E5 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3225A0A78324430BE11DBB07 /* libPods.a */; };
@@ -106,6 +107,8 @@
 		596C80CF1C70725C00CFF0DA /* TempViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TempViewController.h; path = MainInterface/TempViewController.h; sourceTree = "<group>"; };
 		596C80D01C70725C00CFF0DA /* TempViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TempViewController.m; path = MainInterface/TempViewController.m; sourceTree = "<group>"; };
 		59B62BB31CD05151004687D4 /* Reveal.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Reveal.framework; sourceTree = "<group>"; };
+		59B62BB81CD0A9B3004687D4 /* UpdateHomework.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UpdateHomework.h; sourceTree = "<group>"; };
+		59B62BB91CD0A9B3004687D4 /* UpdateHomework.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UpdateHomework.m; sourceTree = "<group>"; };
 		59E8EA741CCF2523006AE0B7 /* Homework.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Homework.h; sourceTree = "<group>"; };
 		59E8EA751CCF2523006AE0B7 /* Homework.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Homework.m; sourceTree = "<group>"; };
 		59E8EA781CCF2C6B006AE0B7 /* NetworkManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NetworkManager.h; sourceTree = "<group>"; };
@@ -315,6 +318,8 @@
 			children = (
 				59E8EA741CCF2523006AE0B7 /* Homework.h */,
 				59E8EA751CCF2523006AE0B7 /* Homework.m */,
+				59B62BB81CD0A9B3004687D4 /* UpdateHomework.h */,
+				59B62BB91CD0A9B3004687D4 /* UpdateHomework.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -572,6 +577,7 @@
 				5918DB551CC6190000430C80 /* UIImage+Alpha.m in Sources */,
 				5902603C1CBCA79E0068E825 /* LaunchDemo.m in Sources */,
 				594F854C1CBF280C0016F9B2 /* HomeworkTableViewController.m in Sources */,
+				59B62BBA1CD0A9B3004687D4 /* UpdateHomework.m in Sources */,
 				594F855A1CBF88D00016F9B2 /* HomeworkCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
