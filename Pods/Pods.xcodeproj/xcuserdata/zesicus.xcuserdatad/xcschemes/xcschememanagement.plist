@@ -9,6 +9,11 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>JCAlertView.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>JElasticPullToRefresh.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -47,7 +52,7 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>6E51C00A52F572E662458EECD57C5272</key>
+		<key>8E16F23C3941DDC72C45FC1B5C8EE8CD</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -57,12 +62,17 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>C0163B997BA6D31A4889A86B2CB472A9</key>
+		<key>B2977580C1BB92606D5279BD149981EF</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>E2547877D4981724A54C803831D8910C</key>
+		<key>DFCACAD79617005485C7692644CC113C</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>E78A419BB2EDB97878325476730956D3</key>
 		<dict>
 			<key>primary</key>
 			<true/>

@@ -20,6 +20,7 @@ PODS:
   - AFNetworking/UIKit (2.6.3):
     - AFNetworking/NSURLConnection
     - AFNetworking/NSURLSession
+  - JCAlertView (1.1.5)
   - JElasticPullToRefresh (1.0.3)
   - JSONModel (1.2.0)
   - SVProgressHUD (2.0.3)
@@ -27,6 +28,7 @@ PODS:
 
 DEPENDENCIES:
   - AFNetworking (~> 2.6.1)
+  - JCAlertView
   - JElasticPullToRefresh
   - JSONModel
   - SVProgressHUD (from `https://github.com/SVProgressHUD/SVProgressHUD.git`)
@@ -43,6 +45,7 @@ CHECKOUT OPTIONS:
 
 SPEC CHECKSUMS:
   AFNetworking: cb8d14a848e831097108418f5d49217339d4eb60
+  JCAlertView: c65a7b298b8b497b3db783d82f719b88f4914869
   JElasticPullToRefresh: 63b15bfbb96ea476dce3df9460509d59473b1e94
   JSONModel: 12523685c4b623553ccf844bbbf7007624317b2c
   SVProgressHUD: b0830714205bea1317ea1a2ebc71e5633af334d4

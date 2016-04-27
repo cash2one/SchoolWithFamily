@@ -16,6 +16,9 @@
     NSMutableArray *_dataArr;
 }
 
+@property (nonatomic, strong) JRMessageView *successMsg;
+@property (nonatomic, strong) JRMessageView *failureMsg;
+
 @end
 
 @implementation HomeworkTableViewController
@@ -23,15 +26,34 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.tableView.tableFooterView = [UIView new];
+    [self configJRMessageView];
+    [self addPullToRefresh];
 }
 
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
+    [self setNeedsStatusBarAppearanceUpdate];
     [self loadHomework];
-    [self addPullToRefresh];
 }
 
 #pragma mark - Function
+- (void)configJRMessageView {
+    self.successMsg = [[JRMessageView alloc] initWithTitle:@"删除成功"
+                                                subTitle:nil
+                                                iconName:@"11"
+                                             messageType:JRMessageViewTypeSuccess
+                                         messagePosition:JRMessagePositionNavBarOverlay
+                                                 superVC:self
+                                                duration:1.5];
+    self.failureMsg = [[JRMessageView alloc] initWithTitle:@"删除失败"
+                                                  subTitle:nil
+                                                  iconName:@"请检查网络设置"
+                                               messageType:JRMessageViewTypeSuccess
+                                           messagePosition:JRMessagePositionNavBarOverlay
+                                                   superVC:self
+                                                  duration:2];
+}
+
 - (void)addPullToRefresh {
     WEAKSELF
     JElasticPullToRefreshLoadingViewCircle *loadingViewCircle = [[JElasticPullToRefreshLoadingViewCircle alloc] init];
@@ -68,6 +90,7 @@
     NSDictionary *dict = [self combineParamsLoadHomeworkByUser:username];
     [[NetworkManager sharedManager] requestByPostWithUrl:@"http://zesicus.site/interface/school_manager/homework_manage/showHomeworkByUserId.php" andDict:dict finishWithSuccess:^(AFHTTPRequestOperation * _Nonnull operation, id  _Nonnull responseObject) {
         Homework *model = [[Homework alloc] initWithDictionary:responseObject error:nil];
+        [_dataArr removeAllObjects];
         _dataArr = [NSMutableArray arrayWithArray:model.data];
         [self.tableView reloadData];
     } orFailure:^(AFHTTPRequestOperation * _Nullable operation, NSError * _Nonnull error) {
@@ -146,15 +169,20 @@
     if (editingStyle == UITableViewCellEditingStyleDelete) {
         if ([[userDefaults objectForKey:keyUserType] isEqualToString:@"2"]) {
             NSDictionary *dict = [self combineParamsForDeleteHomeworkById:((HomeworkData *)_dataArr[indexPath.row]).homeworkId];
-            [[NetworkManager sharedManager] requestByPostWithUrl:@"http://zesicus.site/interface/school_manager/homework_manage/deleteHomework.php" andDict:dict finishWithSuccess:^(AFHTTPRequestOperation * _Nonnull operation, id  _Nonnull responseObject) {
-                DeleteHomework *model = [[DeleteHomework alloc] initWithDictionary:responseObject error:nil];
-                if ([model.responseCode isEqualToString:@"100"]) {
-                    [_dataArr removeObjectAtIndex:indexPath.row];
-                    [self.tableView reloadData];
-                }
-            } orFailure:^(AFHTTPRequestOperation * _Nullable operation, NSError * _Nonnull error) {
-                UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"删除失败！" message:@"请检查您的网络设置" delegate:nil cancelButtonTitle:@"确定" otherButtonTitles:nil, nil];
-                [alert show];
+            WEAKSELF
+            [JCAlertView showTwoButtonsWithTitle:@"警告❗️" Message:@"确认删除该作业吗？" ButtonType:JCAlertViewButtonTypeCancel ButtonTitle:@"取消" Click:^{
+                [weakSelf.tableView reloadData];
+            } ButtonType:JCAlertViewButtonTypeDefault ButtonTitle:@"确定" Click:^{
+                [[NetworkManager sharedManager] requestByPostWithUrl:@"http://zesicus.site/interface/school_manager/homework_manage/deleteHomework.php" andDict:dict finishWithSuccess:^(AFHTTPRequestOperation * _Nonnull operation, id  _Nonnull responseObject) {
+                    DeleteHomework *model = [[DeleteHomework alloc] initWithDictionary:responseObject error:nil];
+                    if ([model.responseCode isEqualToString:@"100"]) {
+                        [_dataArr removeObjectAtIndex:indexPath.row];
+                        [weakSelf.tableView reloadData];
+                    }
+                    [_successMsg showMessageView];
+                } orFailure:^(AFHTTPRequestOperation * _Nullable operation, NSError * _Nonnull error) {
+                    [_failureMsg showMessageView];
+                }];
             }];
         }
     }
