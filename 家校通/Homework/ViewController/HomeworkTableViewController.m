@@ -115,8 +115,11 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     HomeworkDetailViewController *detailVC = [HomeworkDetailViewController new];
-    HomeworkCell *currentCell = [tableView cellForRowAtIndexPath:indexPath];
-    detailVC.score = currentCell.scoreLabel.text;
+    detailVC.homeworkTitle = ((HomeworkData *)_dataArr[indexPath.row]).homeworkTitle;
+    detailVC.uploader = ((HomeworkData *)_dataArr[indexPath.row]).userId;
+    detailVC.homeworkDetail = ((HomeworkData *)_dataArr[indexPath.row]).homeworkDetail;
+    detailVC.uploadDate = ((HomeworkData *)_dataArr[indexPath.row]).homeworkDate;
+    detailVC.score = ((HomeworkData *)_dataArr[indexPath.row]).homeworkScore?[NSString stringWithFormat:@"分数：%@", ((HomeworkData *)_dataArr[indexPath.row]).homeworkScore]:unmarked;
     [self.navigationController pushViewController:detailVC animated:YES];
 }
 

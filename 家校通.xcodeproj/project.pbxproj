@@ -29,9 +29,9 @@
 		594F855A1CBF88D00016F9B2 /* HomeworkCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 594F85581CBF88D00016F9B2 /* HomeworkCell.m */; };
 		594F855B1CBF88D00016F9B2 /* HomeworkCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 594F85591CBF88D00016F9B2 /* HomeworkCell.xib */; };
 		594F85641CBF996A0016F9B2 /* HomeworkDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 594F85621CBF996A0016F9B2 /* HomeworkDetailViewController.m */; };
-		594F85651CBF996A0016F9B2 /* HomeworkDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 594F85631CBF996A0016F9B2 /* HomeworkDetailViewController.xib */; };
 		596C80C51C706D6C00CFF0DA /* MainTabBarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 596C80C41C706D6C00CFF0DA /* MainTabBarViewController.m */; };
 		596C80D11C70725C00CFF0DA /* TempViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 596C80D01C70725C00CFF0DA /* TempViewController.m */; };
+		59B62BB41CD05151004687D4 /* Reveal.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 59B62BB31CD05151004687D4 /* Reveal.framework */; };
 		59E8EA761CCF2523006AE0B7 /* Homework.m in Sources */ = {isa = PBXBuildFile; fileRef = 59E8EA751CCF2523006AE0B7 /* Homework.m */; };
 		59E8EA7A1CCF2C6B006AE0B7 /* NetworkManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 59E8EA791CCF2C6B006AE0B7 /* NetworkManager.m */; };
 		B65EBF61778FD0D2E93B58E5 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3225A0A78324430BE11DBB07 /* libPods.a */; };
@@ -101,11 +101,11 @@
 		594F85591CBF88D00016F9B2 /* HomeworkCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HomeworkCell.xib; sourceTree = "<group>"; };
 		594F85611CBF996A0016F9B2 /* HomeworkDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeworkDetailViewController.h; sourceTree = "<group>"; };
 		594F85621CBF996A0016F9B2 /* HomeworkDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeworkDetailViewController.m; sourceTree = "<group>"; };
-		594F85631CBF996A0016F9B2 /* HomeworkDetailViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HomeworkDetailViewController.xib; sourceTree = "<group>"; };
 		596C80C31C706D6C00CFF0DA /* MainTabBarViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MainTabBarViewController.h; path = MainInterface/MainTabBarViewController.h; sourceTree = "<group>"; };
 		596C80C41C706D6C00CFF0DA /* MainTabBarViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MainTabBarViewController.m; path = MainInterface/MainTabBarViewController.m; sourceTree = "<group>"; };
 		596C80CF1C70725C00CFF0DA /* TempViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TempViewController.h; path = MainInterface/TempViewController.h; sourceTree = "<group>"; };
 		596C80D01C70725C00CFF0DA /* TempViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TempViewController.m; path = MainInterface/TempViewController.m; sourceTree = "<group>"; };
+		59B62BB31CD05151004687D4 /* Reveal.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Reveal.framework; sourceTree = "<group>"; };
 		59E8EA741CCF2523006AE0B7 /* Homework.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Homework.h; sourceTree = "<group>"; };
 		59E8EA751CCF2523006AE0B7 /* Homework.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Homework.m; sourceTree = "<group>"; };
 		59E8EA781CCF2C6B006AE0B7 /* NetworkManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NetworkManager.h; sourceTree = "<group>"; };
@@ -119,6 +119,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B65EBF61778FD0D2E93B58E5 /* libPods.a in Frameworks */,
+				59B62BB41CD05151004687D4 /* Reveal.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -142,6 +143,7 @@
 		2E3150A0A0125EF808284664 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				59B62BB31CD05151004687D4 /* Reveal.framework */,
 				3225A0A78324430BE11DBB07 /* libPods.a */,
 				35B5A2B5C8240CFC4B90A48D /* libPods-家校通.a */,
 			);
@@ -334,7 +336,6 @@
 				594F854B1CBF280C0016F9B2 /* HomeworkTableViewController.m */,
 				594F85611CBF996A0016F9B2 /* HomeworkDetailViewController.h */,
 				594F85621CBF996A0016F9B2 /* HomeworkDetailViewController.m */,
-				594F85631CBF996A0016F9B2 /* HomeworkDetailViewController.xib */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -476,7 +477,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				594F85651CBF996A0016F9B2 /* HomeworkDetailViewController.xib in Resources */,
 				59269ABD1CA8C7FE00CC9620 /* Main.storyboard in Resources */,
 				59269ABB1CA8C7FE00CC9620 /* Assets.xcassets in Resources */,
 				59269ABC1CA8C7FE00CC9620 /* LaunchScreen.storyboard in Resources */,
@@ -717,11 +717,20 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				GCC_PREFIX_HEADER = "$(SRCROOT)/家校通/Supporting Files/PrefixHeader.pch";
 				INFOPLIST_FILE = "家校通/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				OTHER_LDFLAGS = "$(inherited)";
+				OTHER_LDFLAGS = (
+					"$(inherited)",
+					"-ObjC",
+					"-lz",
+					"-framework",
+					Reveal,
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.Nine.jxt;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "50193d1c-b10e-4366-9fed-4ffac3132a51";
@@ -735,7 +744,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				GCC_PREFIX_HEADER = "$(SRCROOT)/家校通/Supporting Files/PrefixHeader.pch";
 				INFOPLIST_FILE = "家校通/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";

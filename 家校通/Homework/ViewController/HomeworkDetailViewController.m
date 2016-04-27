@@ -13,11 +13,11 @@
     UIBarButtonItem *_rightBarBtn;
 }
 
-@property (weak, nonatomic) IBOutlet UITextField *titleTextField;
-@property (weak, nonatomic) IBOutlet UILabel *uploaderLabel;
-@property (weak, nonatomic) IBOutlet UITextView *detailTextView;
-@property (weak, nonatomic) IBOutlet UILabel *dateLabel;
-@property (weak, nonatomic) IBOutlet UILabel *scoreLabel;
+@property (strong, nonatomic) UITextField *titleTextField;
+@property (strong, nonatomic) UILabel *uploaderLabel;
+@property (strong, nonatomic) UITextView *detailTextView;
+@property (strong, nonatomic) UILabel *dateLabel;
+@property (strong, nonatomic) UILabel *scoreLabel;
 
 @end
 
@@ -25,26 +25,55 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.view.backgroundColor = [UIColor whiteColor];
     _tabBar = self.tabBarController.tabBar;
-    
-    self.navigationItem.title = @"作业详情";
-    _rightBarBtn = [[UIBarButtonItem alloc] initWithTitle:@"编辑  " style:UIBarButtonItemStylePlain target:self action:@selector(behavior)];
-    self.navigationItem.rightBarButtonItem = _rightBarBtn;
-    
-    _titleTextField.delegate = self;
-    _detailTextView.delegate = self;
+    [self addSubviews];
 }
 
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
+    [self changeUIText];
     [self hideTabBar];
     
-    _scoreLabel.textColor = [UIColor grayColor];
-    _scoreLabel.text = _score;
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboarWillShow:) name:UIKeyboardWillShowNotification object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardWillHide:) name:UIKeyboardWillHideNotification object:nil];
 }
 
 - (void)viewWillDisappear:(BOOL)animated {
     [self showTabBar];
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
+}
+
+- (void)addSubviews {
+    _titleTextField = [[UITextField alloc] initWithFrame:CGRectMake(16, 20, kScreenWidth-32, 40)];
+    [_titleTextField setFont:[UIFont systemFontOfSize:22.0]];
+    [_titleTextField setTextAlignment:NSTextAlignmentCenter];
+    _titleTextField.delegate = self;
+    [_titleTextField setEnabled:NO];
+    [self.view addSubview:_titleTextField];
+    
+    _uploaderLabel = [[UILabel alloc] initWithFrame:CGRectMake(16, 20+40+8, kScreenWidth-32, 20)];
+    [_uploaderLabel setFont:[UIFont systemFontOfSize:15.0]];
+    [_uploaderLabel setTextAlignment:NSTextAlignmentCenter];
+    [_uploaderLabel setTextColor:[UIColor grayColor]];
+    [self.view addSubview:_uploaderLabel];
+    
+    _dateLabel = [[UILabel alloc] initWithFrame:CGRectMake(16, kScreenHeight-10-20-64, 200, 20)];
+    [_dateLabel setTextColor:[UIColor grayColor]];
+    [_dateLabel setFont:[UIFont systemFontOfSize:14.0]];
+    [self.view addSubview:_dateLabel];
+    
+    _scoreLabel = [[UILabel alloc] initWithFrame:CGRectMake(216, kScreenHeight-10-20-64, kScreenWidth-232, 20)];
+    [_scoreLabel setTextColor:[UIColor grayColor]];
+    [_scoreLabel setFont:[UIFont systemFontOfSize:14.0]];
+    [_scoreLabel setTextAlignment:NSTextAlignmentRight];
+    [self.view addSubview:_scoreLabel];
+    
+    _detailTextView = [[UITextView alloc] initWithFrame:CGRectMake(16, 96, kScreenWidth-32, kScreenHeight-96-40-64)];
+    [_detailTextView setFont:[UIFont systemFontOfSize:15.0]];
+    _detailTextView.delegate = self;
+    [_detailTextView setEditable:NO];
+    [self.view addSubview:_detailTextView];
 }
 
 #pragma mark - Tab bar
@@ -67,7 +96,23 @@
 }
 
 #pragma mark - function
-- (void)behavior {
+- (void)changeUIText {
+    self.navigationItem.title = @"作业详情";
+    _rightBarBtn = [[UIBarButtonItem alloc] initWithTitle:@"编辑  " style:UIBarButtonItemStylePlain target:self action:@selector(btnBehavior)];
+    self.navigationItem.rightBarButtonItem = _rightBarBtn;
+    _titleTextField.text = _homeworkTitle;
+    _uploaderLabel.text = _uploader;
+    _detailTextView.text = _homeworkDetail;
+    _dateLabel.text = _uploadDate;
+    _scoreLabel.text = _score;
+    if ([_score isEqualToString:unmarked]) {
+        _scoreLabel.textColor = [UIColor grayColor];
+    } else {
+        _scoreLabel.textColor = [UIColor redColor];
+    }
+}
+
+- (void)btnBehavior {
     if ([_rightBarBtn.title isEqualToString:@"编辑  "]) {
         _titleTextField.enabled = YES;
         _detailTextView.editable = YES;
@@ -80,8 +125,8 @@
     } else if ([_rightBarBtn.title isEqualToString:@"完成"]) {
         [_titleTextField resignFirstResponder];
         [_detailTextView resignFirstResponder];
-        _titleTextField.enabled = NO;
-        _detailTextView.editable = NO;
+        _titleTextField.enabled = YES;
+        _detailTextView.editable = YES;
         _rightBarBtn.title = @"保存";
     } else if ([_rightBarBtn.title isEqualToString:@"保存"]) {
         __block BOOL isSaved;
@@ -107,6 +152,10 @@
     }
 }
 
+- (void)changeTextViewHight:(CGFloat)height {
+    [_detailTextView setFrame:CGRectMake(16, 96, kScreenWidth-32, height)];
+}
+
 #pragma mark - UITextFieldDelegate
 - (BOOL)textFieldShouldReturn:(UITextField *)textField {
     [_titleTextField resignFirstResponder];
@@ -124,6 +173,34 @@
 #pragma mark - UITextViewDelegate
 - (void)textViewDidChange:(UITextView *)textView {
     _rightBarBtn.title = @"完成";
+}
+
+#pragma mark - Keyboard
+- (void)keyboarWillShow:(NSNotification *)notification {
+    CGRect keyboardFrame = [[[notification userInfo] objectForKey:UIKeyboardFrameEndUserInfoKey] CGRectValue];
+    //键盘弹出时间
+    NSValue *animationDurationValue = [[notification userInfo] objectForKey:UIKeyboardAnimationDurationUserInfoKey];
+    NSTimeInterval animationDuration;
+    [animationDurationValue getValue:&animationDuration];
+    //更改TextView高度
+    WEAKSELF
+    [UIView animateWithDuration:animationDuration animations:^{
+        [weakSelf changeTextViewHight:kScreenHeight-96-40-64-keyboardFrame.size.height];
+    }];
+    _rightBarBtn.title = @"完成";
+}
+
+- (void)keyboardWillHide:(NSNotification *)notification {
+    //键盘弹出时间
+    NSValue *animationDurationValue = [[notification userInfo] objectForKey:UIKeyboardAnimationDurationUserInfoKey];
+    NSTimeInterval animationDuration;
+    [animationDurationValue getValue:&animationDuration];
+    //更改TextView高度
+    WEAKSELF
+    [UIView animateWithDuration:animationDuration animations:^{
+        [weakSelf changeTextViewHight:kScreenHeight-96-40-64];
+    }];
+    _rightBarBtn.title = @"保存";
 }
 
 @end
