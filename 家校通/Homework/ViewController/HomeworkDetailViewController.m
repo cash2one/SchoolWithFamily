@@ -99,7 +99,7 @@
 #pragma mark - function
 - (void)changeUIText {
     self.navigationItem.title = @"作业详情";
-    if ([[userDefaults objectForKey:keyUserType] isEqualToString:@"2"]) {
+    if ([[userDefaults objectForKey:keyUserType] isEqualToString:@"2"] && [_score isEqualToString:unmarked]) {
         _rightBarBtn = [[UIBarButtonItem alloc] initWithTitle:@"编辑  " style:UIBarButtonItemStylePlain target:self action:@selector(btnBehavior)];
     } else if ([[userDefaults objectForKey:keyUserType] isEqualToString:@"1"]) {
         _rightBarBtn = [[UIBarButtonItem alloc] initWithTitle:@"评分  " style:UIBarButtonItemStylePlain target:self action:@selector(btnBehavior)];
