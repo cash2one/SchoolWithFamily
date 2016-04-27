@@ -17,6 +17,7 @@
 #import "NetworkManager.h"
 #import <JCAlertView.h>
 #import "JRMessageView.h"
+#import "ChangeStatusBarDelegate.h"
 
 //屏幕大小
 #define kScreenFrame [UIScreen mainScreen].bounds

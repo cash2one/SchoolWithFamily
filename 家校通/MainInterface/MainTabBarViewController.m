@@ -40,12 +40,14 @@
     
     /* 添加子控制器 */
     //＊＊班级新闻
-    _NewsVC = [[NewsViewController alloc] init];
-    _NewsVC.isStatusBarHidden = _shouldShowLaunchAnimation;
-    [self setUpChildControllerWith:_NewsVC norImage:[UIImage imageNamed:@"tabBar_essence_icon"] selImage:[UIImage imageNamed:@"tabBar_essence_click_icon"] title:@"学院要闻"];
+    _newsVC = [[NewsViewController alloc] init];
+    _newsVC.isStatusBarHidden = _shouldShowLaunchAnimation;
+    [self setUpChildControllerWith:_newsVC norImage:[UIImage imageNamed:@"tabBar_essence_icon"] selImage:[UIImage imageNamed:@"tabBar_essence_click_icon"] title:@"学院要闻"];
     
     //＊＊作业管理
-    [self setUpChildControllerWith:[HomeworkTableViewController new] norImage:[UIImage imageNamed:@"tabBar_new_icon"] selImage:[UIImage imageNamed:@"tabBar_new_click_icon"] title:@"作业管理"];
+    _homeworkVC = [HomeworkTableViewController new];
+    _homeworkVC.delegate = self;
+    [self setUpChildControllerWith:_homeworkVC norImage:[UIImage imageNamed:@"tabBar_new_icon"] selImage:[UIImage imageNamed:@"tabBar_new_click_icon"] title:@"作业管理"];
     
     //＊＊实时交流
     [self setUpChildControllerWith:[TempViewController new] norImage:[UIImage imageNamed:@"tabBar_me_icon"] selImage:[UIImage imageNamed:@"tabBar_me_click_icon"] title:@"实时交流"];
@@ -84,7 +86,11 @@
 
 #pragma mark - status bar
 - (UIViewController *)childViewControllerForStatusBarStyle {
-    return _NewsVC;
+    return _newsVC;
+}
+
+- (void)refreshStatusBar {
+    [self setNeedsStatusBarAppearanceUpdate];
 }
 
 @end

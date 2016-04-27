@@ -8,8 +8,9 @@
 
 #import <UIKit/UIKit.h>
 #import "NewsViewController.h"
+#import "HomeworkTableViewController.h"
 
-@interface MainTabBarViewController : UITabBarController {
+@interface MainTabBarViewController : UITabBarController <ChangeStatusBarDelegate> {
     BOOL _isStatusBarHidden;
 }
 
@@ -17,6 +18,7 @@
 @property (nonatomic, assign) BOOL shouldShowLaunchAnimation;
 
 //子ViewController
-@property (nonatomic, strong) NewsViewController *NewsVC;
+@property (nonatomic, strong) NewsViewController *newsVC;
+@property (nonatomic, strong) HomeworkTableViewController *homeworkVC;
 
 @end

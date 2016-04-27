@@ -171,6 +171,7 @@
             NSDictionary *dict = [self combineParamsForDeleteHomeworkById:((HomeworkData *)_dataArr[indexPath.row]).homeworkId];
             WEAKSELF
             [JCAlertView showTwoButtonsWithTitle:@"警告❗️" Message:@"确认删除该作业吗？" ButtonType:JCAlertViewButtonTypeCancel ButtonTitle:@"取消" Click:^{
+                [_delegate refreshStatusBar];
                 [weakSelf.tableView reloadData];
             } ButtonType:JCAlertViewButtonTypeDefault ButtonTitle:@"确定" Click:^{
                 [[NetworkManager sharedManager] requestByPostWithUrl:@"http://zesicus.site/interface/school_manager/homework_manage/deleteHomework.php" andDict:dict finishWithSuccess:^(AFHTTPRequestOperation * _Nonnull operation, id  _Nonnull responseObject) {

@@ -10,4 +10,6 @@
 
 @interface HomeworkTableViewController : UITableViewController
 
+@property (strong, nonatomic) id <ChangeStatusBarDelegate> delegate;
+
 @end

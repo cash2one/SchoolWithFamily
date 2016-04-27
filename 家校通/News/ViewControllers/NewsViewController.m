@@ -77,10 +77,11 @@
 - (void)delayShowStatusBar {
     if (_isStatusBarHidden) {
         //等待Launch动画结束，动态滑入状态栏，NavigationController下也很自然
+        WEAKSELF
         dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(2 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
             _isStatusBarHidden = NO;
             [UIView animateWithDuration:0.5 animations:^{
-                [self setNeedsStatusBarAppearanceUpdate];
+                [weakSelf setNeedsStatusBarAppearanceUpdate];
             }];
         });
     }
