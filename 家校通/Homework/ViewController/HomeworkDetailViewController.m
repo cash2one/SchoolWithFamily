@@ -9,6 +9,7 @@
 #import "HomeworkDetailViewController.h"
 #import "UpdateHomework.h"
 #import "GradeHomework.h"
+#import "NewHomeworkViewController.h"
 
 @interface HomeworkDetailViewController () <UITextViewDelegate, UITextFieldDelegate> {
     UITabBar *_tabBar;

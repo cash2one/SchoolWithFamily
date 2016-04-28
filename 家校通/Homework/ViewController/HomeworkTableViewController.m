@@ -11,6 +11,7 @@
 #import "HomeworkDetailViewController.h"
 #import "Homework.h"
 #import "DeleteHomework.h"
+#import "NewHomeworkViewController.h"
 
 @interface HomeworkTableViewController () {
     NSMutableArray *_dataArr;
@@ -18,6 +19,7 @@
 
 @property (nonatomic, strong) JRMessageView *successMsg;
 @property (nonatomic, strong) JRMessageView *failureMsg;
+@property (nonatomic, strong) UIBarButtonItem *createHomeworkBtn;
 
 @end
 
@@ -28,6 +30,7 @@
     self.tableView.tableFooterView = [UIView new];
     [self configJRMessageView];
     [self addPullToRefresh];
+    [self configRightBarBtn];
 }
 
 - (void)viewWillAppear:(BOOL)animated {
@@ -37,6 +40,13 @@
 }
 
 #pragma mark - Function
+- (void)configRightBarBtn {
+    if ([[userDefaults objectForKey:keyUserType] isEqualToString:@"2"]) {
+        _createHomeworkBtn = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(createNewHomework)];
+        self.navigationItem.rightBarButtonItem = _createHomeworkBtn;
+    }
+}
+
 - (void)configJRMessageView {
     self.successMsg = [[JRMessageView alloc] initWithTitle:@"删除成功"
                                                 subTitle:nil
@@ -66,6 +76,11 @@
     } LoadingView:loadingViewCircle];
     [self.tableView setJElasticPullToRefreshFillColor:kCommonColor];
     [self.tableView setJElasticPullToRefreshBackgroundColor:[UIColor whiteColor]];
+}
+
+- (void)createNewHomework {
+    NewHomeworkViewController *newHomeworkVC = [NewHomeworkViewController new];
+    [self.navigationController pushViewController:newHomeworkVC animated:YES];
 }
 
 - (void)loadHomework {

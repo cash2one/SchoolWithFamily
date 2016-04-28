@@ -26,6 +26,9 @@
 		59269ABC1CA8C7FE00CC9620 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 59269AB31CA8C7FE00CC9620 /* LaunchScreen.storyboard */; };
 		59269ABD1CA8C7FE00CC9620 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 59269AB51CA8C7FE00CC9620 /* Main.storyboard */; };
 		59269ABF1CA8C7FE00CC9620 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 59269AB81CA8C7FE00CC9620 /* main.m */; };
+		592F883C1CD2208F001BAD11 /* UserTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 592F883B1CD2208F001BAD11 /* UserTableViewController.m */; };
+		592F88421CD2237A001BAD11 /* NewHomeworkViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 592F88411CD2237A001BAD11 /* NewHomeworkViewController.m */; };
+		592F88451CD270AB001BAD11 /* CommitHomework.m in Sources */ = {isa = PBXBuildFile; fileRef = 592F88441CD270AB001BAD11 /* CommitHomework.m */; };
 		594F854C1CBF280C0016F9B2 /* HomeworkTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 594F854B1CBF280C0016F9B2 /* HomeworkTableViewController.m */; };
 		594F855A1CBF88D00016F9B2 /* HomeworkCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 594F85581CBF88D00016F9B2 /* HomeworkCell.m */; };
 		594F855B1CBF88D00016F9B2 /* HomeworkCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 594F85591CBF88D00016F9B2 /* HomeworkCell.xib */; };
@@ -100,6 +103,12 @@
 		59269AB81CA8C7FE00CC9620 /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		59269AB91CA8C7FE00CC9620 /* PrefixHeader.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PrefixHeader.pch; path = "Supporting Files/PrefixHeader.pch"; sourceTree = "<group>"; };
 		59269AC31CA8CA8F00CC9620 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = ../Info.plist; sourceTree = "<group>"; };
+		592F883A1CD2208F001BAD11 /* UserTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserTableViewController.h; sourceTree = "<group>"; };
+		592F883B1CD2208F001BAD11 /* UserTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserTableViewController.m; sourceTree = "<group>"; };
+		592F88401CD2237A001BAD11 /* NewHomeworkViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewHomeworkViewController.h; sourceTree = "<group>"; };
+		592F88411CD2237A001BAD11 /* NewHomeworkViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewHomeworkViewController.m; sourceTree = "<group>"; };
+		592F88431CD270AB001BAD11 /* CommitHomework.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CommitHomework.h; sourceTree = "<group>"; };
+		592F88441CD270AB001BAD11 /* CommitHomework.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CommitHomework.m; sourceTree = "<group>"; };
 		594F854A1CBF280C0016F9B2 /* HomeworkTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeworkTableViewController.h; sourceTree = "<group>"; };
 		594F854B1CBF280C0016F9B2 /* HomeworkTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeworkTableViewController.m; sourceTree = "<group>"; };
 		594F85571CBF88D00016F9B2 /* HomeworkCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeworkCell.h; sourceTree = "<group>"; };
@@ -223,6 +232,7 @@
 				596C80C21C706CE000CFF0DA /* MainInterface */,
 				59269AAA1CA8C7ED00CC9620 /* News */,
 				594F85421CBF27840016F9B2 /* Homework */,
+				592F88391CD21D03001BAD11 /* User */,
 				595118611CC5CE0800AB503A /* Utility */,
 				590260351CBCA7750068E825 /* Libs */,
 				59269AAF1CA8C7FE00CC9620 /* Supporting Files */,
@@ -314,6 +324,15 @@
 			path = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		592F88391CD21D03001BAD11 /* User */ = {
+			isa = PBXGroup;
+			children = (
+				592F883A1CD2208F001BAD11 /* UserTableViewController.h */,
+				592F883B1CD2208F001BAD11 /* UserTableViewController.m */,
+			);
+			path = User;
+			sourceTree = "<group>";
+		};
 		594F85421CBF27840016F9B2 /* Homework */ = {
 			isa = PBXGroup;
 			children = (
@@ -335,6 +354,8 @@
 				59B62BBC1CD0D282004687D4 /* DeleteHomework.m */,
 				590DB3451CD1F80700540AFB /* GradeHomework.h */,
 				590DB3461CD1F80700540AFB /* GradeHomework.m */,
+				592F88431CD270AB001BAD11 /* CommitHomework.h */,
+				592F88441CD270AB001BAD11 /* CommitHomework.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -356,6 +377,8 @@
 				594F854B1CBF280C0016F9B2 /* HomeworkTableViewController.m */,
 				594F85611CBF996A0016F9B2 /* HomeworkDetailViewController.h */,
 				594F85621CBF996A0016F9B2 /* HomeworkDetailViewController.m */,
+				592F88401CD2237A001BAD11 /* NewHomeworkViewController.h */,
+				592F88411CD2237A001BAD11 /* NewHomeworkViewController.m */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -592,12 +615,14 @@
 			files = (
 				59269ABF1CA8C7FE00CC9620 /* main.m in Sources */,
 				59269ABA1CA8C7FE00CC9620 /* AppDelegate.m in Sources */,
+				592F88451CD270AB001BAD11 /* CommitHomework.m in Sources */,
 				596C80D11C70725C00CFF0DA /* TempViewController.m in Sources */,
 				594F85641CBF996A0016F9B2 /* HomeworkDetailViewController.m in Sources */,
 				590D95AE1CC7CB4C00BEFB10 /* LoginModel.m in Sources */,
 				5918DB561CC6190000430C80 /* UIImage+Resize.m in Sources */,
 				596C80C51C706D6C00CFF0DA /* MainTabBarViewController.m in Sources */,
 				59E8EA761CCF2523006AE0B7 /* Homework.m in Sources */,
+				592F88421CD2237A001BAD11 /* NewHomeworkViewController.m in Sources */,
 				590DB3471CD1F80700540AFB /* GradeHomework.m in Sources */,
 				590D95AA1CC7CB0C00BEFB10 /* LoginViewController.m in Sources */,
 				59269AAE1CA8C7ED00CC9620 /* NewsViewController.m in Sources */,
@@ -608,6 +633,7 @@
 				59B62BC11CD10862004687D4 /* JRMessageView.m in Sources */,
 				5918DB5A1CC6190000430C80 /* UIImage+XHRounded.m in Sources */,
 				59B62BBD1CD0D282004687D4 /* DeleteHomework.m in Sources */,
+				592F883C1CD2208F001BAD11 /* UserTableViewController.m in Sources */,
 				5918DB551CC6190000430C80 /* UIImage+Alpha.m in Sources */,
 				5902603C1CBCA79E0068E825 /* LaunchDemo.m in Sources */,
 				594F854C1CBF280C0016F9B2 /* HomeworkTableViewController.m in Sources */,
