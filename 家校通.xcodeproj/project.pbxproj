@@ -26,9 +26,9 @@
 		59269ABC1CA8C7FE00CC9620 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 59269AB31CA8C7FE00CC9620 /* LaunchScreen.storyboard */; };
 		59269ABD1CA8C7FE00CC9620 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 59269AB51CA8C7FE00CC9620 /* Main.storyboard */; };
 		59269ABF1CA8C7FE00CC9620 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 59269AB81CA8C7FE00CC9620 /* main.m */; };
-		592F883C1CD2208F001BAD11 /* UserTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 592F883B1CD2208F001BAD11 /* UserTableViewController.m */; };
 		592F88421CD2237A001BAD11 /* NewHomeworkViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 592F88411CD2237A001BAD11 /* NewHomeworkViewController.m */; };
 		592F88451CD270AB001BAD11 /* CommitHomework.m in Sources */ = {isa = PBXBuildFile; fileRef = 592F88441CD270AB001BAD11 /* CommitHomework.m */; };
+		592F884B1CD2766C001BAD11 /* UserTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 592F884A1CD2766C001BAD11 /* UserTableViewController.m */; };
 		594F854C1CBF280C0016F9B2 /* HomeworkTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 594F854B1CBF280C0016F9B2 /* HomeworkTableViewController.m */; };
 		594F855A1CBF88D00016F9B2 /* HomeworkCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 594F85581CBF88D00016F9B2 /* HomeworkCell.m */; };
 		594F855B1CBF88D00016F9B2 /* HomeworkCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 594F85591CBF88D00016F9B2 /* HomeworkCell.xib */; };
@@ -103,12 +103,12 @@
 		59269AB81CA8C7FE00CC9620 /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		59269AB91CA8C7FE00CC9620 /* PrefixHeader.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PrefixHeader.pch; path = "Supporting Files/PrefixHeader.pch"; sourceTree = "<group>"; };
 		59269AC31CA8CA8F00CC9620 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = ../Info.plist; sourceTree = "<group>"; };
-		592F883A1CD2208F001BAD11 /* UserTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserTableViewController.h; sourceTree = "<group>"; };
-		592F883B1CD2208F001BAD11 /* UserTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserTableViewController.m; sourceTree = "<group>"; };
 		592F88401CD2237A001BAD11 /* NewHomeworkViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewHomeworkViewController.h; sourceTree = "<group>"; };
 		592F88411CD2237A001BAD11 /* NewHomeworkViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewHomeworkViewController.m; sourceTree = "<group>"; };
 		592F88431CD270AB001BAD11 /* CommitHomework.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CommitHomework.h; sourceTree = "<group>"; };
 		592F88441CD270AB001BAD11 /* CommitHomework.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CommitHomework.m; sourceTree = "<group>"; };
+		592F88491CD2766C001BAD11 /* UserTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserTableViewController.h; sourceTree = "<group>"; };
+		592F884A1CD2766C001BAD11 /* UserTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserTableViewController.m; sourceTree = "<group>"; };
 		594F854A1CBF280C0016F9B2 /* HomeworkTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeworkTableViewController.h; sourceTree = "<group>"; };
 		594F854B1CBF280C0016F9B2 /* HomeworkTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeworkTableViewController.m; sourceTree = "<group>"; };
 		594F85571CBF88D00016F9B2 /* HomeworkCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeworkCell.h; sourceTree = "<group>"; };
@@ -327,10 +327,34 @@
 		592F88391CD21D03001BAD11 /* User */ = {
 			isa = PBXGroup;
 			children = (
-				592F883A1CD2208F001BAD11 /* UserTableViewController.h */,
-				592F883B1CD2208F001BAD11 /* UserTableViewController.m */,
+				592F88461CD2766C001BAD11 /* Model */,
+				592F88471CD2766C001BAD11 /* View */,
+				592F88481CD2766C001BAD11 /* ViewController */,
 			);
 			path = User;
+			sourceTree = "<group>";
+		};
+		592F88461CD2766C001BAD11 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		592F88471CD2766C001BAD11 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		592F88481CD2766C001BAD11 /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				592F88491CD2766C001BAD11 /* UserTableViewController.h */,
+				592F884A1CD2766C001BAD11 /* UserTableViewController.m */,
+			);
+			path = ViewController;
 			sourceTree = "<group>";
 		};
 		594F85421CBF27840016F9B2 /* Homework */ = {
@@ -633,9 +657,9 @@
 				59B62BC11CD10862004687D4 /* JRMessageView.m in Sources */,
 				5918DB5A1CC6190000430C80 /* UIImage+XHRounded.m in Sources */,
 				59B62BBD1CD0D282004687D4 /* DeleteHomework.m in Sources */,
-				592F883C1CD2208F001BAD11 /* UserTableViewController.m in Sources */,
 				5918DB551CC6190000430C80 /* UIImage+Alpha.m in Sources */,
 				5902603C1CBCA79E0068E825 /* LaunchDemo.m in Sources */,
+				592F884B1CD2766C001BAD11 /* UserTableViewController.m in Sources */,
 				594F854C1CBF280C0016F9B2 /* HomeworkTableViewController.m in Sources */,
 				59B62BBA1CD0A9B3004687D4 /* UpdateHomework.m in Sources */,
 				594F855A1CBF88D00016F9B2 /* HomeworkCell.m in Sources */,
