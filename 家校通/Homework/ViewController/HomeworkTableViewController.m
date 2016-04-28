@@ -158,7 +158,7 @@
 
 - (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {
     HomeworkCell *cell = [tableView cellForRowAtIndexPath:indexPath];
-    if ([cell.scoreLabel.text isEqualToString:unmarked]) {
+    if ([cell.scoreLabel.text isEqualToString:unmarked] && [[userDefaults objectForKey:keyUserType] isEqualToString:@"2"]) {
         return YES;
     } else {
         return NO;
