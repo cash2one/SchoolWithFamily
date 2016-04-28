@@ -57,7 +57,6 @@
     } else {
         LoginViewController *loginVC = [LoginViewController new];
         loginVC.shouldShowLaunchAnimation = YES;
-        loginVC.isStatusBarHidden = YES;
         self.window.rootViewController = loginVC;
     }
     [self.window makeKeyAndVisible];

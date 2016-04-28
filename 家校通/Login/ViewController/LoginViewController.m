@@ -18,6 +18,8 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleDefault];
+    
     //文本框相关
     _loginBtn.layer.cornerRadius = 4;
     _usernameField.delegate = self;
@@ -107,27 +109,12 @@
 }
 
 #pragma mark - Status bar
-- (BOOL)prefersStatusBarHidden {
-    return _isStatusBarHidden;
-}
-
-- (UIStatusBarAnimation)preferredStatusBarUpdateAnimation {
-    return UIStatusBarAnimationFade;
-}
-
 - (void)delayShowStatusBar {
     if (_shouldShowLaunchAnimation) {
         dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(2 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-            _isStatusBarHidden = NO;
-            [UIView animateWithDuration:0.5 animations:^{
-                [self setNeedsStatusBarAppearanceUpdate];
-            }];
+            [[UIApplication sharedApplication] setStatusBarHidden:NO withAnimation:UIStatusBarAnimationSlide];
         });
-    } else {
-        _isStatusBarHidden = NO;
-        [self setNeedsStatusBarAppearanceUpdate];
     }
-    
 }
 
 #pragma mark - UITextFieldDelegate

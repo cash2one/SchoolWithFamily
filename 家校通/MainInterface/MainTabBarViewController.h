@@ -10,7 +10,7 @@
 #import "NewsViewController.h"
 #import "HomeworkTableViewController.h"
 
-@interface MainTabBarViewController : UITabBarController <ChangeStatusBarDelegate> {
+@interface MainTabBarViewController : UITabBarController {
     BOOL _isStatusBarHidden;
 }
 

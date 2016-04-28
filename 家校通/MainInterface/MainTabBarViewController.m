@@ -32,21 +32,21 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
+    [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleLightContent];
 }
 
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
     
+    [self delayShowStatusBar];
+    
     /* 添加子控制器 */
     //＊＊班级新闻
     _newsVC = [[NewsViewController alloc] init];
-    _newsVC.isStatusBarHidden = _shouldShowLaunchAnimation;
     [self setUpChildControllerWith:_newsVC norImage:[UIImage imageNamed:@"tabBar_essence_icon"] selImage:[UIImage imageNamed:@"tabBar_essence_click_icon"] title:@"学院要闻"];
     
     //＊＊作业管理
     _homeworkVC = [HomeworkTableViewController new];
-    _homeworkVC.delegate = self;
     [self setUpChildControllerWith:_homeworkVC norImage:[UIImage imageNamed:@"tabBar_new_icon"] selImage:[UIImage imageNamed:@"tabBar_new_click_icon"] title:@"作业管理"];
     
     //＊＊实时交流
@@ -84,13 +84,13 @@
     [self addChildViewController:nav];
 }
 
-#pragma mark - status bar
-- (UIViewController *)childViewControllerForStatusBarStyle {
-    return _newsVC;
-}
-
-- (void)refreshStatusBar {
-    [self setNeedsStatusBarAppearanceUpdate];
+#pragma mark - Status bar
+- (void)delayShowStatusBar {
+    if (_shouldShowLaunchAnimation) {
+        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(2 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+            [[UIApplication sharedApplication] setStatusBarHidden:NO withAnimation:UIStatusBarAnimationSlide];
+        });
+    }
 }
 
 @end

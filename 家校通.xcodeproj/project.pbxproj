@@ -115,7 +115,6 @@
 		59B62BBC1CD0D282004687D4 /* DeleteHomework.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DeleteHomework.m; sourceTree = "<group>"; };
 		59B62BBF1CD10862004687D4 /* JRMessageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JRMessageView.h; sourceTree = "<group>"; };
 		59B62BC01CD10862004687D4 /* JRMessageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JRMessageView.m; sourceTree = "<group>"; };
-		59B62BC51CD12792004687D4 /* ChangeStatusBarDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChangeStatusBarDelegate.h; sourceTree = "<group>"; };
 		59E8EA741CCF2523006AE0B7 /* Homework.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Homework.h; sourceTree = "<group>"; };
 		59E8EA751CCF2523006AE0B7 /* Homework.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Homework.m; sourceTree = "<group>"; };
 		59E8EA781CCF2C6B006AE0B7 /* NetworkManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NetworkManager.h; sourceTree = "<group>"; };
@@ -389,7 +388,6 @@
 		59B62BC41CD12792004687D4 /* Delegate */ = {
 			isa = PBXGroup;
 			children = (
-				59B62BC51CD12792004687D4 /* ChangeStatusBarDelegate.h */,
 			);
 			path = Delegate;
 			sourceTree = "<group>";

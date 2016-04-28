@@ -10,6 +10,4 @@
 
 @interface NewsViewController : UIViewController
 
-@property (nonatomic, assign) BOOL isStatusBarHidden;
-
 @end

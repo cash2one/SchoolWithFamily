@@ -17,7 +17,6 @@
 #import "NetworkManager.h"
 #import <JCAlertView.h>
 #import "JRMessageView.h"
-#import "ChangeStatusBarDelegate.h"
 
 //屏幕大小
 #define kScreenFrame [UIScreen mainScreen].bounds
@@ -32,6 +31,7 @@
 #define appDelegate ((AppDelegate *)[[UIApplication sharedApplication] delegate])
 #define WEAKSELF  __weak typeof(self) weakSelf = self;
 #define userDefaults [NSUserDefaults standardUserDefaults]
+#define defaultNotiCenter [NSNotificationCenter defaultCenter]
 
 //登录
 #define keyUsername @"username"
