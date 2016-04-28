@@ -8,6 +8,7 @@
 
 #import "HomeworkDetailViewController.h"
 #import "UpdateHomework.h"
+#import "GradeHomework.h"
 
 @interface HomeworkDetailViewController () <UITextViewDelegate, UITextFieldDelegate> {
     UITabBar *_tabBar;
@@ -19,6 +20,8 @@
 @property (strong, nonatomic) UITextView *detailTextView;
 @property (strong, nonatomic) UILabel *dateLabel;
 @property (strong, nonatomic) UILabel *scoreLabel;
+@property (nonatomic, strong) JRMessageView *successMsg;
+@property (nonatomic, strong) JRMessageView *failureMsg;
 
 @end
 
@@ -35,6 +38,7 @@
     [super viewWillAppear:animated];
     [self changeUIText];
     [self hideTabBar];
+    [self configJRMessageView];
     
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboarWillShow:) name:UIKeyboardWillShowNotification object:nil];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardWillHide:) name:UIKeyboardWillHideNotification object:nil];
@@ -97,12 +101,29 @@
 }
 
 #pragma mark - function
+- (void)configJRMessageView {
+    self.successMsg = [[JRMessageView alloc] initWithTitle:@"已评分"
+                                                  subTitle:nil
+                                                  iconName:@"11"
+                                               messageType:JRMessageViewTypeSuccess
+                                           messagePosition:JRMessagePositionNavBarOverlay
+                                                   superVC:self
+                                                  duration:1.5];
+    self.failureMsg = [[JRMessageView alloc] initWithTitle:@"评分失败"
+                                                  subTitle:@"请检查网络设置"
+                                                  iconName:@"11"
+                                               messageType:JRMessageViewTypeError
+                                           messagePosition:JRMessagePositionNavBarOverlay
+                                                   superVC:self
+                                                  duration:2];
+}
+
 - (void)changeUIText {
     self.navigationItem.title = @"作业详情";
     if ([[userDefaults objectForKey:keyUserType] isEqualToString:@"2"] && [_score isEqualToString:unmarked]) {
-        _rightBarBtn = [[UIBarButtonItem alloc] initWithTitle:@"编辑  " style:UIBarButtonItemStylePlain target:self action:@selector(btnBehavior)];
+        _rightBarBtn = [[UIBarButtonItem alloc] initWithTitle:edit_title style:UIBarButtonItemStylePlain target:self action:@selector(btnBehavior)];
     } else if ([[userDefaults objectForKey:keyUserType] isEqualToString:@"1"]) {
-        _rightBarBtn = [[UIBarButtonItem alloc] initWithTitle:@"评分  " style:UIBarButtonItemStylePlain target:self action:@selector(btnBehavior)];
+        _rightBarBtn = [[UIBarButtonItem alloc] initWithTitle:grade_title style:UIBarButtonItemStylePlain target:self action:@selector(btnBehavior)];
     } else {
         _rightBarBtn = nil;
     }
@@ -121,7 +142,7 @@
 }
 
 - (void)btnBehavior {
-    if ([_rightBarBtn.title isEqualToString:@"编辑  "]) {
+    if ([_rightBarBtn.title isEqualToString:edit_title]) {
         _titleTextField.enabled = YES;
         _detailTextView.editable = YES;
         _rightBarBtn.title = @"取消编辑";
@@ -129,7 +150,7 @@
     } else if ([_rightBarBtn.title isEqualToString:@"取消编辑"]) {
         _titleTextField.enabled = NO;
         _detailTextView.editable = NO;
-        _rightBarBtn.title = @"编辑  ";
+        _rightBarBtn.title = edit_title;
     } else if ([_rightBarBtn.title isEqualToString:@"完成"]) {
         [_titleTextField resignFirstResponder];
         [_detailTextView resignFirstResponder];
@@ -166,6 +187,28 @@
                 NSLog(@"%@", error);
             }];
         });
+    }  else if ([_rightBarBtn.title isEqualToString:grade_title]) {
+        TKTextFieldAlertViewController *textFieldAlertView = [[TKTextFieldAlertViewController alloc] initWithTitle:@"评分" placeholder:@"成绩"];
+        __block UITextField *scoreTextfield = textFieldAlertView.textField;
+        WEAKSELF
+        [textFieldAlertView addButtonWithTitle:@"确定"  block:^(NSUInteger index) {
+            [[NetworkManager sharedManager] requestByPostWithUrl:@"http://zesicus.site/interface/school_manager/homework_manage/updateHomeworkForTeacher.php" andDict:[weakSelf combineParamsForGrading:scoreTextfield.text] finishWithSuccess:^(AFHTTPRequestOperation * _Nonnull operation, id  _Nonnull responseObject) {
+                GradeHomework *model = [[GradeHomework alloc] initWithDictionary:responseObject error:nil];
+                if ([model.responseCode isEqualToString:@"100"]) {
+                    [_successMsg showMessageView];
+                    _scoreLabel.text = [NSString stringWithFormat:@"成绩：%@", scoreTextfield.text];
+                    [_scoreLabel setTextColor:[UIColor redColor]];
+                } else {
+                    [_failureMsg showMessageView];
+                }
+            } orFailure:^(AFHTTPRequestOperation * _Nullable operation, NSError * _Nonnull error) {
+                [_failureMsg showMessageView];
+                NSLog(@"%@", error);
+            }];
+        }];
+        [textFieldAlertView addButtonWithTitle:@"取消" block:^(NSUInteger index) {
+        }];
+        [textFieldAlertView show];
     }
 }
 
@@ -174,6 +217,13 @@
     [dict setObject:_homeworkId forKey:@"homeworkId"];
     [dict setObject:_titleTextField.text forKey:@"homeworkTitle"];
     [dict setObject:_detailTextView.text forKey:@"homeworkDetail"];
+    return dict.copy;
+}
+
+- (NSDictionary *)combineParamsForGrading:(NSString *)score {
+    NSMutableDictionary *dict = [NSMutableDictionary dictionary];
+    [dict setObject:_homeworkId forKey:@"homeworkId"];
+    [dict setObject:score forKey:@"homeworkScore"];
     return dict.copy;
 }
 
@@ -188,7 +238,9 @@
 }
 
 -  (void)textFieldDidBeginEditing:(UITextField *)textField {
-    _rightBarBtn.title = @"完成";
+    if (textField == _titleTextField) {
+        _rightBarBtn.title = @"完成";
+    }
 }
 
 - (void)textFieldDidEndEditing:(UITextField *)textField {
@@ -197,7 +249,9 @@
 
 #pragma mark - UITextViewDelegate
 - (void)textViewDidChange:(UITextView *)textView {
-    _rightBarBtn.title = @"完成";
+    if (textView == _detailTextView) {
+        _rightBarBtn.title = @"完成";
+    }
 }
 
 #pragma mark - Keyboard
@@ -212,7 +266,6 @@
     [UIView animateWithDuration:animationDuration animations:^{
         [weakSelf changeTextViewHight:kScreenHeight-96-40-64-keyboardFrame.size.height];
     }];
-    _rightBarBtn.title = @"完成";
 }
 
 - (void)keyboardWillHide:(NSNotification *)notification {
@@ -225,7 +278,6 @@
     [UIView animateWithDuration:animationDuration animations:^{
         [weakSelf changeTextViewHight:kScreenHeight-96-40-64];
     }];
-    _rightBarBtn.title = @"保存";
 }
 
 @end

@@ -25,6 +25,7 @@ PODS:
   - JSONModel (1.2.0)
   - SVProgressHUD (2.0.3)
   - TAlertView (0.2.0)
+  - TKAlert&TKActionSheet (1.0.23)
 
 DEPENDENCIES:
   - AFNetworking (~> 2.6.1)
@@ -33,6 +34,7 @@ DEPENDENCIES:
   - JSONModel
   - SVProgressHUD (from `https://github.com/SVProgressHUD/SVProgressHUD.git`)
   - TAlertView
+  - TKAlert&TKActionSheet
 
 EXTERNAL SOURCES:
   SVProgressHUD:
@@ -50,5 +52,6 @@ SPEC CHECKSUMS:
   JSONModel: 12523685c4b623553ccf844bbbf7007624317b2c
   SVProgressHUD: b0830714205bea1317ea1a2ebc71e5633af334d4
   TAlertView: 3787ac0ea7e832d80be129a9be960eb1fc5c73f1
+  TKAlert&TKActionSheet: 951f168b82b5f0431b6a9dc0e05d59871339a2cd
 
 COCOAPODS: 0.39.0

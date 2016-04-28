@@ -17,6 +17,7 @@
 #import "NetworkManager.h"
 #import <JCAlertView.h>
 #import "JRMessageView.h"
+#import <TKAlert&TKActionSheet.h>
 
 //屏幕大小
 #define kScreenFrame [UIScreen mainScreen].bounds
@@ -40,5 +41,7 @@
 
 //作业
 #define unmarked @"未评分"
+#define edit_title @"编辑  "
+#define grade_title @"评分  "
 
 #endif /* PrefixHeader_pch */

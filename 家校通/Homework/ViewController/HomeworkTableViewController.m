@@ -46,8 +46,8 @@
                                                  superVC:self
                                                 duration:1.5];
     self.failureMsg = [[JRMessageView alloc] initWithTitle:@"删除失败"
-                                                  subTitle:nil
-                                                  iconName:@"请检查网络设置"
+                                                  subTitle:@"请检查网络设置"
+                                                  iconName:@"11"
                                                messageType:JRMessageViewTypeSuccess
                                            messagePosition:JRMessagePositionNavBarOverlay
                                                    superVC:self

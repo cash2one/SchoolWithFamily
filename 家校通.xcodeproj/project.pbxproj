@@ -13,6 +13,7 @@
 		590D95AA1CC7CB0C00BEFB10 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 590D95A81CC7CB0C00BEFB10 /* LoginViewController.m */; };
 		590D95AB1CC7CB0C00BEFB10 /* LoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 590D95A91CC7CB0C00BEFB10 /* LoginViewController.xib */; };
 		590D95AE1CC7CB4C00BEFB10 /* LoginModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 590D95AD1CC7CB4C00BEFB10 /* LoginModel.m */; };
+		590DB3471CD1F80700540AFB /* GradeHomework.m in Sources */ = {isa = PBXBuildFile; fileRef = 590DB3461CD1F80700540AFB /* GradeHomework.m */; };
 		5918DB551CC6190000430C80 /* UIImage+Alpha.m in Sources */ = {isa = PBXBuildFile; fileRef = 5918DB4A1CC6190000430C80 /* UIImage+Alpha.m */; };
 		5918DB561CC6190000430C80 /* UIImage+Resize.m in Sources */ = {isa = PBXBuildFile; fileRef = 5918DB4C1CC6190000430C80 /* UIImage+Resize.m */; };
 		5918DB571CC6190000430C80 /* UIImage+RoundedCorner.m in Sources */ = {isa = PBXBuildFile; fileRef = 5918DB4E1CC6190000430C80 /* UIImage+RoundedCorner.m */; };
@@ -75,6 +76,8 @@
 		590D95A91CC7CB0C00BEFB10 /* LoginViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LoginViewController.xib; sourceTree = "<group>"; };
 		590D95AC1CC7CB4C00BEFB10 /* LoginModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginModel.h; sourceTree = "<group>"; };
 		590D95AD1CC7CB4C00BEFB10 /* LoginModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginModel.m; sourceTree = "<group>"; };
+		590DB3451CD1F80700540AFB /* GradeHomework.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GradeHomework.h; sourceTree = "<group>"; };
+		590DB3461CD1F80700540AFB /* GradeHomework.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GradeHomework.m; sourceTree = "<group>"; };
 		5918DB491CC6190000430C80 /* UIImage+Alpha.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+Alpha.h"; sourceTree = "<group>"; };
 		5918DB4A1CC6190000430C80 /* UIImage+Alpha.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+Alpha.m"; sourceTree = "<group>"; };
 		5918DB4B1CC6190000430C80 /* UIImage+Resize.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+Resize.h"; sourceTree = "<group>"; };
@@ -330,6 +333,8 @@
 				59B62BB91CD0A9B3004687D4 /* UpdateHomework.m */,
 				59B62BBB1CD0D282004687D4 /* DeleteHomework.h */,
 				59B62BBC1CD0D282004687D4 /* DeleteHomework.m */,
+				590DB3451CD1F80700540AFB /* GradeHomework.h */,
+				590DB3461CD1F80700540AFB /* GradeHomework.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -593,6 +598,7 @@
 				5918DB561CC6190000430C80 /* UIImage+Resize.m in Sources */,
 				596C80C51C706D6C00CFF0DA /* MainTabBarViewController.m in Sources */,
 				59E8EA761CCF2523006AE0B7 /* Homework.m in Sources */,
+				590DB3471CD1F80700540AFB /* GradeHomework.m in Sources */,
 				590D95AA1CC7CB0C00BEFB10 /* LoginViewController.m in Sources */,
 				59269AAE1CA8C7ED00CC9620 /* NewsViewController.m in Sources */,
 				5918DB581CC6190000430C80 /* UIImage+Utility.m in Sources */,
