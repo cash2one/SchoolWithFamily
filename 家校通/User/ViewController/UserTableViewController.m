@@ -7,8 +7,14 @@
 //
 
 #import "UserTableViewController.h"
+#import "MineCell.h"
+#import "ChangePasswordViewController.h"
+#import "LoginViewController.h"
 
-@interface UserTableViewController ()
+@interface UserTableViewController () {
+    UILabel *_passwordLabel;
+    UIButton *_logoutBtn;
+}
 
 @end
 
@@ -17,6 +23,9 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.view.backgroundColor = UIColorRef(240, 240, 240);
+    self.tableView.tableFooterView = [[UIView alloc]init];
+    self.tableView.showsVerticalScrollIndicator = NO;
+    self.tableView.scrollEnabled = NO;
 }
 
 - (void)didReceiveMemoryWarning {
@@ -24,70 +33,104 @@
     // Dispose of any resources that can be recreated.
 }
 
+#pragma mark - Function
+- (void)logout {
+    TKAlertViewController *logoutAlert = [[TKAlertViewController alloc] initWithTitle:@"提示" message:@"即将注销，确定吗？"];
+    [logoutAlert addButtonWithTitle:@"确定" block:^(NSUInteger index) {
+        [[AFHTTPRequestOperationManager manager].operationQueue cancelAllOperations];
+        LoginViewController *loginVC = [LoginViewController new];
+        loginVC.shouldShowLaunchAnimation = NO;
+        [self presentViewController:loginVC animated:NO completion:nil];
+    }];
+    [logoutAlert addButtonWithTitle:@"取消" block:nil];
+    [logoutAlert showWithAnimationType:TKAlertViewAnimationPathStyle];
+}
+
 #pragma mark - Table view data source
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-#warning Incomplete implementation, return the number of sections
-    return 0;
+    return 3;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-#warning Incomplete implementation, return the number of rows
-    return 0;
+    return 1;
 }
 
-/*
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:<#@"reuseIdentifier"#> forIndexPath:indexPath];
-    
-    // Configure the cell...
-    
-    return cell;
+    if (indexPath.section == 0) {
+        static NSString *identifier = @"MineIdentifier";
+        MineCell *cell = [tableView dequeueReusableCellWithIdentifier:identifier];
+        if (!cell) {
+            [tableView registerNib:[UINib nibWithNibName:@"MineCell" bundle:nil] forCellReuseIdentifier:identifier];
+            cell = [tableView dequeueReusableCellWithIdentifier:identifier];
+        }
+        cell.userIdLabel.text = [userDefaults objectForKey:keyUsername];
+        switch ([[userDefaults objectForKey:keyUserType] intValue]) {
+            case 0:
+                cell.userTypeLabel.text = @"管理员";
+                break;
+            case 1:
+                cell.userTypeLabel.text = @"教师";
+                break;
+            case 2:
+                cell.userTypeLabel.text = @"学生";
+                break;
+            case 3:
+                cell.userTypeLabel.text = @"家长";
+                break;
+            default:
+                break;
+        }
+        cell.selectionStyle = UITableViewCellSelectionStyleNone;
+        return cell;
+    } else if (indexPath.section == 1) {
+        static NSString *identifier = @"PasswordIdentifier";
+        UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:identifier];
+        if (!cell) {
+            cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:identifier];
+        }
+        cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
+        if (!_passwordLabel) {
+            _passwordLabel = [[UILabel alloc] initWithFrame:CGRectMake(15, 0, kScreenWidth/2, 44)];
+            _passwordLabel.text = @"密码";
+            [cell addSubview:_passwordLabel];
+        }
+        return cell;
+    } else {
+        static NSString *identifier = @"LogoutIdentifier";
+        UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:identifier];
+        if (!cell) {
+            cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:identifier];
+        }
+        if (!_logoutBtn) {
+            _logoutBtn = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, kScreenWidth, 44)];
+            [_logoutBtn setTitle:@"注销登录" forState:UIControlStateNormal];
+            [_logoutBtn setTitleColor:[UIColor redColor] forState:UIControlStateNormal];
+            [_logoutBtn.titleLabel setFont:[UIFont systemFontOfSize:15]];
+            [_logoutBtn addTarget:self action:@selector(logout) forControlEvents:UIControlEventTouchUpInside];
+            [cell addSubview:_logoutBtn];
+        }
+        return cell;
+    }
 }
-*/
 
-/*
-// Override to support conditional editing of the table view.
-- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {
-    // Return NO if you do not want the specified item to be editable.
-    return YES;
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    if (indexPath.section == 1) {
+        ChangePasswordViewController *changePasswdVC = [[ChangePasswordViewController alloc] init];
+        [self.navigationController pushViewController:changePasswdVC animated:YES];
+    }
 }
-*/
 
-/*
-// Override to support editing the table view.
-- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
-    if (editingStyle == UITableViewCellEditingStyleDelete) {
-        // Delete the row from the data source
-        [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
-    } else if (editingStyle == UITableViewCellEditingStyleInsert) {
-        // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-    }   
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
+    if (indexPath.section == 0) {
+        return 100;
+    } else {
+        return 44;
+    }
 }
-*/
 
-/*
-// Override to support rearranging the table view.
-- (void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)fromIndexPath toIndexPath:(NSIndexPath *)toIndexPath {
+- (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section {
+    return 15.f;
 }
-*/
-
-/*
-// Override to support conditional rearranging of the table view.
-- (BOOL)tableView:(UITableView *)tableView canMoveRowAtIndexPath:(NSIndexPath *)indexPath {
-    // Return NO if you do not want the item to be re-orderable.
-    return YES;
-}
-*/
-
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 @end

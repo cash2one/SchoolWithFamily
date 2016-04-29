@@ -9,6 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "NewsViewController.h"
 #import "HomeworkTableViewController.h"
+#import "UserTableViewController.h"
 
 @interface MainTabBarViewController : UITabBarController {
     BOOL _isStatusBarHidden;
@@ -20,5 +21,6 @@
 //子ViewController
 @property (nonatomic, strong) NewsViewController *newsVC;
 @property (nonatomic, strong) HomeworkTableViewController *homeworkVC;
+@property (nonatomic, strong) UserTableViewController *userVC;
 
 @end

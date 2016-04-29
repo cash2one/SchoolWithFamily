@@ -8,7 +8,6 @@
 
 #import "MainTabBarViewController.h"
 #import "TempViewController.h"
-#import "HomeworkTableViewController.h"
 
 @implementation MainTabBarViewController
 
@@ -41,19 +40,20 @@
     [self delayShowStatusBar];
     
     /* 添加子控制器 */
-    //＊＊班级新闻
+    //＊＊新闻
     _newsVC = [[NewsViewController alloc] init];
-    [self setUpChildControllerWith:_newsVC norImage:[UIImage imageNamed:@"tabBar_essence_icon"] selImage:[UIImage imageNamed:@"tabBar_essence_click_icon"] title:@"学院要闻"];
+    [self setUpChildControllerWith:_newsVC norImage:[UIImage imageNamed:@"tabBar_essence_icon"] selImage:[UIImage imageNamed:@"tabBar_essence_click_icon"] title:@"要闻"];
     
-    //＊＊作业管理
+    //＊＊作业
     _homeworkVC = [HomeworkTableViewController new];
-    [self setUpChildControllerWith:_homeworkVC norImage:[UIImage imageNamed:@"tabBar_new_icon"] selImage:[UIImage imageNamed:@"tabBar_new_click_icon"] title:@"作业管理"];
+    [self setUpChildControllerWith:_homeworkVC norImage:[UIImage imageNamed:@"tabBar_new_icon"] selImage:[UIImage imageNamed:@"tabBar_new_click_icon"] title:@"作业"];
     
-    //＊＊实时交流
-    [self setUpChildControllerWith:[TempViewController new] norImage:[UIImage imageNamed:@"tabBar_me_icon"] selImage:[UIImage imageNamed:@"tabBar_me_click_icon"] title:@"实时交流"];
+    //＊＊交流
+    [self setUpChildControllerWith:[TempViewController new] norImage:[UIImage imageNamed:@"tabBar_me_icon"] selImage:[UIImage imageNamed:@"tabBar_me_click_icon"] title:@"交流"];
     
-    //＊＊用户管理
-    [self setUpChildControllerWith:[TempViewController new] norImage:[UIImage imageNamed:@"tabBar_friendTrends_icon"] selImage:[UIImage imageNamed:@"tabBar_friendTrends_click_icon"] title:@"用户管理"];
+    //＊＊我的
+    _userVC = [UserTableViewController new];
+    [self setUpChildControllerWith:_userVC norImage:[UIImage imageNamed:@"tabBar_friendTrends_icon"] selImage:[UIImage imageNamed:@"tabBar_friendTrends_click_icon"] title:@"我的"];
     
     //＊＊设置tabBar工具条
     [self.tabBar setBackgroundImage:[UIImage imageNamed:@"tabbar-light"]];

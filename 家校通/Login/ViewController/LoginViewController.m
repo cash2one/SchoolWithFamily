@@ -37,6 +37,7 @@
     [super viewWillAppear:animated];
     _usernameField.text = [userDefaults objectForKey:keyUsername]?[userDefaults objectForKey:keyUsername]:@"";
     _passwordField.text = [userDefaults objectForKey:keyPassword]?[userDefaults objectForKey:keyPassword]:@"";
+    if ([_usernameField.text isEqualToString:@""] && [_passwordField.text isEqualToString:@""]) _loginBtn.enabled = NO;
 }
 
 - (void)viewDidAppear:(BOOL)animated {

@@ -39,6 +39,10 @@
 		59B62BBA1CD0A9B3004687D4 /* UpdateHomework.m in Sources */ = {isa = PBXBuildFile; fileRef = 59B62BB91CD0A9B3004687D4 /* UpdateHomework.m */; };
 		59B62BBD1CD0D282004687D4 /* DeleteHomework.m in Sources */ = {isa = PBXBuildFile; fileRef = 59B62BBC1CD0D282004687D4 /* DeleteHomework.m */; };
 		59B62BC11CD10862004687D4 /* JRMessageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 59B62BC01CD10862004687D4 /* JRMessageView.m */; };
+		59D6931C1CD3037A00CC0181 /* MineCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 59D6931A1CD3037A00CC0181 /* MineCell.m */; };
+		59D6931D1CD3037A00CC0181 /* MineCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 59D6931B1CD3037A00CC0181 /* MineCell.xib */; };
+		59D693251CD34D6300CC0181 /* ChangePasswordViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 59D693241CD34D6300CC0181 /* ChangePasswordViewController.m */; };
+		59D693281CD3A1A200CC0181 /* UpdateUser.m in Sources */ = {isa = PBXBuildFile; fileRef = 59D693271CD3A1A200CC0181 /* UpdateUser.m */; };
 		59E8EA761CCF2523006AE0B7 /* Homework.m in Sources */ = {isa = PBXBuildFile; fileRef = 59E8EA751CCF2523006AE0B7 /* Homework.m */; };
 		59E8EA7A1CCF2C6B006AE0B7 /* NetworkManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 59E8EA791CCF2C6B006AE0B7 /* NetworkManager.m */; };
 		B65EBF61778FD0D2E93B58E5 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3225A0A78324430BE11DBB07 /* libPods.a */; };
@@ -127,6 +131,13 @@
 		59B62BBC1CD0D282004687D4 /* DeleteHomework.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DeleteHomework.m; sourceTree = "<group>"; };
 		59B62BBF1CD10862004687D4 /* JRMessageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JRMessageView.h; sourceTree = "<group>"; };
 		59B62BC01CD10862004687D4 /* JRMessageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JRMessageView.m; sourceTree = "<group>"; };
+		59D693191CD3037A00CC0181 /* MineCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MineCell.h; sourceTree = "<group>"; };
+		59D6931A1CD3037A00CC0181 /* MineCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MineCell.m; sourceTree = "<group>"; };
+		59D6931B1CD3037A00CC0181 /* MineCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MineCell.xib; sourceTree = "<group>"; };
+		59D693231CD34D6300CC0181 /* ChangePasswordViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChangePasswordViewController.h; sourceTree = "<group>"; };
+		59D693241CD34D6300CC0181 /* ChangePasswordViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChangePasswordViewController.m; sourceTree = "<group>"; };
+		59D693261CD3A1A200CC0181 /* UpdateUser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UpdateUser.h; sourceTree = "<group>"; };
+		59D693271CD3A1A200CC0181 /* UpdateUser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UpdateUser.m; sourceTree = "<group>"; };
 		59E8EA741CCF2523006AE0B7 /* Homework.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Homework.h; sourceTree = "<group>"; };
 		59E8EA751CCF2523006AE0B7 /* Homework.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Homework.m; sourceTree = "<group>"; };
 		59E8EA781CCF2C6B006AE0B7 /* NetworkManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NetworkManager.h; sourceTree = "<group>"; };
@@ -337,6 +348,8 @@
 		592F88461CD2766C001BAD11 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				59D693261CD3A1A200CC0181 /* UpdateUser.h */,
+				59D693271CD3A1A200CC0181 /* UpdateUser.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -344,6 +357,9 @@
 		592F88471CD2766C001BAD11 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				59D693191CD3037A00CC0181 /* MineCell.h */,
+				59D6931A1CD3037A00CC0181 /* MineCell.m */,
+				59D6931B1CD3037A00CC0181 /* MineCell.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -353,6 +369,8 @@
 			children = (
 				592F88491CD2766C001BAD11 /* UserTableViewController.h */,
 				592F884A1CD2766C001BAD11 /* UserTableViewController.m */,
+				59D693231CD34D6300CC0181 /* ChangePasswordViewController.h */,
+				59D693241CD34D6300CC0181 /* ChangePasswordViewController.m */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -564,6 +582,7 @@
 				59269ABB1CA8C7FE00CC9620 /* Assets.xcassets in Resources */,
 				59269ABC1CA8C7FE00CC9620 /* LaunchScreen.storyboard in Resources */,
 				590D95AB1CC7CB0C00BEFB10 /* LoginViewController.xib in Resources */,
+				59D6931D1CD3037A00CC0181 /* MineCell.xib in Resources */,
 				594F855B1CBF88D00016F9B2 /* HomeworkCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -642,12 +661,14 @@
 				592F88451CD270AB001BAD11 /* CommitHomework.m in Sources */,
 				596C80D11C70725C00CFF0DA /* TempViewController.m in Sources */,
 				594F85641CBF996A0016F9B2 /* HomeworkDetailViewController.m in Sources */,
+				59D693251CD34D6300CC0181 /* ChangePasswordViewController.m in Sources */,
 				590D95AE1CC7CB4C00BEFB10 /* LoginModel.m in Sources */,
 				5918DB561CC6190000430C80 /* UIImage+Resize.m in Sources */,
 				596C80C51C706D6C00CFF0DA /* MainTabBarViewController.m in Sources */,
 				59E8EA761CCF2523006AE0B7 /* Homework.m in Sources */,
 				592F88421CD2237A001BAD11 /* NewHomeworkViewController.m in Sources */,
 				590DB3471CD1F80700540AFB /* GradeHomework.m in Sources */,
+				59D6931C1CD3037A00CC0181 /* MineCell.m in Sources */,
 				590D95AA1CC7CB0C00BEFB10 /* LoginViewController.m in Sources */,
 				59269AAE1CA8C7ED00CC9620 /* NewsViewController.m in Sources */,
 				5918DB581CC6190000430C80 /* UIImage+Utility.m in Sources */,
@@ -655,6 +676,7 @@
 				5918DB571CC6190000430C80 /* UIImage+RoundedCorner.m in Sources */,
 				59E8EA7A1CCF2C6B006AE0B7 /* NetworkManager.m in Sources */,
 				59B62BC11CD10862004687D4 /* JRMessageView.m in Sources */,
+				59D693281CD3A1A200CC0181 /* UpdateUser.m in Sources */,
 				5918DB5A1CC6190000430C80 /* UIImage+XHRounded.m in Sources */,
 				59B62BBD1CD0D282004687D4 /* DeleteHomework.m in Sources */,
 				5918DB551CC6190000430C80 /* UIImage+Alpha.m in Sources */,
