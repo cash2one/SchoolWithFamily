@@ -9,6 +9,7 @@
 #import "AppDelegate.h"
 #import "LoginViewController.h"
 #import "MainTabBarViewController.h"
+#import "RongTokenModel.h"
 
 @interface AppDelegate ()
 
@@ -21,6 +22,8 @@
     
     [self setupRoot];
     [self setupUI];
+    //启动融云SDK
+    [[RCIM sharedRCIM] initWithAppKey:@"lmxuhwagxvsmd"];
     
     return YES;
 }
@@ -75,6 +78,21 @@
     //去掉导航栏黑线
     [[UINavigationBar appearance] setShadowImage:[UIImage imageFromColor:[UIColor clearColor] corner:CornerAll radius:0]];
     [[UINavigationBar appearance] setBackgroundImage:[UIImage imageFromColor:[UIColor clearColor] corner:CornerAll radius:0] forBarMetrics:UIBarMetricsDefault];
+}
+
+- (void)getToken {
+    NSMutableDictionary *dict = [NSMutableDictionary dictionary];
+    [dict setObject:[userDefaults objectForKey:keyUsername] forKey:@"userId"];
+    [dict setObject:[userDefaults objectForKey:keyUsername] forKey:@"name"];
+    [dict setObject:@"http://zesicus.site/interface/school_manager/IMG/MBNormal.png" forKey:@"portraitUri"];
+    [[NetworkManager sharedManager] requestRCWithUrl:@"https://api.cn.ronghub.com/user/getToken.json" andDict:dict.copy finishWithSuccess:^(AFHTTPRequestOperation * _Nonnull operation, id  _Nonnull responseObject) {
+        RongTokenModel *model = [[RongTokenModel alloc] initWithDictionary:responseObject error:nil];
+        if ([model.code isEqualToString:@"200"]) {
+            [userDefaults setObject:model.token forKey:keyToken];
+        }
+    } orFailure:^(AFHTTPRequestOperation * _Nullable operation, NSError * _Nonnull error) {
+        NSLog(@"Get token error: /n%@", error);
+    }];
 }
 
 @end

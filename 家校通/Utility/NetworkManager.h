@@ -15,5 +15,6 @@ typedef void (^FailureBlock)(AFHTTPRequestOperation * _Nullable operation, NSErr
 
 + (NetworkManager * _Nonnull)sharedManager;
 - (void)requestByPostWithUrl:(NSString * _Nonnull)url andDict:(NSDictionary * _Nullable)dict finishWithSuccess:(SuccessBlock _Nonnull)success orFailure:(FailureBlock _Nonnull)failure;
+- (void)requestRCWithUrl:(NSString * _Nonnull)url andDict:(NSDictionary * _Nullable)dict finishWithSuccess:(SuccessBlock _Nonnull)success orFailure:(FailureBlock _Nonnull)failure;
 
 @end

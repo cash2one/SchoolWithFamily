@@ -99,6 +99,10 @@ OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 The MIT License in plain English: http://www.touch-code-magazine.com/JSONModel/MITLicense
 
 
+## RongCloudIMKit
+
+Copyright 2014 Rong Cloud
+
 ## SVProgressHUD
 
 Copyright (c) 2011-2016 Sam Vermette, Tobias Tiemerding and contributors.

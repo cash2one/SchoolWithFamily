@@ -8,6 +8,7 @@
 
 #import "LoginViewController.h"
 #import "LoginModel.h"
+#import "RongTokenModel.h"
 
 @interface LoginViewController () <UITextFieldDelegate>
 
@@ -53,15 +54,6 @@
 }
 
 #pragma mark - Function
-- (NSDictionary *)combineParamsForLogin {
-    NSMutableDictionary *dict = [NSMutableDictionary dictionary];
-    //act参数
-    [dict setObject:_usernameField.text forKey:@"username"];
-    [dict setObject:_passwordField.text forKey:@"password"];
-    
-    return dict.copy;
-}
-
 - (IBAction)login:(UIButton *)sender {
     MainTabBarViewController *mainVC = [MainTabBarViewController new];
     mainVC.shouldShowLaunchAnimation = NO;
@@ -80,6 +72,7 @@
                 [userDefaults setObject:_usernameField.text forKey:keyUsername];
                 [userDefaults setObject:_passwordField.text forKey:keyPassword];
                 [userDefaults setObject:model.data forKey:keyUserType];
+                [appDelegate getToken];
                 [weakSelf dismissHud];
                 [weakSelf presentViewController:mainVC animated:NO completion:nil];
             } else if ([model.responseCode isEqualToString:@"200"]) {
@@ -94,6 +87,15 @@
             [weakSelf performSelector:@selector(dismissHud) withObject:nil afterDelay:1.5];
         }];
     });
+}
+
+- (NSDictionary *)combineParamsForLogin {
+    NSMutableDictionary *dict = [NSMutableDictionary dictionary];
+    //act参数
+    [dict setObject:_usernameField.text forKey:@"username"];
+    [dict setObject:_passwordField.text forKey:@"password"];
+    
+    return dict.copy;
 }
 
 - (void)dismissHud {

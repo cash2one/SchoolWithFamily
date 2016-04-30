@@ -35,6 +35,7 @@
 		594F85641CBF996A0016F9B2 /* HomeworkDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 594F85621CBF996A0016F9B2 /* HomeworkDetailViewController.m */; };
 		596C80C51C706D6C00CFF0DA /* MainTabBarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 596C80C41C706D6C00CFF0DA /* MainTabBarViewController.m */; };
 		596C80D11C70725C00CFF0DA /* TempViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 596C80D01C70725C00CFF0DA /* TempViewController.m */; };
+		598DC9AE1CD47AC700C48991 /* RongTokenModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 598DC9AD1CD47AC700C48991 /* RongTokenModel.m */; };
 		59B62BB41CD05151004687D4 /* Reveal.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 59B62BB31CD05151004687D4 /* Reveal.framework */; };
 		59B62BBA1CD0A9B3004687D4 /* UpdateHomework.m in Sources */ = {isa = PBXBuildFile; fileRef = 59B62BB91CD0A9B3004687D4 /* UpdateHomework.m */; };
 		59B62BBD1CD0D282004687D4 /* DeleteHomework.m in Sources */ = {isa = PBXBuildFile; fileRef = 59B62BBC1CD0D282004687D4 /* DeleteHomework.m */; };
@@ -124,6 +125,8 @@
 		596C80C41C706D6C00CFF0DA /* MainTabBarViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MainTabBarViewController.m; path = MainInterface/MainTabBarViewController.m; sourceTree = "<group>"; };
 		596C80CF1C70725C00CFF0DA /* TempViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TempViewController.h; path = MainInterface/TempViewController.h; sourceTree = "<group>"; };
 		596C80D01C70725C00CFF0DA /* TempViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TempViewController.m; path = MainInterface/TempViewController.m; sourceTree = "<group>"; };
+		598DC9AC1CD47AC700C48991 /* RongTokenModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RongTokenModel.h; sourceTree = "<group>"; };
+		598DC9AD1CD47AC700C48991 /* RongTokenModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RongTokenModel.m; sourceTree = "<group>"; };
 		59B62BB31CD05151004687D4 /* Reveal.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Reveal.framework; sourceTree = "<group>"; };
 		59B62BB81CD0A9B3004687D4 /* UpdateHomework.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UpdateHomework.h; sourceTree = "<group>"; };
 		59B62BB91CD0A9B3004687D4 /* UpdateHomework.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UpdateHomework.m; sourceTree = "<group>"; };
@@ -274,6 +277,8 @@
 			children = (
 				590D95AC1CC7CB4C00BEFB10 /* LoginModel.h */,
 				590D95AD1CC7CB4C00BEFB10 /* LoginModel.m */,
+				598DC9AC1CD47AC700C48991 /* RongTokenModel.h */,
+				598DC9AD1CD47AC700C48991 /* RongTokenModel.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -677,6 +682,7 @@
 				59E8EA7A1CCF2C6B006AE0B7 /* NetworkManager.m in Sources */,
 				59B62BC11CD10862004687D4 /* JRMessageView.m in Sources */,
 				59D693281CD3A1A200CC0181 /* UpdateUser.m in Sources */,
+				598DC9AE1CD47AC700C48991 /* RongTokenModel.m in Sources */,
 				5918DB5A1CC6190000430C80 /* UIImage+XHRounded.m in Sources */,
 				59B62BBD1CD0D282004687D4 /* DeleteHomework.m in Sources */,
 				5918DB551CC6190000430C80 /* UIImage+Alpha.m in Sources */,

@@ -9,6 +9,7 @@
 #ifndef PrefixHeader_pch
 #define PrefixHeader_pch
 
+#import "AppDelegate.h"
 #import "LaunchDemo.h"
 #import "SVProgressHUD.h"
 #import "UIImage+Utility.h"
@@ -18,6 +19,7 @@
 #import <JCAlertView.h>
 #import "JRMessageView.h"
 #import <TKAlert&TKActionSheet.h>
+#import <RongIMKit/RongIMKit.h>
 
 //屏幕大小
 #define kScreenFrame [UIScreen mainScreen].bounds
@@ -39,6 +41,7 @@
 #define keyUsername @"username"
 #define keyPassword @"password"
 #define keyUserType @"userType"
+#define keyToken @"keyToken"
 
 //作业
 #define unmarked @"未评分"
