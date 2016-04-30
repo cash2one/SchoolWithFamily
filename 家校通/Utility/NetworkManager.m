@@ -66,7 +66,6 @@ static NSString *_timeStamp;
 
 - (NSString *)getNonce {
     NSString *nonce = [NSString stringWithFormat:@"%ld", random()];
-    NSLog(@"nonce: %@", nonce);
     return nonce;
 }
 
@@ -74,7 +73,6 @@ static NSString *_timeStamp;
     NSDate *now = [NSDate new];
     NSString *timeStampFloat = [NSString stringWithFormat:@"%f", [now timeIntervalSince1970]];
     NSString *timeStamp = [timeStampFloat substringToIndex:10];
-    NSLog(@"time stamp: %@", timeStamp);
     return timeStamp;
 }
 
