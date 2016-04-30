@@ -11,7 +11,7 @@
 #import "MainTabBarViewController.h"
 #import "RongTokenModel.h"
 
-@interface AppDelegate ()
+@interface AppDelegate () <RCIMUserInfoDataSource>
 
 @end
 
@@ -20,10 +20,8 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     
-    [self setupRoot];
     [self setupUI];
-    //启动融云SDK
-    [[RCIM sharedRCIM] initWithAppKey:@"lmxuhwagxvsmd"];
+    [self setupRoot];
     
     return YES;
 }
@@ -80,6 +78,7 @@
     [[UINavigationBar appearance] setBackgroundImage:[UIImage imageFromColor:[UIColor clearColor] corner:CornerAll radius:0] forBarMetrics:UIBarMetricsDefault];
 }
 
+#pragma mark - RongCloud
 - (void)getToken {
     NSMutableDictionary *dict = [NSMutableDictionary dictionary];
     [dict setObject:[userDefaults objectForKey:keyUsername] forKey:@"userId"];
@@ -89,10 +88,41 @@
         RongTokenModel *model = [[RongTokenModel alloc] initWithDictionary:responseObject error:nil];
         if ([model.code isEqualToString:@"200"]) {
             [userDefaults setObject:model.token forKey:keyToken];
+            [self connectRongCloud];
         }
     } orFailure:^(AFHTTPRequestOperation * _Nullable operation, NSError * _Nonnull error) {
         NSLog(@"Get token error: /n%@", error);
     }];
+}
+
+- (void)connectRongCloud {
+    [[RCIM sharedRCIM] initWithAppKey:@"lmxuhwagxvsmd"];
+    NSString *token = [userDefaults objectForKey:keyToken];
+    [[RCIM sharedRCIM] connectWithToken:token success:^(NSString *userId) {
+        [[RCIM sharedRCIM] setUserInfoDataSource:self];
+        NSLog(@"登陆成功。当前登录的用户ID：%@", userId);
+    } error:^(RCConnectErrorCode status) {
+        NSLog(@"登陆的错误码为:%d", status);
+    } tokenIncorrect:^{
+        NSLog(@"token错误");
+    }];
+}
+
+- (void)getUserInfoWithUserId:(NSString *)userId
+                   completion:(void (^)(RCUserInfo *userInfo))completion {
+    if ([userId isEqualToString:[userDefaults objectForKey:keyUsername]]) {
+        RCUserInfo *userInfo = [RCUserInfo new];
+        userInfo.userId = userId;
+        userInfo.name = userId;
+        userInfo.portraitUri = @"http://zesicus.site/interface/school_manager/IMG/MBNormal.png";
+        return completion(userInfo);
+    } else {
+        RCUserInfo *userInfo = [RCUserInfo new];
+        userInfo.userId = userId;
+        userInfo.name = userId;
+        userInfo.portraitUri = @"http://zesicus.site/interface/school_manager/IMG/MBTalking.png";
+        return completion(userInfo);
+    }
 }
 
 @end

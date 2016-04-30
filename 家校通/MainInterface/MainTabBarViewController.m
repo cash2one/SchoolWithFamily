@@ -7,7 +7,6 @@
 //
 
 #import "MainTabBarViewController.h"
-#import "TempViewController.h"
 
 @implementation MainTabBarViewController
 
@@ -32,6 +31,9 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleLightContent];
+    if (!_shouldShowLaunchAnimation) {
+        [appDelegate connectRongCloud];
+    }
 }
 
 - (void)viewWillAppear:(BOOL)animated {
@@ -49,7 +51,8 @@
     [self setUpChildControllerWith:_homeworkVC norImage:[UIImage imageNamed:@"tabBar_new_icon"] selImage:[UIImage imageNamed:@"tabBar_new_click_icon"] title:@"作业"];
     
     //＊＊交流
-    [self setUpChildControllerWith:[TempViewController new] norImage:[UIImage imageNamed:@"tabBar_me_icon"] selImage:[UIImage imageNamed:@"tabBar_me_click_icon"] title:@"交流"];
+    _chatListVC = [ChatListViewController new];
+    [self setUpChildControllerWith:_chatListVC norImage:[UIImage imageNamed:@"tabBar_me_icon"] selImage:[UIImage imageNamed:@"tabBar_me_click_icon"] title:@"交流"];
     
     //＊＊我的
     _userVC = [UserTableViewController new];
