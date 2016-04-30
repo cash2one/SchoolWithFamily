@@ -34,7 +34,6 @@
 		594F855B1CBF88D00016F9B2 /* HomeworkCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 594F85591CBF88D00016F9B2 /* HomeworkCell.xib */; };
 		594F85641CBF996A0016F9B2 /* HomeworkDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 594F85621CBF996A0016F9B2 /* HomeworkDetailViewController.m */; };
 		596C80C51C706D6C00CFF0DA /* MainTabBarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 596C80C41C706D6C00CFF0DA /* MainTabBarViewController.m */; };
-		596C80D11C70725C00CFF0DA /* TempViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 596C80D01C70725C00CFF0DA /* TempViewController.m */; };
 		598DC9AE1CD47AC700C48991 /* RongTokenModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 598DC9AD1CD47AC700C48991 /* RongTokenModel.m */; };
 		598DC9B31CD4A73A00C48991 /* ChatListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 598DC9B21CD4A73A00C48991 /* ChatListViewController.m */; };
 		598DC9B61CD5225900C48991 /* ChatViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 598DC9B51CD5225900C48991 /* ChatViewController.m */; };
@@ -125,8 +124,6 @@
 		594F85621CBF996A0016F9B2 /* HomeworkDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeworkDetailViewController.m; sourceTree = "<group>"; };
 		596C80C31C706D6C00CFF0DA /* MainTabBarViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MainTabBarViewController.h; path = MainInterface/MainTabBarViewController.h; sourceTree = "<group>"; };
 		596C80C41C706D6C00CFF0DA /* MainTabBarViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MainTabBarViewController.m; path = MainInterface/MainTabBarViewController.m; sourceTree = "<group>"; };
-		596C80CF1C70725C00CFF0DA /* TempViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TempViewController.h; path = MainInterface/TempViewController.h; sourceTree = "<group>"; };
-		596C80D01C70725C00CFF0DA /* TempViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TempViewController.m; path = MainInterface/TempViewController.m; sourceTree = "<group>"; };
 		598DC9AC1CD47AC700C48991 /* RongTokenModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RongTokenModel.h; sourceTree = "<group>"; };
 		598DC9AD1CD47AC700C48991 /* RongTokenModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RongTokenModel.m; sourceTree = "<group>"; };
 		598DC9B11CD4A73A00C48991 /* ChatListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChatListViewController.h; sourceTree = "<group>"; };
@@ -450,8 +447,6 @@
 		596C80C21C706CE000CFF0DA /* MainInterface */ = {
 			isa = PBXGroup;
 			children = (
-				596C80CF1C70725C00CFF0DA /* TempViewController.h */,
-				596C80D01C70725C00CFF0DA /* TempViewController.m */,
 				596C80C31C706D6C00CFF0DA /* MainTabBarViewController.h */,
 				596C80C41C706D6C00CFF0DA /* MainTabBarViewController.m */,
 			);
@@ -690,7 +685,6 @@
 				59269ABF1CA8C7FE00CC9620 /* main.m in Sources */,
 				59269ABA1CA8C7FE00CC9620 /* AppDelegate.m in Sources */,
 				592F88451CD270AB001BAD11 /* CommitHomework.m in Sources */,
-				596C80D11C70725C00CFF0DA /* TempViewController.m in Sources */,
 				594F85641CBF996A0016F9B2 /* HomeworkDetailViewController.m in Sources */,
 				59D693251CD34D6300CC0181 /* ChangePasswordViewController.m in Sources */,
 				590D95AE1CC7CB4C00BEFB10 /* LoginModel.m in Sources */,

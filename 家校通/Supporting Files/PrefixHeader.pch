@@ -37,6 +37,9 @@
 #define defaultNotiCenter [NSNotificationCenter defaultCenter]
 #define UIColorRef(red1,green1,blue1) [UIColor colorWithRed:red1/255.0f green:green1/255.0f blue:blue1/255.0f alpha:1.0f]
 
+//Notification
+#define Noti_ShouldShowLaunchAnimation @"shouldShowLaunchAnimation"
+
 //登录
 #define keyUsername @"username"
 #define keyPassword @"password"

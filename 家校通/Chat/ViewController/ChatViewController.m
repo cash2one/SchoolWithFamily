@@ -19,6 +19,8 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     _tabBar = self.tabBarController.tabBar;
+    NSString *launchAni = @"NO";
+    [defaultNotiCenter postNotificationName:Noti_ShouldShowLaunchAnimation object:launchAni];
 }
 
 - (void)viewWillAppear:(BOOL)animated {

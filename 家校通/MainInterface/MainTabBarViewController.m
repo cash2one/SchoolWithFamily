@@ -34,6 +34,7 @@
     if (!_shouldShowLaunchAnimation) {
         [appDelegate connectRongCloud];
     }
+    [defaultNotiCenter addObserver:self selector:@selector(shouldShowLaunchAnimation:) name:Noti_ShouldShowLaunchAnimation object:nil];
 }
 
 - (void)viewWillAppear:(BOOL)animated {
@@ -76,6 +77,11 @@
     }
 }
 
+- (void)viewWillDisappear:(BOOL)animated {
+    [super viewWillDisappear:animated];
+    [defaultNotiCenter removeObserver:self];
+}
+
 - (void)setUpChildControllerWith:(UIViewController *)childVc norImage:(UIImage *)norImage selImage:(UIImage *)selImage title:(NSString *)title {
     UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:childVc];
     
@@ -94,6 +100,11 @@
             [[UIApplication sharedApplication] setStatusBarHidden:NO withAnimation:UIStatusBarAnimationSlide];
         });
     }
+}
+
+#pragma mark - Other
+- (void)shouldShowLaunchAnimation:(NSNotification *)noti {
+    _shouldShowLaunchAnimation = [noti.object boolValue];
 }
 
 @end
