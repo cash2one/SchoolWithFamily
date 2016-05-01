@@ -41,6 +41,7 @@
 		59B62BBA1CD0A9B3004687D4 /* UpdateHomework.m in Sources */ = {isa = PBXBuildFile; fileRef = 59B62BB91CD0A9B3004687D4 /* UpdateHomework.m */; };
 		59B62BBD1CD0D282004687D4 /* DeleteHomework.m in Sources */ = {isa = PBXBuildFile; fileRef = 59B62BBC1CD0D282004687D4 /* DeleteHomework.m */; };
 		59B62BC11CD10862004687D4 /* JRMessageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 59B62BC01CD10862004687D4 /* JRMessageView.m */; };
+		59C6890E1CD5CD910087CD4D /* AddChatViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 59C6890D1CD5CD910087CD4D /* AddChatViewController.m */; };
 		59D6931C1CD3037A00CC0181 /* MineCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 59D6931A1CD3037A00CC0181 /* MineCell.m */; };
 		59D6931D1CD3037A00CC0181 /* MineCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 59D6931B1CD3037A00CC0181 /* MineCell.xib */; };
 		59D693251CD34D6300CC0181 /* ChangePasswordViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 59D693241CD34D6300CC0181 /* ChangePasswordViewController.m */; };
@@ -137,6 +138,8 @@
 		59B62BBC1CD0D282004687D4 /* DeleteHomework.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DeleteHomework.m; sourceTree = "<group>"; };
 		59B62BBF1CD10862004687D4 /* JRMessageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JRMessageView.h; sourceTree = "<group>"; };
 		59B62BC01CD10862004687D4 /* JRMessageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JRMessageView.m; sourceTree = "<group>"; };
+		59C6890C1CD5CD910087CD4D /* AddChatViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddChatViewController.h; sourceTree = "<group>"; };
+		59C6890D1CD5CD910087CD4D /* AddChatViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddChatViewController.m; sourceTree = "<group>"; };
 		59D693191CD3037A00CC0181 /* MineCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MineCell.h; sourceTree = "<group>"; };
 		59D6931A1CD3037A00CC0181 /* MineCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MineCell.m; sourceTree = "<group>"; };
 		59D6931B1CD3037A00CC0181 /* MineCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MineCell.xib; sourceTree = "<group>"; };
@@ -468,6 +471,8 @@
 				598DC9B21CD4A73A00C48991 /* ChatListViewController.m */,
 				598DC9B41CD5225900C48991 /* ChatViewController.h */,
 				598DC9B51CD5225900C48991 /* ChatViewController.m */,
+				59C6890C1CD5CD910087CD4D /* AddChatViewController.h */,
+				59C6890D1CD5CD910087CD4D /* AddChatViewController.m */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -708,6 +713,7 @@
 				5918DB5A1CC6190000430C80 /* UIImage+XHRounded.m in Sources */,
 				59B62BBD1CD0D282004687D4 /* DeleteHomework.m in Sources */,
 				5918DB551CC6190000430C80 /* UIImage+Alpha.m in Sources */,
+				59C6890E1CD5CD910087CD4D /* AddChatViewController.m in Sources */,
 				5902603C1CBCA79E0068E825 /* LaunchDemo.m in Sources */,
 				592F884B1CD2766C001BAD11 /* UserTableViewController.m in Sources */,
 				594F854C1CBF280C0016F9B2 /* HomeworkTableViewController.m in Sources */,

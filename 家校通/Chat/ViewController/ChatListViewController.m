@@ -8,8 +8,11 @@
 
 #import "ChatListViewController.h"
 #import "ChatViewController.h"
+#import "AddChatViewController.h"
 
-@interface ChatListViewController ()
+@interface ChatListViewController () {
+    UIBarButtonItem *_createChatBtn;
+}
 
 @end
 
@@ -25,7 +28,8 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
+    _createChatBtn = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(createChat)];
+    self.navigationItem.rightBarButtonItem = _createChatBtn;
 }
 
 - (void)didReceiveMemoryWarning {
@@ -42,6 +46,11 @@
     conversationVC.targetId = model.targetId;
     conversationVC.title = model.targetId;
     [self.navigationController pushViewController:conversationVC animated:YES];
+}
+
+- (void)createChat {
+    AddChatViewController *addChatVC = [[AddChatViewController alloc] init];
+    [self.navigationController pushViewController:addChatVC animated:YES];
 }
 
 @end
