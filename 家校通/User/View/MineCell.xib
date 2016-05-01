@@ -12,11 +12,15 @@
             <rect key="frame" x="0.0" y="0.0" width="320" height="100"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
-                <rect key="frame" x="0.0" y="0.0" width="320" height="99.5"/>
+                <rect key="frame" x="0.0" y="0.0" width="320" height="100"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ProfilePic" translatesAutoresizingMaskIntoConstraints="NO" id="Wtu-7a-3ur">
                         <rect key="frame" x="13" y="10" width="80" height="80"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="80" id="Auw-4h-9Pv"/>
+                            <constraint firstAttribute="height" constant="80" id="XGX-2z-zIR"/>
+                        </constraints>
                     </imageView>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ecW-lg-1Xp">
                         <rect key="frame" x="101" y="23" width="211" height="27"/>
@@ -35,16 +39,15 @@
                     </label>
                 </subviews>
                 <constraints>
-                    <constraint firstItem="NRF-TP-OJS" firstAttribute="leading" secondItem="Wtu-7a-3ur" secondAttribute="trailing" constant="8" id="3oV-OP-KEQ"/>
                     <constraint firstItem="NRF-TP-OJS" firstAttribute="trailing" secondItem="ecW-lg-1Xp" secondAttribute="trailing" id="7CQ-mr-2PM"/>
                     <constraint firstAttribute="bottomMargin" secondItem="NRF-TP-OJS" secondAttribute="bottom" constant="12.5" id="A25-KC-DbL"/>
-                    <constraint firstItem="Wtu-7a-3ur" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="AOF-bD-9v3"/>
-                    <constraint firstItem="Wtu-7a-3ur" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" constant="2" id="JTi-Wx-OCo"/>
                     <constraint firstItem="NRF-TP-OJS" firstAttribute="leading" secondItem="ecW-lg-1Xp" secondAttribute="leading" id="MsK-YE-OPP"/>
                     <constraint firstItem="NRF-TP-OJS" firstAttribute="top" secondItem="ecW-lg-1Xp" secondAttribute="bottom" constant="8" symbolic="YES" id="QIT-sR-YJC"/>
-                    <constraint firstItem="NRF-TP-OJS" firstAttribute="leading" secondItem="Wtu-7a-3ur" secondAttribute="trailing" constant="8" symbolic="YES" id="jpc-BX-Gmr"/>
+                    <constraint firstItem="ecW-lg-1Xp" firstAttribute="leading" secondItem="Wtu-7a-3ur" secondAttribute="trailing" constant="8" symbolic="YES" id="THq-K7-wyO"/>
+                    <constraint firstItem="Wtu-7a-3ur" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="bbo-8V-Ox9"/>
+                    <constraint firstItem="Wtu-7a-3ur" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" constant="2" id="f6F-bG-hp2"/>
                     <constraint firstItem="NRF-TP-OJS" firstAttribute="trailing" secondItem="H2p-sc-9uM" secondAttribute="trailingMargin" id="lbP-P4-ckQ"/>
-                    <constraint firstItem="Wtu-7a-3ur" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" constant="5" id="r0c-Vp-Z7c"/>
+                    <constraint firstItem="Wtu-7a-3ur" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" constant="5" id="ugP-9n-Yfd"/>
                 </constraints>
             </tableViewCellContentView>
             <connections>
