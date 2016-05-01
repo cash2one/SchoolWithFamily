@@ -21,6 +21,10 @@
     _tabBar = self.tabBarController.tabBar;
     NSString *launchAni = @"NO";
     [defaultNotiCenter postNotificationName:Noti_ShouldShowLaunchAnimation object:launchAni];
+    self.conversationMessageCollectionView.backgroundColor = [UIColor clearColor];
+    UIImageView *bgView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, kScreenWidth, kScreenHeight)];
+    [bgView setImage:[UIImage imageNamed:@"chatBg"]];
+    [self.view insertSubview:bgView belowSubview:self.conversationMessageCollectionView];
 }
 
 - (void)viewWillAppear:(BOOL)animated {

@@ -97,6 +97,7 @@
 
 - (void)connectRongCloud {
     [[RCIM sharedRCIM] initWithAppKey:@"lmxuhwagxvsmd"];
+    [RCIM sharedRCIM].enableTypingStatus = YES; //用户输入状态
     NSString *token = [userDefaults objectForKey:keyToken];
     [[RCIM sharedRCIM] connectWithToken:token success:^(NSString *userId) {
         [[RCIM sharedRCIM] setUserInfoDataSource:self];

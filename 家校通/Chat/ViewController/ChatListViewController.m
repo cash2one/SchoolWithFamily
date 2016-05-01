@@ -29,6 +29,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     _createChatBtn = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(createChat)];
+    self.cellBackgroundColor = [UIColor clearColor];
     self.navigationItem.rightBarButtonItem = _createChatBtn;
 }
 
