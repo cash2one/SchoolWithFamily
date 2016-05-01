@@ -72,11 +72,7 @@
                 [userDefaults setObject:_usernameField.text forKey:keyUsername];
                 [userDefaults setObject:_passwordField.text forKey:keyPassword];
                 [userDefaults setObject:model.data forKey:keyUserType];
-                if ([userDefaults objectForKey:keyToken]) {
-                    [appDelegate connectRongCloud];
-                } else {
-                    [appDelegate getToken];
-                }
+                [appDelegate getToken];
                 [weakSelf dismissHud];
                 [weakSelf presentViewController:mainVC animated:NO completion:nil];
             } else if ([model.responseCode isEqualToString:@"200"]) {
