@@ -19,8 +19,6 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleDefault];
-    
     //文本框相关
     _loginBtn.layer.cornerRadius = 4;
     _usernameField.delegate = self;
@@ -36,6 +34,7 @@
 
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
+    [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleDefault];
     _usernameField.text = [userDefaults objectForKey:keyUsername]?[userDefaults objectForKey:keyUsername]:@"";
     _passwordField.text = [userDefaults objectForKey:keyPassword]?[userDefaults objectForKey:keyPassword]:@"";
     if ([_usernameField.text isEqualToString:@""] && [_passwordField.text isEqualToString:@""]) _loginBtn.enabled = NO;
@@ -94,7 +93,6 @@
     //act参数
     [dict setObject:_usernameField.text forKey:@"username"];
     [dict setObject:_passwordField.text forKey:@"password"];
-    
     return dict.copy;
 }
 

@@ -109,7 +109,7 @@
     //更改TextView高度
     WEAKSELF
     [UIView animateWithDuration:animationDuration animations:^{
-        [weakSelf changeTextViewHight:kScreenHeight-CGRectGetMaxY(_titleTxtField.frame)-49-64-keyboardFrame.size.height];
+        [weakSelf changeTextViewHight:kScreenHeight-CGRectGetMaxY(_titleTxtField.frame)-49-64+10-keyboardFrame.size.height];
     }];
 }
 
