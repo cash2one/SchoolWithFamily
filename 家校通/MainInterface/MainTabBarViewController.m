@@ -31,7 +31,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleLightContent];
-    if (!_shouldShowLaunchAnimation) {
+    if (_shouldShowLaunchAnimation) {
         [appDelegate connectRongCloud];
     }
     [defaultNotiCenter addObserver:self selector:@selector(shouldShowLaunchAnimation:) name:Noti_ShouldShowLaunchAnimation object:nil];

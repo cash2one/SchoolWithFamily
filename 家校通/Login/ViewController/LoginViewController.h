@@ -15,6 +15,8 @@
 @property (weak, nonatomic) IBOutlet UITextField *passwordField;
 @property (weak, nonatomic) IBOutlet UIButton *loginBtn;
 - (IBAction)login:(UIButton *)sender;
+- (IBAction)loginProblem;
+- (IBAction)signUp;
 //是否需要启动动画
 @property (nonatomic, assign) BOOL shouldShowLaunchAnimation;
 @property (nonatomic, assign) BOOL isStatusBarHidden;

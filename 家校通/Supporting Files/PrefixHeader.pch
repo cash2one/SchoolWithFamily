@@ -39,6 +39,7 @@
 
 //Notification
 #define Noti_ShouldShowLaunchAnimation @"shouldShowLaunchAnimation"
+#define Noti_ChooseGroup @"chooseGroup"
 
 //登录
 #define keyUsername @"username"

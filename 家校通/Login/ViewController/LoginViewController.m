@@ -9,6 +9,7 @@
 #import "LoginViewController.h"
 #import "LoginModel.h"
 #import "RongTokenModel.h"
+#import "SignUpViewController.h"
 
 @interface LoginViewController () <UITextFieldDelegate>
 
@@ -86,6 +87,14 @@
             [weakSelf performSelector:@selector(dismissHud) withObject:nil afterDelay:1.5];
         }];
     });
+}
+
+- (IBAction)loginProblem {
+}
+
+- (IBAction)signUp {
+    SignUpViewController *signUpVC = [[SignUpViewController alloc] init];
+    [self presentViewController:signUpVC animated:YES completion:nil];
 }
 
 - (NSDictionary *)combineParamsForLogin {

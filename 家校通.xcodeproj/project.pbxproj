@@ -14,6 +14,10 @@
 		590D95AB1CC7CB0C00BEFB10 /* LoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 590D95A91CC7CB0C00BEFB10 /* LoginViewController.xib */; };
 		590D95AE1CC7CB4C00BEFB10 /* LoginModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 590D95AD1CC7CB4C00BEFB10 /* LoginModel.m */; };
 		590DB3471CD1F80700540AFB /* GradeHomework.m in Sources */ = {isa = PBXBuildFile; fileRef = 590DB3461CD1F80700540AFB /* GradeHomework.m */; };
+		59148F4F1CD6F3E80062DCD5 /* SignUpViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 59148F4D1CD6F3E80062DCD5 /* SignUpViewController.m */; };
+		59148F501CD6F3E80062DCD5 /* SignUpViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 59148F4E1CD6F3E80062DCD5 /* SignUpViewController.xib */; };
+		59148F541CD703AA0062DCD5 /* ChooseGroupViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 59148F521CD703AA0062DCD5 /* ChooseGroupViewController.m */; };
+		59148F5B1CD7426C0062DCD5 /* SignUpModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 59148F5A1CD7426C0062DCD5 /* SignUpModel.m */; };
 		5918DB551CC6190000430C80 /* UIImage+Alpha.m in Sources */ = {isa = PBXBuildFile; fileRef = 5918DB4A1CC6190000430C80 /* UIImage+Alpha.m */; };
 		5918DB561CC6190000430C80 /* UIImage+Resize.m in Sources */ = {isa = PBXBuildFile; fileRef = 5918DB4C1CC6190000430C80 /* UIImage+Resize.m */; };
 		5918DB571CC6190000430C80 /* UIImage+RoundedCorner.m in Sources */ = {isa = PBXBuildFile; fileRef = 5918DB4E1CC6190000430C80 /* UIImage+RoundedCorner.m */; };
@@ -88,6 +92,13 @@
 		590D95AD1CC7CB4C00BEFB10 /* LoginModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginModel.m; sourceTree = "<group>"; };
 		590DB3451CD1F80700540AFB /* GradeHomework.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GradeHomework.h; sourceTree = "<group>"; };
 		590DB3461CD1F80700540AFB /* GradeHomework.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GradeHomework.m; sourceTree = "<group>"; };
+		59148F4C1CD6F3E80062DCD5 /* SignUpViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SignUpViewController.h; sourceTree = "<group>"; };
+		59148F4D1CD6F3E80062DCD5 /* SignUpViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SignUpViewController.m; sourceTree = "<group>"; };
+		59148F4E1CD6F3E80062DCD5 /* SignUpViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SignUpViewController.xib; sourceTree = "<group>"; };
+		59148F511CD703AA0062DCD5 /* ChooseGroupViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChooseGroupViewController.h; sourceTree = "<group>"; };
+		59148F521CD703AA0062DCD5 /* ChooseGroupViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChooseGroupViewController.m; sourceTree = "<group>"; };
+		59148F591CD7426C0062DCD5 /* SignUpModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SignUpModel.h; sourceTree = "<group>"; };
+		59148F5A1CD7426C0062DCD5 /* SignUpModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SignUpModel.m; sourceTree = "<group>"; };
 		5918DB491CC6190000430C80 /* UIImage+Alpha.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+Alpha.h"; sourceTree = "<group>"; };
 		5918DB4A1CC6190000430C80 /* UIImage+Alpha.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+Alpha.m"; sourceTree = "<group>"; };
 		5918DB4B1CC6190000430C80 /* UIImage+Resize.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+Resize.h"; sourceTree = "<group>"; };
@@ -286,6 +297,8 @@
 				590D95AD1CC7CB4C00BEFB10 /* LoginModel.m */,
 				598DC9AC1CD47AC700C48991 /* RongTokenModel.h */,
 				598DC9AD1CD47AC700C48991 /* RongTokenModel.m */,
+				59148F591CD7426C0062DCD5 /* SignUpModel.h */,
+				59148F5A1CD7426C0062DCD5 /* SignUpModel.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -296,6 +309,11 @@
 				590D95A71CC7CB0C00BEFB10 /* LoginViewController.h */,
 				590D95A81CC7CB0C00BEFB10 /* LoginViewController.m */,
 				590D95A91CC7CB0C00BEFB10 /* LoginViewController.xib */,
+				59148F4C1CD6F3E80062DCD5 /* SignUpViewController.h */,
+				59148F4D1CD6F3E80062DCD5 /* SignUpViewController.m */,
+				59148F4E1CD6F3E80062DCD5 /* SignUpViewController.xib */,
+				59148F511CD703AA0062DCD5 /* ChooseGroupViewController.h */,
+				59148F521CD703AA0062DCD5 /* ChooseGroupViewController.m */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -611,6 +629,7 @@
 			files = (
 				59269ABD1CA8C7FE00CC9620 /* Main.storyboard in Resources */,
 				59269ABB1CA8C7FE00CC9620 /* Assets.xcassets in Resources */,
+				59148F501CD6F3E80062DCD5 /* SignUpViewController.xib in Resources */,
 				59269ABC1CA8C7FE00CC9620 /* LaunchScreen.storyboard in Resources */,
 				590D95AB1CC7CB0C00BEFB10 /* LoginViewController.xib in Resources */,
 				59D6931D1CD3037A00CC0181 /* MineCell.xib in Resources */,
@@ -704,9 +723,12 @@
 				590D95AA1CC7CB0C00BEFB10 /* LoginViewController.m in Sources */,
 				59269AAE1CA8C7ED00CC9620 /* NewsViewController.m in Sources */,
 				5918DB581CC6190000430C80 /* UIImage+Utility.m in Sources */,
+				59148F541CD703AA0062DCD5 /* ChooseGroupViewController.m in Sources */,
 				5918DB591CC6190000430C80 /* UIImage+XHAnimatedFaceGif.m in Sources */,
 				5918DB571CC6190000430C80 /* UIImage+RoundedCorner.m in Sources */,
 				59E8EA7A1CCF2C6B006AE0B7 /* NetworkManager.m in Sources */,
+				59148F5B1CD7426C0062DCD5 /* SignUpModel.m in Sources */,
+				59148F4F1CD6F3E80062DCD5 /* SignUpViewController.m in Sources */,
 				59B62BC11CD10862004687D4 /* JRMessageView.m in Sources */,
 				59D693281CD3A1A200CC0181 /* UpdateUser.m in Sources */,
 				598DC9AE1CD47AC700C48991 /* RongTokenModel.m in Sources */,
