@@ -90,6 +90,9 @@
 }
 
 - (IBAction)loginProblem {
+    TKAlertViewController *alert = [[TKAlertViewController alloc] initWithTitle:@"求助！" message:@"请检查您的网络是否通畅，还不行请联系管理员"];
+    [alert addButtonWithTitle:@"确定" block:nil];
+    [alert show];
 }
 
 - (IBAction)signUp {

@@ -103,7 +103,7 @@
         [[RCIM sharedRCIM] setUserInfoDataSource:self];
         NSLog(@"登陆成功。当前登录的用户ID：%@", userId);
     } error:^(RCConnectErrorCode status) {
-        NSLog(@"登陆的错误码为:%d", status);
+        NSLog(@"登陆的错误码为:%ld", (long)status);
     } tokenIncorrect:^{
         NSLog(@"token错误");
     }];
