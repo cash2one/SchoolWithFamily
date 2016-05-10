@@ -31,9 +31,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleLightContent];
-    if (_shouldShowLaunchAnimation) {
-        [appDelegate connectRongCloud];
-    }
+    [appDelegate getToken]; //登录融云
     [defaultNotiCenter addObserver:self selector:@selector(shouldShowLaunchAnimation:) name:Noti_ShouldShowLaunchAnimation object:nil];
 }
 
